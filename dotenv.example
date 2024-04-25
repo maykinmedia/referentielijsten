@@ -1,0 +1,10 @@
+SECRET_KEY="django-insecure-4foe-_dk9x=88*0sl$jyo1_ga!!nj*x8ye6u0p(@871e)zg^+q"
+DB_NAME="referentielijsten"
+DB_USER="referentielijsten"
+#
+# For peer authentication via unix domain socket
+# these should be kept empty.
+#
+DB_PASSWORD=""
+DB_HOST=""
+DB_PORT=""
