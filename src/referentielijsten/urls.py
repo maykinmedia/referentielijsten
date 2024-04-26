@@ -48,8 +48,13 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
+    path(
+        "api/",
+        include("referentielijsten.api.urls"),
+    ),
     # Simply show the master template.
     path("", TemplateView.as_view(template_name="master.html"), name="root"),
+    path("ref/", include("vng_api_common.urls")),
 ]
 
 # NOTE: The staticfiles_urlpatterns also discovers static files (ie. no need to run collectstatic). Both the static

@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 
 import sentry_sdk
 
+from .api import *  # noqa
 from .utils import config, get_sentry_integrations
 
 # Build paths inside the project, so further paths can be defined relative to
