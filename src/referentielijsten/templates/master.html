@@ -20,6 +20,40 @@
                 to get some actual content.
             {% endblock %}
         </main>
+
+        <footer class="footer container">
+            <div class="footer__row">
+              <div class="footer__col footer__col--small">
+                <img src="{% static 'img/maykin_logo.png' %}" alt="Maykin Media logo" height="48">
+                <p>
+                Developed by <a class="link" href="https://www.maykinmedia.nl">Maykin Media</a><br>
+                </p>
+              </div>
+              <div class="footer__col">
+                <h5 class="footer__header">Referentielijsten API</h5>
+                <ul class="footer__list">
+                  <li><a class="link link--muted" href="https://hub.docker.com/r/maykinmedia/referentielijsten">Docker images</a></li>
+                  <li><a class="link link--muted" href="https://github.com/maykinmedia/referentielijsten">Code on Github</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <h5 class="footer__header">Other</h5>
+                <ul class="footer__list">
+                  <li>Report <a class="link link--muted" href="https://github.com/maykinmedia/referentielijsten/issues">issues</a> for questions, bugs or wishes</li>
+                  <li>Read more on <a class="link link--muted" href="https://commonground.nl/">Common Ground</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer__row">
+              <div class="footer__col">
+                <code>{{ settings.RELEASE }}</code>
+              </div>
+              <div class="footer__col footer__col--right">
+                <code>{{ settings.GIT_SHA|default:"" }}</code>
+              </div>
+            </div>
+          </footer>
         
         <script src="{% static 'bundles/referentielijsten-js.js' %}"></script>
     </body>
