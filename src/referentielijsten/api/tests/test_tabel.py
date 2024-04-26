@@ -5,6 +5,7 @@ from rest_framework import status
 from vng_api_common.tests import reverse
 
 from referentielijsten.token.tests.api_testcase import APITestCase
+
 from ..models import Tabel
 from .factories import ItemFactory, TabelFactory
 
