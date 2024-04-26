@@ -34,9 +34,9 @@ IS_HTTPS = config("IS_HTTPS", default=not DEBUG)
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = "nl-nl"
+LANGUAGE_CODE = "nl"
 
-TIME_ZONE = "Europe/Amsterdam"  # note: this *may* affect the output of DRF datetimes
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -112,8 +112,10 @@ INSTALLED_APPS = [
     # External applications.
     "axes",
     # Project applications.
+    "referentielijsten",
     "referentielijsten.accounts",
     "referentielijsten.utils",
+    "referentielijsten.api",
 ]
 
 MIDDLEWARE = [
