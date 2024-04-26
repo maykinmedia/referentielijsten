@@ -120,6 +120,7 @@ INSTALLED_APPS = [
     "referentielijsten",
     "referentielijsten.accounts",
     "referentielijsten.utils",
+    "referentielijsten.token",
     "referentielijsten.api",
 ]
 

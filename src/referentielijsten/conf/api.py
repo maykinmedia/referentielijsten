@@ -3,6 +3,12 @@ from vng_api_common.conf.api import *  # noqa
 # DRF
 REST_FRAMEWORK = BASE_REST_FRAMEWORK.copy()
 REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "drf_spectacular.openapi.AutoSchema"
+REST_FRAMEWORK["DEFAULT_AUTHENTICATION_CLASSES"] = [
+    "referentielijsten.token.authentication.TokenAuthentication"
+]
+REST_FRAMEWORK["DEFAULT_PERMISSION_CLASSES"] = [
+    "referentielijsten.token.permission.TokenPermissions"
+]
 
 SPECTACULAR_SETTINGS = {
     "SERVE_INCLUDE_SCHEMA": False,

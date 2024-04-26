@@ -26,7 +26,7 @@ paths:
       tags:
       - tabelen
       security:
-      - {}
+      - tokenAuth: []
       responses:
         '200':
           content:
@@ -127,3 +127,9 @@ components:
       - code
       - items
       - naam
+  securitySchemes:
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"
