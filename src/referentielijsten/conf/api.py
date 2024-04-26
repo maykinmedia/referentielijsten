@@ -2,10 +2,6 @@ from vng_api_common.conf.api import *  # noqa
 
 # DRF
 REST_FRAMEWORK = BASE_REST_FRAMEWORK.copy()
-REST_FRAMEWORK["PAGE_SIZE"] = 100
-REST_FRAMEWORK["DEFAULT_PAGINATION_CLASS"] = (
-    "rest_framework.pagination.PageNumberPagination"
-)
 REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "drf_spectacular.openapi.AutoSchema"
 
 SPECTACULAR_SETTINGS = {

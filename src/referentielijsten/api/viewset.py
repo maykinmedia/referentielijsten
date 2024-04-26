@@ -1,9 +1,9 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 
 from .filterset import TabelFilterset
-from .serializers import TabelSerializer
 from .models import Tabel
+from .serializers import TabelSerializer
 
 
 @extend_schema(
@@ -15,9 +15,16 @@ from .models import Tabel
         description="De operatie waarmee alle gegevens van een tabel wordt opgehaald.",
     ),
 )
-class TabelViewSet(viewsets.ReadOnlyModelViewSet):
+class TabelViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    lookup_field = "code"
     queryset = Tabel.objects.all()
     serializer_class = TabelSerializer
-    filterset_class = TabelFilterset
     lookup_url_kwargs = ["code", "geldig"]
-    lookup_field = "code"
+    filterset_class = TabelFilterset
+
+    def get_queryset(self):
+        code = self.request.query_params.get("code", None)
+        if code is None:
+            return Tabel.objects.none()
+
+        return Tabel.objects.filter(code=code)

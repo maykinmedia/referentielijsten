@@ -1,8 +1,8 @@
-from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
-from .models import Tabel, Item
+from .models import Item, Tabel
 
 
 class ItemInlineAdmin(admin.TabularInline):

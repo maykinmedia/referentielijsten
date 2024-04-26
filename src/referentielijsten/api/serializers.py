@@ -1,13 +1,14 @@
 from distutils.util import strtobool
 
 from django.db.models import Q
-from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from vng_api_common.serializers import GegevensGroepSerializer
 
-from .models import Tabel, Item
+from .models import Item, Tabel
 
 
 class ItemSerializer(serializers.ModelSerializer):
@@ -46,15 +47,20 @@ class TabelSerializer(serializers.ModelSerializer):
             "items",
         )
 
+    @extend_schema_field(field=ItemSerializer)
     def get_items(self, obj):
         request = self.context["request"]
         geldig = request.query_params.get("geldig", "false")
         if strtobool(geldig):
             item_qs = obj.item_set.filter(
-                Q(begindatum_geldigheid__isnull=True)
-                | Q(begindatum_geldigheid__lt=timezone.now())
-                & Q(einddatum_geldigheid__isnull=True)
-                | Q(einddatum_geldigheid__gt=timezone.now())
+                (
+                    Q(begindatum_geldigheid__isnull=True)
+                    | Q(begindatum_geldigheid__lte=timezone.now())
+                )
+                & (
+                    Q(einddatum_geldigheid__isnull=True)
+                    | Q(einddatum_geldigheid__gt=timezone.now())
+                )
             )
             return ItemSerializer(item_qs, many=True).data
 

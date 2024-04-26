@@ -106,12 +106,16 @@ INSTALLED_APPS = [
     # Optional applications.
     "ordered_model",
     "django_admin_index",
+    "django_jsonform",
     "django.contrib.admin",
     # 'django.contrib.admindocs',
     # 'django.contrib.humanize',
     # 'django.contrib.sitemaps',
     # External applications.
     "axes",
+    "drf_spectacular",
+    "rest_framework",
+    "vng_api_common",
     # Project applications.
     "referentielijsten",
     "referentielijsten.accounts",
