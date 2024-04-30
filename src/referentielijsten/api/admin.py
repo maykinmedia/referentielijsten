@@ -2,13 +2,16 @@ from django.contrib import admin
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
+from .admin_list_filters import ItemGeldigListFilter
 from .models import Item, Tabel
 
 
-class ItemInlineAdmin(admin.TabularInline):
-    model = Item
-    extra = 1
+@admin.register(Item)
+class ItemAdmin(admin.ModelAdmin):
+    list_display = ("tabel", "code", "naam", "is_geldig")
+    list_filter = (ItemGeldigListFilter, "tabel")
     fields = (
+        "tabel",
         "code",
         "naam",
         "begindatum_geldigheid",
@@ -16,10 +19,23 @@ class ItemInlineAdmin(admin.TabularInline):
         "aanvullende_gegevens",
     )
 
+    @admin.display(description="Is geldig", boolean=True)
+    def is_geldig(self, obj):
+        if (
+            not obj.einddatum_geldigheid or obj.einddatum_geldigheid > timezone.now()
+        ) and (
+            not obj.begindatum_geldigheid or obj.begindatum_geldigheid <= timezone.now()
+        ):
+            return True
+
+        return False
+
 
 @admin.register(Tabel)
 class TabelAdmin(admin.ModelAdmin):
     list_display = ("code", "naam", "is_geldig")
+    list_filter = (ItemGeldigListFilter,)
+
     fieldsets = [
         (
             None,
@@ -43,7 +59,6 @@ class TabelAdmin(admin.ModelAdmin):
             },
         ),
     ]
-    inlines = (ItemInlineAdmin,)
 
     @admin.display(description="Is geldig", boolean=True)
     def is_geldig(self, obj):

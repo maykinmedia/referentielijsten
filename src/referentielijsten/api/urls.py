@@ -7,10 +7,11 @@ from drf_spectacular.views import (
 )
 from vng_api_common import routers
 
-from .viewset import TabelViewSet
+from .viewset import ItemViewSet, TabelViewSet
 
 router = routers.DefaultRouter()
-router.register("tabel", TabelViewSet)
+router.register("items", ItemViewSet)
+router.register("tabellen", TabelViewSet)
 
 urlpatterns = [
     re_path(

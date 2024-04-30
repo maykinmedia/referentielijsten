@@ -58,7 +58,7 @@ class TokenAuth(models.Model):
         verbose_name_plural = _("token authorizaties")
 
     def __str__(self):
-        return self.naam
+        return self.token
 
     def save(self, *args, **kwargs):
         if not self.token:

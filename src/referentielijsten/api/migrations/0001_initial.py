@@ -127,7 +127,7 @@ class Migration(migrations.Migration):
                     "begindatum_geldigheid",
                     models.DateTimeField(
                         blank=True,
-                        help_text="De datum vanaf deze tabel geldig is.",
+                        help_text="De datum vanaf waneer deze tabel geldig is.",
                         null=True,
                         verbose_name="begindatum geldigheid",
                     ),

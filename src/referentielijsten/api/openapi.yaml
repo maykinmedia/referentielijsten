@@ -9,22 +9,30 @@ info:
     name: EUPL
     url: https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md
 paths:
-  /tabel:
+  /items:
     get:
-      operationId: gettabelen
-      description: De operatie waarmee alle gegevens van een tabel wordt opgehaald.
+      operationId: getitems
+      description: De operatie waarmee alle items van een tabel wordt opgehaald.
       parameters:
       - in: query
-        name: code
-        schema:
-          type: string
-      - in: query
-        name: geldig
+        name: isGeldig
         schema:
           type: boolean
-        description: Zoek klantcontacten met specifieke tekst in inhoud
+        description: Of de `begindatum_geldigheid` niet in de toekomst ligt en de
+          `einddatum_geldigheid` niet in het verleden ligt.
+      - name: page
+        required: false
+        in: query
+        description: Een pagina binnen de gepagineerde set resultaten.
+        schema:
+          type: integer
+      - in: query
+        name: tabel__code
+        schema:
+          type: string
+        description: 'De naam van de `tabel__code` gelinkt aan de items: VERPLICHT'
       tags:
-      - tabelen
+      - items
       security:
       - tokenAuth: []
       responses:
@@ -32,9 +40,51 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Tabel'
+                $ref: '#/components/schemas/PaginatedItemList'
+          description: ''
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+              examples:
+                Tabel_codeQueryParamNotProvided:
+                  value:
+                    name: tabel__code
+                    code: invalid
+                    reason: Verplichte query parameter `tabel__code` niet mee gegeven.
+                  summary: tabel__code query param not provided
+          description: ''
+  /tabellen:
+    get:
+      operationId: gettabellen
+      description: De operatie waarmee alle gegevens van een tabel wordt opgehaald.
+      parameters:
+      - in: query
+        name: code
+        schema:
+          type: string
+      - in: query
+        name: isGeldig
+        schema:
+          type: boolean
+        description: Of de `einddatum_geldigheid` niet in het verleden ligt.
+      - name: page
+        required: false
+        in: query
+        description: Een pagina binnen de gepagineerde set resultaten.
+        schema:
+          type: integer
+      tags:
+      - tabellen
+      security:
+      - tokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTabelList'
           description: ''
 components:
   schemas:
@@ -86,7 +136,7 @@ components:
           type: string
           format: date-time
           nullable: true
-          description: De datum vanaf deze tabel geldig is.
+          description: De datum vanaf waneer deze tabel geldig is.
         einddatumGeldigheid:
           type: string
           format: date-time
@@ -98,6 +148,52 @@ components:
       required:
       - code
       - naam
+    PaginatedItemList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+    PaginatedTabelList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tabel'
     Tabel:
       type: object
       properties:
@@ -119,14 +215,30 @@ components:
           format: date-time
           nullable: true
           description: De datum tot wanneer deze tabel geldig is.
-        items:
-          allOf:
-          - $ref: '#/components/schemas/Item'
-          readOnly: true
       required:
       - code
-      - items
       - naam
+    ValidationError:
+      type: object
+      description: |-
+        Validation error format, following the NL API Strategy.
+
+        See https://docs.geostandaarden.nl/api/API-Strategie/ and
+        https://docs.geostandaarden.nl/api/API-Strategie-ext/#error-handling-0
+      properties:
+        name:
+          type: string
+          description: Name of the field with invalid data
+        code:
+          type: string
+          description: System code of the type of error
+        reason:
+          type: string
+          description: Explanation of what went wrong with the data
+      required:
+      - code
+      - name
+      - reason
   securitySchemes:
     tokenAuth:
       type: apiKey
