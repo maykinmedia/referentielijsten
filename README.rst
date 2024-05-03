@@ -34,9 +34,9 @@ References
 * `Code <https://bitbucket.org/maykinmedia/referentielijsten>`_
 
 
-.. |build-status| image:: http://jenkins.maykin.nl/buildStatus/icon?job=bitbucket/referentielijsten/master
+.. |build-status| image:: https://github.com/maykinmedia/referentielijsten/workflows/ci/badge.svg?branch=master
     :alt: Build status
-    :target: http://jenkins.maykin.nl/job/referentielijsten
+    :target: https://github.com/maykinmedia/referentielijsten/actions?query=workflow%3Aci
 
 .. |requirements| image:: https://requires.io/bitbucket/maykinmedia/referentielijsten/requirements.svg?branch=master
      :target: https://requires.io/bitbucket/maykinmedia/referentielijsten/requirements/?branch=master

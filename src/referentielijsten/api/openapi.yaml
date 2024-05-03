@@ -9,7 +9,7 @@ info:
     name: EUPL
     url: https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md
 paths:
-  /items:
+  /api/v1/items:
     get:
       operationId: getitems
       description: De operatie waarmee alle items van een tabel wordt opgehaald.
@@ -30,11 +30,12 @@ paths:
         name: tabel__code
         schema:
           type: string
-        description: 'De naam van de `tabel__code` gelinkt aan de items: VERPLICHT'
+        description: 'De waarde van de `tabel__code` die gelinkt is aan de items:
+          VERPLICHT'
       tags:
       - items
       security:
-      - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -55,7 +56,7 @@ paths:
                     reason: Verplichte query parameter `tabel__code` niet mee gegeven.
                   summary: tabel__code query param not provided
           description: ''
-  /tabellen:
+  /api/v1/tabellen:
     get:
       operationId: gettabellen
       description: De operatie waarmee alle gegevens van een tabel wordt opgehaald.
@@ -64,6 +65,7 @@ paths:
         name: code
         schema:
           type: string
+        description: De waarde van de `code` van een specifieke `tabel`.
       - in: query
         name: isGeldig
         schema:
@@ -78,7 +80,7 @@ paths:
       tags:
       - tabellen
       security:
-      - tokenAuth: []
+      - {}
       responses:
         '200':
           content:
@@ -150,9 +152,6 @@ components:
       - naam
     PaginatedItemList:
       type: object
-      required:
-      - count
-      - results
       properties:
         count:
           type: integer
@@ -173,9 +172,6 @@ components:
             $ref: '#/components/schemas/Item'
     PaginatedTabelList:
       type: object
-      required:
-      - count
-      - results
       properties:
         count:
           type: integer
@@ -239,9 +235,3 @@ components:
       - code
       - name
       - reason
-  securitySchemes:
-    tokenAuth:
-      type: apiKey
-      in: header
-      name: Authorization
-      description: Token-based authentication with required prefix "Token"

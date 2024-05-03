@@ -2,9 +2,8 @@ from django.test import override_settings
 
 from freezegun import freeze_time
 from rest_framework import status
+from rest_framework.test import APITestCase
 from vng_api_common.tests import reverse
-
-from referentielijsten.token.tests.api_testcase import APITestCase
 
 from ..models import Item
 from .factories import ItemFactory, TabelFactory
@@ -18,6 +17,16 @@ class ItemsApiTests(APITestCase):
 
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(
+            response.json()["invalidParams"],
+            [
+                {
+                    "name": "tabel__code",
+                    "code": "required",
+                    "reason": "Dit veld is vereist.",
+                }
+            ],
+        )
 
     def test_items_with_tabel_code(self):
         url = reverse(Item)

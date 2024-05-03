@@ -3,6 +3,8 @@ from django.utils.translation import gettext_lazy as _
 
 from vng_api_common.descriptors import GegevensGroepType
 
+from .managers import ItemQuerySet, TabelQuerySet
+
 
 class Tabel(models.Model):
     code = models.CharField(
@@ -30,7 +32,6 @@ class Tabel(models.Model):
         max_length=200,
         help_text=_("De naam van de beheerder van dit tabel."),
         blank=True,
-        null=True,
     )
     beheerder_email = models.EmailField(
         _("mail"),
@@ -43,14 +44,12 @@ class Tabel(models.Model):
         max_length=200,
         help_text=_("De afdelings naam van de beheerder van dit tabel."),
         blank=True,
-        null=True,
     )
     beheerder_organisatie = models.CharField(
         _("organisatie"),
         max_length=200,
         help_text=_("De organisatie naam van de beheerder van dit tabel."),
         blank=True,
-        null=True,
     )
     beheerder = GegevensGroepType(
         {
@@ -66,6 +65,8 @@ class Tabel(models.Model):
             "organisatie",
         ),
     )
+
+    objects = TabelQuerySet.as_manager()
 
     class Meta:
         verbose_name = _("tabel")
@@ -111,6 +112,8 @@ class Item(models.Model):
         blank=True,
         null=True,
     )
+
+    objects = ItemQuerySet.as_manager()
 
     class Meta:
         verbose_name = _("item")

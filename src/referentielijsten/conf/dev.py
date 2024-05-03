@@ -96,7 +96,7 @@ DEBUG_TOOLBAR_PANELS = [
 ]
 
 # None of the authentication backends require two-factor authentication.
-if config("DISABLE_2FA", default=False):
+if config("DISABLE_2FA", default=True):
     MAYKIN_2FA_ALLOW_MFA_BYPASS_BACKENDS = AUTHENTICATION_BACKENDS
 
 # THOU SHALT NOT USE NAIVE DATETIMES

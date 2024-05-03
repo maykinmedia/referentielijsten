@@ -6,21 +6,6 @@ from vng_api_common.serializers import GegevensGroepSerializer
 from .models import Item, Tabel
 
 
-class ValidationErrorSerializer(serializers.Serializer):
-    """
-    Validation error format, following the NL API Strategy.
-
-    See https://docs.geostandaarden.nl/api/API-Strategie/ and
-    https://docs.geostandaarden.nl/api/API-Strategie-ext/#error-handling-0
-    """
-
-    name = serializers.CharField(help_text=_("Name of the field with invalid data"))
-    code = serializers.CharField(help_text=_("System code of the type of error"))
-    reason = serializers.CharField(
-        help_text=_("Explanation of what went wrong with the data")
-    )
-
-
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item

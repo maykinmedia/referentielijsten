@@ -2,14 +2,14 @@ from django.contrib import admin
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from .admin_list_filters import ItemGeldigListFilter
+from .admin_list_filters import GeldigListFilter
 from .models import Item, Tabel
 
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
     list_display = ("tabel", "code", "naam", "is_geldig")
-    list_filter = (ItemGeldigListFilter, "tabel")
+    list_filter = (GeldigListFilter, "tabel__code")
     fields = (
         "tabel",
         "code",
@@ -34,7 +34,7 @@ class ItemAdmin(admin.ModelAdmin):
 @admin.register(Tabel)
 class TabelAdmin(admin.ModelAdmin):
     list_display = ("code", "naam", "is_geldig")
-    list_filter = (ItemGeldigListFilter,)
+    list_filter = (GeldigListFilter,)
 
     fieldsets = [
         (
