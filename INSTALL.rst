@@ -18,7 +18,7 @@ Prerequisites
 
 You need the following libraries and/or programs:
 
-* `Python`_ - check the ``Dockerfile`` for the required version.
+* `Python`_ - 3.11
 * Python `Virtualenv`_ and `Pip`_
 * `PostgreSQL`_
 * `Node.js`_
@@ -44,13 +44,10 @@ development machine.
 
    .. code-block:: bash
 
-       $ git clone git@bitbucket.org:maykinmedia/referentielijsten.git
+       $ git clone https://github.com/maykinmedia/referentielijsten.git
        $ cd referentielijsten
 
-3. Install all required (backend) libraries.
-   **Tip:** You can use the ``bootstrap.py`` script to install the requirements
-   and set the proper settings in ``manage.py``. Or, perform the steps
-   manually:
+3. Install all required (backend) libraries:
 
    .. code-block:: bash
 
@@ -69,6 +66,7 @@ development machine.
 
    .. code-block:: bash
 
+       $ source env/bin/activate
        $ python src/manage.py collectstatic --link
        $ python src/manage.py migrate
 
@@ -148,10 +146,6 @@ file or as part of the ``(post)activate`` of your virtualenv.
 * ``DB_HOST``: database host. Defaults to ``localhost``
 * ``DB_PORT``: database port. Defaults to ``5432``.
 
-* ``SENTRY_DSN``: the DSN of the project in Sentry. If set, enabled Sentry SDK as
-  logger and will send errors/logging to Sentry. If unset, Sentry SDK will be
-  disabled.
-
 Docker
 ======
 
@@ -162,7 +156,7 @@ The easiest way to get the project started is by using `Docker Compose`_.
 
    .. code-block:: bash
 
-       $ git clone git@bitbucket.org:maykinmedia/referentielijsten.git
+       $ git clone https://github.com/maykinmedia/referentielijsten.git
        Cloning into 'referentielijsten'...
        ...
 
@@ -194,8 +188,8 @@ The easiest way to get the project started is by using `Docker Compose`_.
        ...
        Superuser created successfully.
 
-       $ docker exec -it referentielijsten_web_1 /app/src/manage.py loaddata admin_index groups
-       Installed 5 object(s) from 2 fixture(s)
+       $ docker exec -it referentielijsten_web_1 /app/src/manage.py loaddata default_admin_index.json
+       Installed 4 object(s) from 1 fixture(s)
 
 4. Point your browser to ``http://localhost:8000/`` to access the project's
    management interface with the credentials used in step 3.
@@ -239,60 +233,6 @@ all settings.
         referentielijsten
 
     $ docker exec -it referentielijsten /app/src/manage.py createsuperuser
-
-Building and publishing the image
----------------------------------
-
-Using ``bin/release-docker-image``, you can easily build and tag the image.
-
-The script is based on git branches and tags - if you're on the ``master``
-branch and the current ``HEAD`` is tagged, the tag will be used as
-``RELEASE_TAG`` and the image will be pushed. If you want to push the image
-without a git tag, you can use the ``RELEASE_TAG`` envvar.
-
-The image will only be pushed if the ``JOB_NAME`` envvar is set. The image
-will always be built, even if no envvar is set. The default release tag is
-``latest``.
-
-Example usage:
-
-.. code-block:: bash
-
-    JOB_NAME=publish RELEASE_TAG=dev ./bin/release-docker-image.sh
-
-
-Staging and production
-======================
-
-Ansible is used to deploy test, staging and production servers. It is assumed
-the target machine has a clean `Debian`_ installation.
-
-1. Make sure you have `Ansible`_ installed (globally or in the virtual
-   environment):
-
-   .. code-block:: bash
-
-       $ pip install ansible
-
-2. Navigate to the project directory, and install the Maykin deployment
-   submodule if you haven't already:
-
-   .. code-block:: bash
-
-       $ git submodule update --init
-
-3. Run the Ansible playbook to provision a clean Debian machine:
-
-   .. code-block:: bash
-
-       $ cd deployment
-       $ ansible-playbook <test/staging/production>.yml
-
-For more information, see the ``README`` file in the deployment directory.
-
-.. _Debian: https://www.debian.org/
-.. _Ansible: https://pypi.org/project/ansible/
-
 
 Settings
 ========

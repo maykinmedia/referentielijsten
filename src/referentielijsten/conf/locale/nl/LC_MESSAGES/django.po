@@ -119,15 +119,6 @@ msgstr "overnemen"
 msgid "Hijack %(username)s"
 msgstr "Inloggen als %(username)s"
 
-#: foobar/templates/samples/pager.html:8 foobar/templates/samples/pager.html:10
-msgid "Previous"
-msgstr "Vorige"
-
-#: foobar/templates/samples/pager.html:16
-#: foobar/templates/samples/pager.html:18
-msgid "Next"
-msgstr "Volgende"
-
 #: foobar/utils/management/commands/clear_cache.py:10
 msgid "Clear given cache only"
 msgstr "Leeg alleen de opgegeven cache"

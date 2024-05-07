@@ -32,6 +32,7 @@ paths:
           type: string
         description: 'De waarde van de `tabel__code` die gelinkt is aan de items:
           VERPLICHT'
+        required: true
       tags:
       - items
       security:
@@ -47,13 +48,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationError'
+                $ref: '#/components/schemas/FieldValidationError'
               examples:
                 Tabel_codeQueryParamNotProvided:
                   value:
                     name: tabel__code
-                    code: invalid
-                    reason: Verplichte query parameter `tabel__code` niet mee gegeven.
+                    code: required
+                    reason: Dit veld is vereist.
                   summary: tabel__code query param not provided
           description: ''
   /api/v1/tabellen:
@@ -123,6 +124,23 @@ components:
           type: string
           description: De organisatie naam van de beheerder van dit tabel.
           maxLength: 200
+    FieldValidationError:
+      type: object
+      description: Formaat van validatiefouten.
+      properties:
+        name:
+          type: string
+          description: Naam van het veld met ongeldige gegevens
+        code:
+          type: string
+          description: Systeemcode die het type fout aangeeft
+        reason:
+          type: string
+          description: Uitleg wat er precies fout is met de gegevens
+      required:
+      - code
+      - name
+      - reason
     Item:
       type: object
       properties:
@@ -152,6 +170,9 @@ components:
       - naam
     PaginatedItemList:
       type: object
+      required:
+      - count
+      - results
       properties:
         count:
           type: integer
@@ -172,6 +193,9 @@ components:
             $ref: '#/components/schemas/Item'
     PaginatedTabelList:
       type: object
+      required:
+      - count
+      - results
       properties:
         count:
           type: integer
@@ -214,24 +238,3 @@ components:
       required:
       - code
       - naam
-    ValidationError:
-      type: object
-      description: |-
-        Validation error format, following the NL API Strategy.
-
-        See https://docs.geostandaarden.nl/api/API-Strategie/ and
-        https://docs.geostandaarden.nl/api/API-Strategie-ext/#error-handling-0
-      properties:
-        name:
-          type: string
-          description: Name of the field with invalid data
-        code:
-          type: string
-          description: System code of the type of error
-        reason:
-          type: string
-          description: Explanation of what went wrong with the data
-      required:
-      - code
-      - name
-      - reason
