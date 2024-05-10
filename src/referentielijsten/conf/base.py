@@ -107,7 +107,6 @@ INSTALLED_APPS = [
     # Optional applications.
     "ordered_model",
     "django_admin_index",
-    "django_jsonform",
     "django.contrib.admin",
     # 'django.contrib.admindocs',
     # 'django.contrib.humanize',

@@ -95,14 +95,12 @@ class Item(models.Model):
     begindatum_geldigheid = models.DateTimeField(
         _("begindatum geldigheid"),
         help_text=_("De datum vanaf waneer deze tabel geldig is."),
-        editable=True,
         blank=True,
         null=True,
     )
     einddatum_geldigheid = models.DateTimeField(
         _("einddatum geldigheid"),
         help_text=_("De datum tot wanneer deze tabel geldig is."),
-        editable=True,
         blank=True,
         null=True,
     )

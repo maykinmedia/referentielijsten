@@ -34,9 +34,7 @@ class ItemFilterset(FilterSet):
         method="filter_is_geldig",
     )
     tabel__code = filters.CharFilter(
-        help_text=_(
-            "De waarde van de `tabel__code` die gelinkt is aan de items: VERPLICHT"
-        ),
+        help_text=_("De waarde van de `tabel__code` die gelinkt is aan de items."),
         required=True,
     )
 

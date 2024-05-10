@@ -30,8 +30,7 @@ paths:
         name: tabel__code
         schema:
           type: string
-        description: 'De waarde van de `tabel__code` die gelinkt is aan de items:
-          VERPLICHT'
+        description: De waarde van de `tabel__code` die gelinkt is aan de items.
         required: true
       tags:
       - items
