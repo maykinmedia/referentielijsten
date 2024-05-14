@@ -172,7 +172,7 @@ jobs:
 
     name: Push Docker image
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.repository_owner == 'referentielijsten'  # exclude PRs/forks
+    if: github.event_name == 'push' # exclude PRs
 
     steps:
       - uses: actions/checkout@v4
@@ -191,7 +191,7 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
 
           # Use Docker `latest` tag convention
-          [ "$VERSION" == "main" ] && VERSION=latest
+          [ "$VERSION" == "master" ] && VERSION=latest
 
           echo "tag=${VERSION}" >> $GITHUB_OUTPUT
 
