@@ -1,18 +1,20 @@
 import os
-from pathlib import Path
 
 from django.urls import reverse_lazy
 
-import sentry_sdk
-
-from .utils import config, get_sentry_integrations
+from .api import *  # noqa
+from .utils import config
 
 # Build paths inside the project, so further paths can be defined relative to
 # the code root.
 
-DJANGO_PROJECT_DIR = Path(__file__).resolve().parent.parent
+DJANGO_PROJECT_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), os.path.pardir)
+)
 
-BASE_DIR = DJANGO_PROJECT_DIR.parent.parent
+BASE_DIR = os.path.abspath(
+    os.path.join(DJANGO_PROJECT_DIR, os.path.pardir, os.path.pardir)
+)
 
 #
 # Core Django settings
@@ -34,9 +36,9 @@ IS_HTTPS = config("IS_HTTPS", default=not DEBUG)
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = "nl-nl"
+LANGUAGE_CODE = "nl"
 
-TIME_ZONE = "Europe/Amsterdam"  # note: this *may* affect the output of DRF datetimes
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -111,9 +113,13 @@ INSTALLED_APPS = [
     # 'django.contrib.sitemaps',
     # External applications.
     "axes",
+    "drf_spectacular",
+    "rest_framework",
+    "vng_api_common",
     # Project applications.
     "referentielijsten.accounts",
     "referentielijsten.utils",
+    "referentielijsten.api",
 ]
 
 MIDDLEWARE = [
@@ -141,7 +147,7 @@ TEMPLATE_LOADERS = (
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [DJANGO_PROJECT_DIR / "templates"],
+        "DIRS": [os.path.join(DJANGO_PROJECT_DIR, "templates")],
         "APP_DIRS": False,  # conflicts with explicity specifying the loaders
         "OPTIONS": {
             "context_processors": [
@@ -159,7 +165,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "referentielijsten.wsgi.application"
 
 # Translations
-LOCALE_PATHS = (DJANGO_PROJECT_DIR / "conf" / "locale",)
+LOCALE_PATHS = (os.path.join(DJANGO_PROJECT_DIR, "conf", "locale"),)
 
 #
 # SERVING of static and media files
@@ -167,10 +173,10 @@ LOCALE_PATHS = (DJANGO_PROJECT_DIR / "conf" / "locale",)
 
 STATIC_URL = "/static/"
 
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Additional locations of static files
-STATICFILES_DIRS = [DJANGO_PROJECT_DIR / "static"]
+STATICFILES_DIRS = [os.path.join(DJANGO_PROJECT_DIR, "static")]
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -179,7 +185,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MEDIA_URL = "/media/"
 
@@ -204,7 +210,7 @@ DEFAULT_FROM_EMAIL = "referentielijsten@example.com"
 #
 LOG_STDOUT = config("LOG_STDOUT", default=False)
 
-LOGGING_DIR = BASE_DIR / "log"
+LOGGING_DIR = os.path.join(BASE_DIR, "log")
 
 LOGGING = {
     "version": 1,
@@ -240,7 +246,7 @@ LOGGING = {
         "django": {
             "level": "DEBUG",
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": LOGGING_DIR / "django.log",
+            "filename": os.path.join(LOGGING_DIR, "django.log"),
             "formatter": "verbose",
             "maxBytes": 1024 * 1024 * 10,  # 10 MB
             "backupCount": 10,
@@ -248,7 +254,7 @@ LOGGING = {
         "project": {
             "level": "DEBUG",
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": LOGGING_DIR / "referentielijsten.log",
+            "filename": os.path.join(LOGGING_DIR, "referentielijsten.log"),
             "formatter": "verbose",
             "maxBytes": 1024 * 1024 * 10,  # 10 MB
             "backupCount": 10,
@@ -256,7 +262,7 @@ LOGGING = {
         "performance": {
             "level": "INFO",
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": LOGGING_DIR / "performance.log",
+            "filename": os.path.join(LOGGING_DIR, "performance.log"),
             "formatter": "performance",
             "maxBytes": 1024 * 1024 * 10,  # 10 MB
             "backupCount": 10,
@@ -325,12 +331,12 @@ X_FRAME_OPTIONS = "DENY"
 # FIXTURES
 #
 
-FIXTURE_DIRS = (DJANGO_PROJECT_DIR / "fixtures",)
+FIXTURE_DIRS = (os.path.join(DJANGO_PROJECT_DIR, "fixtures"),)
 
 #
 # Custom settings
 #
-PROJECT_NAME = "referentielijsten"
+PROJECT_NAME = "Referentielijsten"
 ENVIRONMENT = config("ENVIRONMENT", "")
 SHOW_ALERT = True
 ENABLE_ADMIN_NAV_SIDEBAR = config("ENABLE_ADMIN_NAV_SIDEBAR", default=False)
@@ -344,7 +350,7 @@ LOGIN_URLS = [reverse_lazy("admin:login")]
 if "GIT_SHA" in os.environ:
     GIT_SHA = config("GIT_SHA", "")
 # in docker (build) context, there is no .git directory
-elif (BASE_DIR / ".git").exists():
+elif os.path.exists(os.path.join(BASE_DIR, ".git")):
     try:
         import git
     except ImportError:
@@ -432,22 +438,6 @@ TWO_FACTOR_WEBAUTHN_AUTHENTICATOR_ATTACHMENT = "cross-platform"
 MAYKIN_2FA_ALLOW_MFA_BYPASS_BACKENDS = [
     # "mozilla_django_oidc_db.backends.OIDCAuthenticationBackend",
 ]
-
-#
-# SENTRY - error monitoring
-#
-SENTRY_DSN = config("SENTRY_DSN", None)
-
-if SENTRY_DSN:
-    SENTRY_CONFIG = {
-        "dsn": SENTRY_DSN,
-        "release": RELEASE,
-        "environment": ENVIRONMENT,
-    }
-
-    sentry_sdk.init(
-        **SENTRY_CONFIG, integrations=get_sentry_integrations(), send_default_pii=True
-    )
 
 # Elastic APM
 ELASTIC_APM_SERVER_URL = os.getenv("ELASTIC_APM_SERVER_URL", None)

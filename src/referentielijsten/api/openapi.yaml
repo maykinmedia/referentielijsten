@@ -1,0 +1,239 @@
+openapi: 3.0.3
+info:
+  title: Referentielijsten API
+  version: 1.0.0
+  description: Een API om de informatie op te halen van stam tabellen
+  contact:
+    url: https://github.com/maykinmedia/referentielijsten
+  license:
+    name: EUPL
+    url: https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md
+paths:
+  /api/v1/items:
+    get:
+      operationId: getitems
+      description: De operatie waarmee alle items van een tabel wordt opgehaald.
+      parameters:
+      - in: query
+        name: isGeldig
+        schema:
+          type: boolean
+        description: Of de `begindatum_geldigheid` niet in de toekomst ligt en de
+          `einddatum_geldigheid` niet in het verleden ligt.
+      - name: page
+        required: false
+        in: query
+        description: Een pagina binnen de gepagineerde set resultaten.
+        schema:
+          type: integer
+      - in: query
+        name: tabel__code
+        schema:
+          type: string
+        description: De waarde van de `tabel__code` die gelinkt is aan de items.
+        required: true
+      tags:
+      - items
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedItemList'
+          description: ''
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FieldValidationError'
+              examples:
+                Tabel_codeQueryParamNotProvided:
+                  value:
+                    name: tabel__code
+                    code: required
+                    reason: Dit veld is vereist.
+                  summary: tabel__code query param not provided
+          description: ''
+  /api/v1/tabellen:
+    get:
+      operationId: gettabellen
+      description: De operatie waarmee alle gegevens van een tabel wordt opgehaald.
+      parameters:
+      - in: query
+        name: code
+        schema:
+          type: string
+        description: De waarde van de `code` van een specifieke `tabel`.
+      - in: query
+        name: isGeldig
+        schema:
+          type: boolean
+        description: Of de `einddatum_geldigheid` niet in het verleden ligt.
+      - name: page
+        required: false
+        in: query
+        description: Een pagina binnen de gepagineerde set resultaten.
+        schema:
+          type: integer
+      tags:
+      - tabellen
+      security:
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTabelList'
+          description: ''
+components:
+  schemas:
+    Beheerder:
+      type: object
+      description: |-
+        Generate a serializer out of a GegevensGroepType.
+
+        Usage::
+
+        >>> class VerlengingSerializer(GegevensGroepSerializer):
+        ...     class Meta:
+        ...         model = Zaak
+        ...         gegevensgroep = 'verlenging'
+        >>>
+
+        Where ``Zaak.verlenging`` is a :class:``GegevensGroepType``.
+      properties:
+        naam:
+          type: string
+          description: De naam van de beheerder van dit tabel.
+          maxLength: 200
+        email:
+          type: string
+          format: email
+          title: Mail
+          description: De email van de beheerder van dit tabel.
+          maxLength: 254
+        afdeling:
+          type: string
+          description: De afdelings naam van de beheerder van dit tabel.
+          maxLength: 200
+        organisatie:
+          type: string
+          description: De organisatie naam van de beheerder van dit tabel.
+          maxLength: 200
+    FieldValidationError:
+      type: object
+      description: Formaat van validatiefouten.
+      properties:
+        name:
+          type: string
+          description: Naam van het veld met ongeldige gegevens
+        code:
+          type: string
+          description: Systeemcode die het type fout aangeeft
+        reason:
+          type: string
+          description: Uitleg wat er precies fout is met de gegevens
+      required:
+      - code
+      - name
+      - reason
+    Item:
+      type: object
+      properties:
+        code:
+          type: string
+          description: De unique code (per tabel) van het item.
+          maxLength: 36
+        naam:
+          type: string
+          description: De naam van het item.
+          maxLength: 200
+        begindatumGeldigheid:
+          type: string
+          format: date-time
+          nullable: true
+          description: De datum vanaf waneer deze tabel geldig is.
+        einddatumGeldigheid:
+          type: string
+          format: date-time
+          nullable: true
+          description: De datum tot wanneer deze tabel geldig is.
+        aanvullendeGegevens:
+          nullable: true
+          description: Extra gegevens die niet standaard gekoppeld zijn aan een item.
+      required:
+      - code
+      - naam
+    PaginatedItemList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+    PaginatedTabelList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tabel'
+    Tabel:
+      type: object
+      properties:
+        code:
+          type: string
+          description: De unique code van het tabel.
+          maxLength: 40
+        naam:
+          type: string
+          description: De naam van het tabel.
+          maxLength: 200
+        beheerder:
+          allOf:
+          - $ref: '#/components/schemas/Beheerder'
+          nullable: true
+          description: De informatie van de beheerder van deze tabel.
+        einddatumGeldigheid:
+          type: string
+          format: date-time
+          nullable: true
+          description: De datum tot wanneer deze tabel geldig is.
+      required:
+      - code
+      - naam

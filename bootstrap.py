@@ -18,8 +18,8 @@ project_name = "referentielijsten"
 parser = argparse.ArgumentParser(description=description)
 parser.add_argument(
     "target",
-    choices=["production", "staging", "test", "jenkins", "dev"],
-    help="production/staging/test/jenkins/dev",
+    choices=["production", "staging", "test", "ci", "dev"],
+    help="production/staging/test/ci/dev",
 )
 parser.add_argument(
     "--project",

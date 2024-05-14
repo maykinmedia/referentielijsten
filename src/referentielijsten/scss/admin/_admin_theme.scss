@@ -173,16 +173,9 @@ div.breadcrumbs {
 }
 
 /**
- * Django form related widget
- */
-.related-widget-wrapper {
-  display: inline-block;
-}
-
-/**
  * Help text mouseover
  */
-div.help {
+ div.help {
   cursor: help;
   width: 16px;
   height: 16px;
@@ -192,7 +185,7 @@ div.help {
   background-size: 14px;
   margin-left: 8px !important;
   margin-top: 6px !important;
-  position: absolute;
+  position: relative;
   text-indent: -9999px;
 
   &:hover {
@@ -226,6 +219,9 @@ div.help {
 }
 .aligned label + div.help {
   margin-left: 2px !important;
+}
+div:has(> div.help ) {
+  display: flex;
 }
 
 /* Additional components seem to need the same behaviour */
