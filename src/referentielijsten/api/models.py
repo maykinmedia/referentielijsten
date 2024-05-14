@@ -37,7 +37,6 @@ class Tabel(models.Model):
         _("mail"),
         help_text=_("De email van de beheerder van dit tabel."),
         blank=True,
-        null=True,
     )
     beheerder_afdeling = models.CharField(
         _("afdeling"),

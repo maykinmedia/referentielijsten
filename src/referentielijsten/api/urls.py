@@ -10,7 +10,7 @@ from vng_api_common import routers
 from .viewset import ItemViewSet, TabelViewSet
 
 router = routers.DefaultRouter()
-router.register("items", ItemViewSet)
+router.register("item", ItemViewSet)
 router.register("tabellen", TabelViewSet)
 
 urlpatterns = [

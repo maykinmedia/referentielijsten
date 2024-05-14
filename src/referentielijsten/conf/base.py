@@ -336,7 +336,7 @@ FIXTURE_DIRS = (os.path.join(DJANGO_PROJECT_DIR, "fixtures"),)
 #
 # Custom settings
 #
-PROJECT_NAME = "referentielijsten"
+PROJECT_NAME = "Referentielijsten"
 ENVIRONMENT = config("ENVIRONMENT", "")
 SHOW_ALERT = True
 ENABLE_ADMIN_NAV_SIDEBAR = config("ENABLE_ADMIN_NAV_SIDEBAR", default=False)

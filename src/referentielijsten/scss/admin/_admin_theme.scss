@@ -224,16 +224,6 @@ div:has(> div.help ) {
   display: flex;
 }
 
-/* Overrides default Django CSS */
-.aligned label + p,
-.aligned label + div.readonly {
-  display: inline-block;
-  margin-left: inherit !important;
-}
-.aligned label + div.help {
-  margin-left: 2px !important;
-}
-
 /* Additional components seem to need the same behaviour */
 /* TODO: TinyMCE is different... */
 .aligned label + ul {
