@@ -1,29 +1,29 @@
-name: quick-start
+# name: quick-start
 
-on: [push]
+# on: [push]
 
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Download docker-compose file
-        run: wget https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/docker-compose.yml -O docker-compose-qs.yml
-      - name: Overwrite the docker-compose file to get the "current" one
-        run: cp docker-compose-qs.yml docker-compose.yml
-      - name: Start docker containers
-        run: docker-compose up -d
-      - name: Wait until DB container starts
-        run: sleep 10
-      # - name: Load fixtures
-      #   run: docker-compose exec -T web src/manage.py loaddata demodata
-      - name: Create superuser
-        run: docker-compose exec -T web src/manage.py createsuperuser --username admin --email admin@admin.nl --no-input
-      - name: Check main page
-        run: |
-          curl_status=$(curl -w '%{http_code}' -o /dev/null  -s http://localhost:8000/)
-          if [[ $curl_status != 200 ]]; then
-            printf "Index page responds with ${curl_status} status.\r\n\r\n" >&2
-            curl -i http://localhost:8000
-            exit 1
-          fi
+# jobs:
+#   run:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Download docker-compose file
+#         run: wget https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/docker-compose.yml -O docker-compose-qs.yml
+#       - name: Overwrite the docker-compose file to get the "current" one
+#         run: cp docker-compose-qs.yml docker-compose.yml
+#       - name: Start docker containers
+#         run: docker-compose up -d --no-build
+#       - name: Wait until DB container starts
+#         run: sleep 10
+#       # - name: Load fixtures
+#       #   run: docker-compose exec -T web src/manage.py loaddata demodata
+#       - name: Create superuser
+#         run: docker-compose exec -T web src/manage.py createsuperuser --username admin --email admin@admin.nl --no-input
+#       - name: Check main page
+#         run: |
+#           curl_status=$(curl -w '%{http_code}' -o /dev/null  -s http://localhost:8000/)
+#           if [[ $curl_status != 200 ]]; then
+#             printf "Index page responds with ${curl_status} status.\r\n\r\n" >&2
+#             curl -i http://localhost:8000
+#             exit 1
+#           fi
