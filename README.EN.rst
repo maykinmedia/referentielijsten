@@ -8,65 +8,62 @@ Referentielijsten API
 
 |docs| |docker|
 
-De Referentielijsten API is een generieke API voor eenvoudige herbruikebare
-lijsten (`English version`_)
+The Referentielijsten API (Reference lists API) is a generic API for simple and
+reusable data lists (`Nederlandse versie`_)
 
-Ontwikkeld en gefinancierd door `Maykin B.V.`_.
-
-
-Introductie
-===========
-
-Er zijn op dit moment 3 initiatieven voor referentielijsten. In de VNG API 
-standaard voor Zaakgericht Werken is een variant aanwezig die nooit is 
-geformaliseerd. In het VNG initiatief voor een Klantinteracties API is ook een 
-variant die net even afwijkt en ook niet formeel is vastgesteld. Ten slotte is 
-er nog de Objecten API, die voor dit doel soms gebruikt wordt. Deze kan echter
-geen uniekheid afdwingen van items in de lijst en bevat teveel vrijheid in de 
-attributen.
-
-Vandaar dat er is gekozen voor een generieke aanpak voor referentielijsten, die
-zijn eigen API verdient. De API is bedoeld als registratie van herbruikbare 
-lijsten waarbij de waarden van deze lijsten mag worden opgeslagen in andere 
-registraties. Dit voorkomt onnodige calls naar deze API voor enkel een 
-tekstuele waarde.
+Developed and financed by `Maykin B.V.`_.
 
 
-API specificatie
-================
+Introduction
+=============
+
+There are currently 3 initiatives for reference lists. In the VNG API standard 
+for Zaakgericht Werken there is a variant that was never formalized. The VNG 
+initiative for Klantinteracties API also includes a variant that differs 
+slightly and has not been formally acknowledged. Finally, there is also the 
+Objects API that is sometimes used for this purpose. However, it cannot enforce 
+uniqueness of items in the list and offers too much freedom in attributes.
+
+That is why a generic approach for reference lists was chosen, which
+deserves its own API. The API is intended as a registration of reusable data 
+lists where the values of these lists may be stored in others registrations. 
+This prevents unnecessary calls to this API for just one textual value.
+
+
+API specification
+=================
 
 |lint-oas| |generate-sdks| |generate-postman-collection|
 
 ==============  ==============  =============================
-Versie          Release datum   API specificatie
+Version         Release date    API specification
 ==============  ==============  =============================
 latest          n/a             `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/v1/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/v1/openapi.yaml>`_,
-                                (`verschillen <https://github.com/maykinmedia/referentielijsten/compare/0.1.0..master#diff-b9c28fec6c3f3fa5cff870d24601d6ab7027520f3b084cc767aefd258cb8c40a>`_)
-0.1.0           YYYY-MM-DD      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/1.0.0/src/referentielijsten/api/v1/openapi.yaml>`_,
+                                (`diff <https://github.com/maykinmedia/referentielijsten/compare/0.1.0..master#diff-b9c28fec6c3f3fa5cff870d24601d6ab7027520f3b084cc767aefd258cb8c40a>`_)
+0.1.0           YYYY-MM-DD      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/v1/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/v1/openapi.yaml>`_
 ==============  ==============  =============================
 
-Vorige versies worden nog 6 maanden ondersteund nadat de volgende versie is 
-uitgebracht.
+Previous versions are supported for 6 month after the next version is released.
 
-Zie: `Alle versies en wijzigingen <https://github.com/maykinmedia/referentielijsten/blob/master/CHANGELOG.rst>`_
+See: `All versions and changes <https://github.com/maykinmedia/referentielijsten/blob/master/CHANGELOG.rst>`_
 
 
-Ontwikkelaars
-=============
+Developers
+==========
 
 |build-status| |coverage| |black| |docker| |python-versions|
 
-Deze repository bevat de broncode voor Referentielijsten API. Om snel aan de slag
-te gaan, raden we aan om de Docker image te gebruiken. Uiteraard kan je ook
-het project zelf bouwen van de broncode. Zie hiervoor
+This repository contains the source code for Referentielijsten API. To quickly
+get started, we recommend using the Docker image. You can also build the
+project from the source code. For this, please look at 
 `INSTALL.rst <INSTALL.rst>`_.
 
 Quickstart
 ----------
 
-1. Download en start Referentielijsten API:
+1. Download and run Referentielijsten API:
 
    .. code:: bash
 
@@ -75,33 +72,31 @@ Quickstart
       $ docker-compose exec web src/manage.py loaddata demodata
       $ docker-compose exec web src/manage.py createsuperuser
 
-2. In de browser, navigeer naar ``http://localhost:8000/`` om de beheerinterface
-   en de API te benaderen.
+2. In the browser, navigate to ``http://localhost:8000/`` to access the admin
+   and the API.
 
 
-Links
-=====
+References
+==========
 
-* `Documentatie <https://TODO>`_
+* `Documentation <https://TODO>`_
 * `Docker image <https://hub.docker.com/r/maykinmedia/referentielijsten>`_
 * `Issues <https://github.com/maykinmedia/referentielijsten/issues>`_
 * `Code <https://github.com/maykinmedia/referentielijsten>`_
 * `Community <https://TODO>`_
 
 
-Licentie
-========
+License
+=======
 
 Copyright © Maykin 2024
 
 Licensed under the EUPL_
 
 
-.. _`English version`: README.EN.rst
+.. _`Nederlandse versie`: README.rst
 
 .. _`Maykin B.V.`: https://www.maykinmedia.nl
-
-.. _`Objecttypen API`: https://github.com/maykinmedia/objecttypes-api
 
 .. _`EUPL`: LICENSE.md
 

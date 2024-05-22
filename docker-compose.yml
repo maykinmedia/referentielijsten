@@ -4,18 +4,25 @@ version: '3'
 services:
   db:
     # NOTE: No persistance storage configured.
+    # Using v14 to prevent schema permissions. See also docker-init-db.sql.
     # See: https://hub.docker.com/_/postgres/
-    image: postgres
-    # NOTE: this works for bitnami, not sure if this works for regular
-    # postgres image
+    image: postgres:${PG_VERSION:-14}
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - ./docker-init-db.sql:/docker-entrypoint-initdb.d/init_db.sql
 
   web:
     build: .
+    image: maykinmedia/referentielijsten-api:latest
     environment:
       - DJANGO_SETTINGS_MODULE=referentielijsten.conf.docker
       - SECRET_KEY=${SECRET_KEY:-django-insecure-4foe-_dk9x=88*0sljyo1_ga!!nj*x8ye6u0p(@871e)zg^+q}
+      - DB_NAME=referentielijsten
+      - DB_USER=referentielijsten
+      - DB_HOST=db
+      # Only allow all hosts for development/testing purposes!
+      - ALLOWED_HOSTS=*
     ports:
       - 8000:8000
     depends_on:
