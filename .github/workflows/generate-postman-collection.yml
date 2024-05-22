@@ -29,4 +29,4 @@ jobs:
       - name: Create tests folder
         run: mkdir -p ./tests/postman
       - name: Generate Postman collection
-        run: openapi2postmanv2 -s ./src/referentielijsten/api/${{ matrix.version }}/openapi.yaml -o ./tests/postman/collection.json --pretty
+        run: openapi2postmanv2 -s ./src/referentielijsten/api/openapi.yaml -o ./tests/postman/collection.json --pretty

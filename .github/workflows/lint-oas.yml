@@ -27,4 +27,4 @@ jobs:
       - name: Install spectral
         run: npm install -g @stoplight/spectral@5
       - name: Run OAS linter
-        run: spectral lint ./src/referentielijsten/api/${{ matrix.version }}/openapi.yaml
+        run: spectral lint ./src/referentielijsten/api/openapi.yaml

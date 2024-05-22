@@ -28,7 +28,7 @@ jobs:
         run: npm install -g @openapitools/openapi-generator-cli
       - name: Determing oas path
         id: vars
-        run: echo ::set-output name=oas::./src/referentielijsten/api/${{ matrix.version }}/openapi.yaml
+        run: echo ::set-output name=oas::./src/referentielijsten/api/openapi.yaml
       - name: Validate schema
         run: openapi-generator-cli validate -i ${{ steps.vars.outputs.oas }}
       - name: Generate Java client
