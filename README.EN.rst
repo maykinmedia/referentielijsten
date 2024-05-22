@@ -80,7 +80,7 @@ References
 ==========
 
 * `Documentation <https://TODO>`_
-* `Docker image <https://hub.docker.com/r/maykinmedia/referentielijsten>`_
+* `Docker image <https://hub.docker.com/r/maykinmedia/referentielijsten-api>`_
 * `Issues <https://github.com/maykinmedia/referentielijsten/issues>`_
 * `Code <https://github.com/maykinmedia/referentielijsten>`_
 * `Community <https://TODO>`_
@@ -116,9 +116,9 @@ Licensed under the EUPL_
     :alt: Code style
     :target: https://github.com/psf/black
 
-.. |docker| image:: https://img.shields.io/docker/v/maykinmedia/referentielijsten?sort=semver
+.. |docker| image:: https://img.shields.io/docker/v/maykinmedia/referentielijsten-api?sort=semver
     :alt: Docker image
-    :target: https://hub.docker.com/r/maykinmedia/referentielijsten
+    :target: https://hub.docker.com/r/maykinmedia/referentielijsten-api
 
 .. |python-versions| image:: https://img.shields.io/badge/python-3.11%2B-blue.svg
     :alt: Supported Python version
