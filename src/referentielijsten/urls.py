@@ -9,6 +9,7 @@ from django.views.generic.base import TemplateView
 
 from maykin_2fa import monkeypatch_admin
 from maykin_2fa.urls import urlpatterns, webauthn_urlpatterns
+from mozilla_django_oidc_db.views import AdminLoginFailure
 from rest_framework.settings import api_settings
 
 from referentielijsten.accounts.views.password_reset import PasswordResetView
@@ -38,6 +39,7 @@ urlpatterns = [
     # Use custom login views for the admin + support hardware tokens
     path("admin/", include((urlpatterns, "maykin_2fa"))),
     path("admin/", include((webauthn_urlpatterns, "two_factor"))),
+    path("admin/login/failure/", AdminLoginFailure.as_view(), name="admin-oidc-error"),
     path("admin/", admin.site.urls),
     path(
         "reset/<uidb64>/<token>/",

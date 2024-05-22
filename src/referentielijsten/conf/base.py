@@ -287,7 +287,7 @@ LOGGING = {
             "propagate": True,
         },
         "mozilla_django_oidc": {
-            "handlers": ["project"],
+            "handlers": ["project"] if not LOG_STDOUT else ["console"],
             "level": "DEBUG",
         },
     },
@@ -313,6 +313,7 @@ AUTHENTICATION_BACKENDS = [
     "axes.backends.AxesBackend",
     "referentielijsten.accounts.backends.UserModelEmailBackend",
     "django.contrib.auth.backends.ModelBackend",
+    "mozilla_django_oidc_db.backends.OIDCAuthenticationBackend",
 ]
 
 SESSION_COOKIE_NAME = "referentielijsten_sessionid"
@@ -460,6 +461,7 @@ if not ELASTIC_APM_SERVER_URL:
 # Mozilla Django OIDC DB settings
 #
 OIDC_AUTHENTICATE_CLASS = "mozilla_django_oidc_db.views.OIDCAuthenticationRequestView"
+OIDC_CALLBACK_CLASS = "mozilla_django_oidc_db.views.OIDCCallbackView"
 MOZILLA_DJANGO_OIDC_DB_CACHE = "oidc"
 MOZILLA_DJANGO_OIDC_DB_CACHE_TIMEOUT = 5 * 60
 
