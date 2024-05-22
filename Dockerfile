@@ -102,7 +102,7 @@ ENV RELEASE=${RELEASE} \
 ARG SECRET_KEY=dummy
 
 LABEL org.label-schema.vcs-ref=$COMMIT_HASH \
-      org.label-schema.vcs-url="https://bitbucket.org/maykinmedia/referentielijsten" \
+      org.label-schema.vcs-url="https://github.com/maykinmedia/referentielijsten" \
       org.label-schema.version=$RELEASE \
       org.label-schema.name="referentielijsten"
 
