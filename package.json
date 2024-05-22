@@ -1,7 +1,7 @@
 {
   "name": "referentielijsten",
-  "version": "1.0.0-alpha.0",
-  "description": "referentielijsten project",
+  "version": "0.1.0",
+  "description": "Referentielijsten API project",
   "main": "src/static/referentielijsten/js/referentielijsten.js",
   "directories": {
     "doc": "doc"
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/maykinmedia/referentielijsten.git"
+    "url": "git+ssh://git@github.com/maykinmedia/referentielijsten.git"
   },
-  "author": "Maykin Media",
-  "license": "UNLICENSED",
+  "author": "Maykin",
+  "license": "EUPL",
   "homepage": "https://maykinmedia.nl",
   "dependencies": {
     "microscope-sass": "latest"
