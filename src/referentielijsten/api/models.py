@@ -72,7 +72,7 @@ class Tabel(models.Model):
         verbose_name_plural = _("tabellen")
 
     def __str__(self):
-        return str(self.code)
+        return f"{self.naam} ({self.code})"
 
 
 class Item(models.Model):
@@ -118,4 +118,4 @@ class Item(models.Model):
         unique_together = ("tabel", "code")
 
     def __str__(self):
-        return f"{self.tabel.code} - {self.code}"
+        return f"{self.naam} ({self.code})"

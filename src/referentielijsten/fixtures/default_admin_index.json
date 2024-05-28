@@ -26,11 +26,11 @@
         "fields": {
             "order": 1,
             "translations": {
-                "en": "Referentielijsten API",
-                "nl": "Referencelists API"
+                "en": "Referentielists",
+                "nl": "Referentielijsten"
             },
-            "name": "Referentielijsten API",
-            "slug": "referentielijsten-api",
+            "name": "Referentielijsten",
+            "slug": "referentielijsten",
             "models": [
                 [
                     "api",

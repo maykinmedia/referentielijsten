@@ -10,10 +10,10 @@ from .models import Item, Tabel
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ("tabel", "code", "naam", "is_geldig")
+    list_display = ("naam", "code", "tabel", "is_geldig")
     list_filter = (
         GeldigListFilter,
-        ("tabel__code", filter_title("tabel code")),
+        ("tabel__naam", filter_title("tabel naam")),
     )
     fields = (
         "tabel",
@@ -24,7 +24,7 @@ class ItemAdmin(admin.ModelAdmin):
         "aanvullende_gegevens",
     )
 
-    @admin.display(description="Is geldig", boolean=True)
+    @admin.display(description=_("Is geldig"), boolean=True)
     def is_geldig(self, obj):
         if (
             not obj.einddatum_geldigheid or obj.einddatum_geldigheid > timezone.now()
@@ -38,7 +38,7 @@ class ItemAdmin(admin.ModelAdmin):
 
 @admin.register(Tabel)
 class TabelAdmin(admin.ModelAdmin):
-    list_display = ("code", "naam", "is_geldig")
+    list_display = ("naam", "code", "is_geldig")
     list_filter = (GeldigListFilter,)
 
     fieldsets = [
@@ -53,7 +53,7 @@ class TabelAdmin(admin.ModelAdmin):
             },
         ),
         (
-            _("beheerder"),
+            _("Beheerder"),
             {
                 "fields": [
                     "beheerder_naam",
@@ -65,7 +65,7 @@ class TabelAdmin(admin.ModelAdmin):
         ),
     ]
 
-    @admin.display(description="Is geldig", boolean=True)
+    @admin.display(description=_("Is geldig"), boolean=True)
     def is_geldig(self, obj):
         if not obj.einddatum_geldigheid or obj.einddatum_geldigheid > timezone.now():
             return True
