@@ -1,15 +1,16 @@
 openapi: 3.0.3
 info:
   title: Referentielijsten API
-  version: 1.0.0
-  description: Een API om de informatie op te halen van stam tabellen
+  version: 0.1.0
+  description: Een API om referentielijsten te raadplegen en de waarden te gebruiken
+    in andere registraties.
   contact:
     url: https://github.com/maykinmedia/referentielijsten
   license:
     name: EUPL
     url: https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md
 paths:
-  /api/v1/items:
+  /api/v1/item:
     get:
       operationId: getitems
       description: De operatie waarmee alle items van een tabel wordt opgehaald.

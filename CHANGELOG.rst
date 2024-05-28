@@ -6,6 +6,6 @@ Change history
 0.1.0
 =====
 
-*tbd*
+*May 28, 2024*
 
 * Initial release.
