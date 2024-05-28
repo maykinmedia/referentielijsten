@@ -38,11 +38,11 @@ API specification
 ==============  ==============  =============================
 Version         Release date    API specification
 ==============  ==============  =============================
-latest          n/a             `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/v1/openapi.yaml>`_,
-                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/v1/openapi.yaml>`_,
+latest          n/a             `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
+                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
                                 (`diff <https://github.com/maykinmedia/referentielijsten/compare/0.1.0..master#diff-b9c28fec6c3f3fa5cff870d24601d6ab7027520f3b084cc767aefd258cb8c40a>`_)
-0.1.0           YYYY-MM-DD      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/v1/openapi.yaml>`_,
-                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/v1/openapi.yaml>`_
+0.1.0           YYYY-MM-DD      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/openapi.yaml>`_,
+                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/openapi.yaml>`_
 ==============  ==============  =============================
 
 Previous versions are supported for 6 month after the next version is released.
@@ -100,9 +100,9 @@ Licensed under the EUPL_
 
 .. _`EUPL`: LICENSE.md
 
-.. |build-status| image:: https://github.com/maykinmedia/referentielijsten/workflows/ci/badge.svg?branch=master
+.. |build-status| image:: https://github.com/maykinmedia/referentielijsten/actions/workflows/ci.yml/badge.svg
     :alt: Build status
-    :target: https://github.com/maykinmedia/referentielijsten/actions?query=workflow%3Aci
+    :target: https://github.com/maykinmedia/referentielijsten/actions/workflows/ci.yml
 
 .. |docs| image:: https://readthedocs.org/projects/referentielijsten-and-objecttypes-api/badge/?version=latest
     :target: https://referentielijsten-and-objecttypes-api.readthedocs.io/

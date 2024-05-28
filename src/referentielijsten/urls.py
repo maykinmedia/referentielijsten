@@ -18,9 +18,9 @@ from referentielijsten.accounts.views.password_reset import PasswordResetView
 monkeypatch_admin()
 
 handler500 = "referentielijsten.utils.views.server_error"
-admin.site.site_header = "referentielijsten admin"
-admin.site.site_title = "referentielijsten admin"
-admin.site.index_title = "Welcome to the referentielijsten admin"
+admin.site.site_header = "Referentielijsten admin"
+admin.site.site_title = "Referentielijsten admin"
+admin.site.index_title = "Referentielijsten dashboard"
 
 # URL routing
 

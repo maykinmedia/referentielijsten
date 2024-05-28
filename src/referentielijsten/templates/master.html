@@ -24,15 +24,17 @@
         <footer class="footer container">
             <div class="footer__row">
               <div class="footer__col footer__col--small">
-                <img src="{% static 'img/maykin_logo.png' %}" alt="Maykin Media logo" height="48">
+                <img src="{% static 'ico/favicon-96x96.png' %}" alt="Maykin logo" height="48">
                 <p>
-                Developed by <a class="link" href="https://www.maykinmedia.nl">Maykin Media</a><br>
+                  Developed by <a class="link" href="https://www.maykinmedia.nl">Maykin</a><br>
+                  within the <a class="link" href="https://opengem.nl">Open Gemeente Initiatief</a> &copy; {% now "Y" %}<br>
+                  {# commissioned by the <a class="link" href="org">org</a> #}
                 </p>
               </div>
               <div class="footer__col">
                 <h5 class="footer__header">Referentielijsten API</h5>
                 <ul class="footer__list">
-                  <li><a class="link link--muted" href="https://hub.docker.com/r/maykinmedia/referentielijsten">Docker images</a></li>
+                  <li><a class="link link--muted" href="https://hub.docker.com/r/maykinmedia/referentielijsten-api">Docker images</a></li>
                   <li><a class="link link--muted" href="https://github.com/maykinmedia/referentielijsten">Code on Github</a></li>
                 </ul>
               </div>

@@ -16,7 +16,7 @@ SPECTACULAR_SETTINGS = {
         "drf_spectacular.contrib.djangorestframework_camel_case.camelize_serializer_fields",
     ],
     "TITLE": "Referentielijsten API",
-    "DESCRIPTION": "Een API om de informatie op te halen van stam tabellen",
+    "DESCRIPTION": "Een API om referentielijsten te raadplegen en de waarden te gebruiken in andere registraties.",
     "CONTACT": {
         "url": "https://github.com/maykinmedia/referentielijsten",
     },
@@ -24,5 +24,5 @@ SPECTACULAR_SETTINGS = {
         "name": "EUPL",
         "url": "https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md",
     },
-    "VERSION": "1.0.0",
+    "VERSION": "0.1.0",
 }
