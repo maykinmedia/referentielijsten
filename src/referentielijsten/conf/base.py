@@ -108,13 +108,14 @@ INSTALLED_APPS = [
     "ordered_model",
     "django_admin_index",
     "django.contrib.admin",
-    # 'django.contrib.admindocs',
-    # 'django.contrib.humanize',
-    # 'django.contrib.sitemaps',
     # External applications.
     "axes",
+    "mozilla_django_oidc",
+    "mozilla_django_oidc_db",
     "drf_spectacular",
     "rest_framework",
+    "solo",
+    "django_jsonform",
     "vng_api_common",
     # Project applications.
     "referentielijsten.accounts",
@@ -129,6 +130,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "mozilla_django_oidc_db.middleware.SessionRefresh",
     "maykin_2fa.middleware.OTPMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -284,6 +286,10 @@ LOGGING = {
             "level": "INFO",
             "propagate": True,
         },
+        "mozilla_django_oidc": {
+            "handlers": ["project"] if not LOG_STDOUT else ["console"],
+            "level": "DEBUG",
+        },
     },
 }
 
@@ -307,6 +313,7 @@ AUTHENTICATION_BACKENDS = [
     "axes.backends.AxesBackend",
     "referentielijsten.accounts.backends.UserModelEmailBackend",
     "django.contrib.auth.backends.ModelBackend",
+    "mozilla_django_oidc_db.backends.OIDCAuthenticationBackend",
 ]
 
 SESSION_COOKIE_NAME = "referentielijsten_sessionid"
@@ -449,6 +456,14 @@ ELASTIC_APM = {
 if not ELASTIC_APM_SERVER_URL:
     ELASTIC_APM["ENABLED"] = False
     ELASTIC_APM["SERVER_URL"] = "http://localhost:8200"
+
+#
+# Mozilla Django OIDC DB settings
+#
+OIDC_AUTHENTICATE_CLASS = "mozilla_django_oidc_db.views.OIDCAuthenticationRequestView"
+OIDC_CALLBACK_CLASS = "mozilla_django_oidc_db.views.OIDCCallbackView"
+MOZILLA_DJANGO_OIDC_DB_CACHE = "oidc"
+MOZILLA_DJANGO_OIDC_DB_CACHE_TIMEOUT = 5 * 60
 
 # Subpath (optional)
 # This environment variable can be configured during deployment.
