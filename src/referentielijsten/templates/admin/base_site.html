@@ -48,6 +48,13 @@
 {% block nav-global %}
 {% endblock %}
 
+{% block messages %}
+    {% if settings.ENVIRONMENT_SHOWN_IN_ADMIN %}
+        <div class="env env-{{ settings.ENVIRONMENT }}">{{ settings.ENVIRONMENT }}</div>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}
+
 {# Override footer block to display version information if you're a logged in staff user #}
 {% block footer %}
     <div id="footer">
