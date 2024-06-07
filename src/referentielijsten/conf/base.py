@@ -374,6 +374,7 @@ else:
     GIT_SHA = None
 
 RELEASE = config("RELEASE", GIT_SHA)
+ENVIRONMENT_SHOWN_IN_ADMIN = True
 
 # Default (connection timeout, read timeout) for the requests library (in seconds)
 REQUESTS_DEFAULT_TIMEOUT = (10, 30)
