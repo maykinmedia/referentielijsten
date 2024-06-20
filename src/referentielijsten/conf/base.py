@@ -117,6 +117,7 @@ INSTALLED_APPS = [
     "solo",
     "django_jsonform",
     "vng_api_common",
+    "open_api_framework",
     # Project applications.
     "referentielijsten.accounts",
     "referentielijsten.utils",
@@ -157,6 +158,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "open_api_framework.context_processors.project",
                 "referentielijsten.utils.context_processors.settings",
             ],
             "loaders": TEMPLATE_LOADERS,
