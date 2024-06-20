@@ -14,6 +14,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
         # git \
         libpq-dev \
         shared-mime-info \
+        git \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
