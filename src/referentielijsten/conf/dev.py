@@ -14,6 +14,7 @@ os.environ.setdefault("DB_NAME", "referentielijsten")
 os.environ.setdefault("DB_USER", "referentielijsten")
 os.environ.setdefault("DB_PASSWORD", "referentielijsten")
 
+os.environ.setdefault("RELEASE", "dev")
 os.environ.setdefault("ENVIRONMENT", "development")
 
 from .base import *  # noqa isort:skip
