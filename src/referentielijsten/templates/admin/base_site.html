@@ -1,4 +1,4 @@
-{% extends "admin/base.html" %}
+{% extends "open_api_framework/admin/base_site.html" %}
 {% load i18n static utils %}
 
 {% block title %}
@@ -46,20 +46,4 @@
 {% endblock %}
 
 {% block nav-global %}
-{% endblock %}
-
-{% block messages %}
-    {% if settings.ENVIRONMENT_SHOWN_IN_ADMIN %}
-        <div class="env env-{{ settings.ENVIRONMENT }}">{{ settings.ENVIRONMENT }}</div>
-    {% endif %}
-    {{ block.super }}
-{% endblock %}
-
-{# Override footer block to display version information if you're a logged in staff user #}
-{% block footer %}
-    <div id="footer">
-        {% if user.is_authenticated and user.is_staff %}
-            {% show_version_info %}
-        {% endif %}
-    </div>
 {% endblock %}
