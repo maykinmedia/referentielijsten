@@ -2,14 +2,23 @@ from django.contrib import admin
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+
 from referentielijsten.utils.admin import filter_title
 
 from .admin_list_filters import GeldigListFilter
 from .models import Item, Tabel
 
 
+class ItemResource(resources.ModelResource):
+
+    class Meta:
+        model = Item
+
+
 @admin.register(Item)
-class ItemAdmin(admin.ModelAdmin):
+class ItemAdmin(ImportExportModelAdmin):
     list_display = ("naam", "code", "tabel", "is_geldig")
     list_filter = (
         GeldigListFilter,
@@ -23,6 +32,8 @@ class ItemAdmin(admin.ModelAdmin):
         "einddatum_geldigheid",
         "aanvullende_gegevens",
     )
+
+    resource_classes = [ItemResource]
 
     @admin.display(description=_("Is geldig"), boolean=True)
     def is_geldig(self, obj):

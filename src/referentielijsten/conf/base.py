@@ -2,6 +2,8 @@ import os
 
 from django.urls import reverse_lazy
 
+from import_export.formats.base_formats import DEFAULT_FORMATS
+
 from .api import *  # noqa
 from .utils import config
 
@@ -117,6 +119,7 @@ INSTALLED_APPS = [
     "solo",
     "django_jsonform",
     "vng_api_common",
+    "import_export",
     # Project applications.
     "referentielijsten.accounts",
     "referentielijsten.utils",
@@ -470,3 +473,6 @@ MOZILLA_DJANGO_OIDC_DB_CACHE_TIMEOUT = 5 * 60
 SUBPATH = config("SUBPATH", None)
 if SUBPATH:
     SUBPATH = f"/{SUBPATH.strip('/')}"
+
+
+IMPORT_EXPORT_FORMATS = DEFAULT_FORMATS

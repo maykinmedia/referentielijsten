@@ -21,10 +21,6 @@ asn1crypto==1.5.1
     # via
     #   -r requirements/base.txt
     #   webauthn
-async-timeout==4.0.3
-    # via
-    #   -r requirements/base.txt
-    #   redis
 attrs==23.2.0
     # via
     #   -r requirements/base.txt
@@ -115,6 +111,10 @@ cryptography==42.0.5
     #   mozilla-django-oidc
     #   pyopenssl
     #   webauthn
+diff-match-patch==20230430
+    # via
+    #   -r requirements/base.txt
+    #   django-import-export
 django==4.2.11
     # via
     #   -r requirements/base.txt
@@ -124,6 +124,7 @@ django==4.2.11
     #   django-cors-headers
     #   django-filter
     #   django-formtools
+    #   django-import-export
     #   django-jsonform
     #   django-markup
     #   django-otp
@@ -168,6 +169,8 @@ django-formtools==2.5.1
     # via
     #   -r requirements/base.txt
     #   django-two-factor-auth
+django-import-export[xlsx]==4.0.9
+    # via -r requirements/base.txt
 django-jsonform==2.22.0
     # via
     #   -r requirements/base.txt
@@ -270,6 +273,10 @@ elastic-apm==6.22.0
     # via
     #   -r requirements/base.txt
     #   open-api-framework
+et-xmlfile==1.1.0
+    # via
+    #   -r requirements/base.txt
+    #   openpyxl
 face==20.1.1
     # via
     #   -r requirements/base.txt
@@ -372,6 +379,10 @@ notifications-api-common==0.2.2
     #   commonground-api-common
 open-api-framework==0.2.0
     # via -r requirements/base.txt
+openpyxl==3.1.4
+    # via
+    #   -r requirements/base.txt
+    #   tablib
 orderedmultidict==1.0.1
     # via
     #   -r requirements/base.txt
@@ -504,6 +515,10 @@ sqlparse==0.5.0
     # via
     #   -r requirements/base.txt
     #   django
+tablib[xlsx]==3.5.0
+    # via
+    #   -r requirements/base.txt
+    #   django-import-export
 tblib==3.0.0
     # via -r requirements/test-tools.in
 tornado==6.4
