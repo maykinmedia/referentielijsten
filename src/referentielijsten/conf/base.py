@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from .api import *  # noqa
 from .utils import config
 
+from open_api_framework.conf.base import TEMPLATES  # noqa
+
 # Build paths inside the project, so further paths can be defined relative to
 # the code root.
 
@@ -146,25 +148,6 @@ TEMPLATE_LOADERS = (
     "django.template.loaders.filesystem.Loader",
     "django.template.loaders.app_directories.Loader",
 )
-
-TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(DJANGO_PROJECT_DIR, "templates")],
-        "APP_DIRS": False,  # conflicts with explicity specifying the loaders
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-                "open_api_framework.context_processors.project",
-                "referentielijsten.utils.context_processors.settings",
-            ],
-            "loaders": TEMPLATE_LOADERS,
-        },
-    },
-]
 
 WSGI_APPLICATION = "referentielijsten.wsgi.application"
 
