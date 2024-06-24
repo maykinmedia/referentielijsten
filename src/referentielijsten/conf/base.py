@@ -2,10 +2,10 @@ import os
 
 from django.urls import reverse_lazy
 
+from open_api_framework.conf.base import TEMPLATES  # noqa
+
 from .api import *  # noqa
 from .utils import config
-
-from open_api_framework.conf.base import TEMPLATES  # noqa
 
 # Build paths inside the project, so further paths can be defined relative to
 # the code root.
