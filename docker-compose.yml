@@ -12,6 +12,9 @@ services:
     volumes:
       - ./docker-init-db.sql:/docker-entrypoint-initdb.d/init_db.sql
 
+  redis:
+    image: redis
+
   web:
     build: .
     image: maykinmedia/referentielijsten-api:latest
@@ -21,12 +24,17 @@ services:
       - DB_NAME=referentielijsten
       - DB_USER=referentielijsten
       - DB_HOST=db
+      - CACHE_DEFAULT=redis:6379/0
+      - CACHE_AXES=redis:6379/0
+      - SUBPATH=${SUBPATH:-/}
+      - DISABLE_2FA=${DISABLE_2FA:-True}
       # Only allow all hosts for development/testing purposes!
       - ALLOWED_HOSTS=*
     ports:
       - 8000:8000
     depends_on:
       - db
+      - redis
 
 # See: src/referentielijsten/conf/docker.py
 # Optional containers below:
