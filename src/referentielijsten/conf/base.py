@@ -2,6 +2,8 @@ import os
 
 from django.urls import reverse_lazy
 
+from open_api_framework.conf.base import TEMPLATES  # noqa
+
 from .api import *  # noqa
 from .utils import config
 
@@ -117,6 +119,7 @@ INSTALLED_APPS = [
     "solo",
     "django_jsonform",
     "vng_api_common",
+    "open_api_framework",
     # Project applications.
     "referentielijsten.accounts",
     "referentielijsten.utils",
@@ -145,24 +148,6 @@ TEMPLATE_LOADERS = (
     "django.template.loaders.filesystem.Loader",
     "django.template.loaders.app_directories.Loader",
 )
-
-TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(DJANGO_PROJECT_DIR, "templates")],
-        "APP_DIRS": False,  # conflicts with explicity specifying the loaders
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-                "referentielijsten.utils.context_processors.settings",
-            ],
-            "loaders": TEMPLATE_LOADERS,
-        },
-    },
-]
 
 WSGI_APPLICATION = "referentielijsten.wsgi.application"
 
@@ -374,6 +359,7 @@ else:
     GIT_SHA = None
 
 RELEASE = config("RELEASE", GIT_SHA)
+ENVIRONMENT_SHOWN_IN_ADMIN = True
 
 # Default (connection timeout, read timeout) for the requests library (in seconds)
 REQUESTS_DEFAULT_TIMEOUT = (10, 30)
