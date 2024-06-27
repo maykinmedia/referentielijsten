@@ -5,7 +5,6 @@ def settings(request):
     public_settings = (
         "GOOGLE_ANALYTICS_ID",
         "ENVIRONMENT",
-        "SHOW_ALERT",
         "PROJECT_NAME",
     )
 
