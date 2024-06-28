@@ -3,7 +3,6 @@ from django.urls import reverse_lazy
 from import_export.formats.base_formats import DEFAULT_FORMATS
 from notifications_api_common.settings import *  # noqa
 from open_api_framework.conf.base import *  # noqa
-from open_api_framework.conf.utils import config
 
 from .api import *  # noqa
 
@@ -31,9 +30,6 @@ CSRF_FAILURE_VIEW = "referentielijsten.accounts.views.csrf_failure"
 # Custom settings
 #
 PROJECT_NAME = "Referentielijsten"
-# TODO are these settings actually used?
-SHOW_ALERT = True
-ENABLE_ADMIN_NAV_SIDEBAR = config("ENABLE_ADMIN_NAV_SIDEBAR", default=False)
 
 # This setting is used by the csrf_failure view (accounts app).
 # You can specify any path that should match the request.path
