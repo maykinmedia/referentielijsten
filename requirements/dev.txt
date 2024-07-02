@@ -27,11 +27,6 @@ asn1crypto==1.5.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   webauthn
-async-timeout==4.0.3
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   redis
 attrs==23.2.0
     # via
     #   -c requirements/ci.txt
@@ -155,6 +150,11 @@ cryptography==42.0.5
     #   mozilla-django-oidc
     #   pyopenssl
     #   webauthn
+diff-match-patch==20230430
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-import-export
 django==4.2.11
     # via
     #   -c requirements/ci.txt
@@ -167,6 +167,7 @@ django==4.2.11
     #   django-extensions
     #   django-filter
     #   django-formtools
+    #   django-import-export
     #   django-jsonform
     #   django-markup
     #   django-otp
@@ -220,6 +221,10 @@ django-formtools==2.5.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-two-factor-auth
+django-import-export[xlsx]==4.0.9
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 django-jsonform==2.22.0
     # via
     #   -c requirements/ci.txt
@@ -350,6 +355,11 @@ elastic-apm==6.22.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
+et-xmlfile==1.1.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   openpyxl
 face==20.1.1
     # via
     #   -c requirements/ci.txt
@@ -500,6 +510,11 @@ open-api-framework==0.2.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+openpyxl==3.1.4
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   tablib
 orderedmultidict==1.0.1
     # via
     #   -c requirements/ci.txt
@@ -710,6 +725,11 @@ sqlparse==0.5.0
     #   -r requirements/ci.txt
     #   django
     #   django-debug-toolbar
+tablib[xlsx]==3.5.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-import-export
 tblib==3.0.0
     # via
     #   -c requirements/ci.txt
