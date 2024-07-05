@@ -20,6 +20,9 @@ INSTALLED_APPS = INSTALLED_APPS + [
     "referentielijsten.utils",
     "referentielijsten.api",
 ]
+# open-api-framework currently installs `django.contrib.sites`, but we want to move
+# away from this in the future
+INSTALLED_APPS.remove("django.contrib.sites")
 
 #
 # SECURITY settings
