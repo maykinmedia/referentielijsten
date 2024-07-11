@@ -33,15 +33,15 @@ TEMPLATES[0]["OPTIONS"]["loaders"] = [
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 # Production logging facility.
-
-# Production logging facility.
-handlers = ["console"] if LOG_STDOUT else ["django"]
-
 LOGGING["loggers"].update(
     {
-        "django": {"handlers": handlers, "level": "INFO", "propagate": True},
+        "django": {
+            "handlers": logging_django_handlers,
+            "level": "INFO",
+            "propagate": True,
+        },
         "django.security.DisallowedHost": {
-            "handlers": handlers,
+            "handlers": logging_django_handlers,
             "level": "CRITICAL",
             "propagate": False,
         },
@@ -56,7 +56,7 @@ SECURE_BROWSER_XSS_FILTER = True  # Sets X-XSS-Protection: 1; mode=block
 #
 # Custom settings overrides
 #
-SHOW_ALERT = False
+ENVIRONMENT_SHOWN_IN_ADMIN = False
 
 ##############################
 #                            #
@@ -70,6 +70,6 @@ INSTALLED_APPS = INSTALLED_APPS + [
     "elasticapm.contrib.django",
 ]
 
-if SUBPATH and SUBPATH != "/":
-    STATIC_URL = f"{SUBPATH}{STATIC_URL}"
-    MEDIA_URL = f"{SUBPATH}{MEDIA_URL}"
+if subpath and subpath != "/":
+    STATIC_URL = f"{subpath}{STATIC_URL}"
+    MEDIA_URL = f"{subpath}{MEDIA_URL}"
