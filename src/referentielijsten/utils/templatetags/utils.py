@@ -1,5 +1,4 @@
 from django import template
-from django.conf import settings
 from django.utils.html import format_html
 
 register = template.Library()
@@ -63,11 +62,3 @@ def placekitten_src(width=800, height=600):
         {% include 'components/image/image.html' with mobile_src=mobile_src src=src alt='placekitten' only %}
     """
     return "//placekitten.com/{}/{}".format(width, height)
-
-
-@register.inclusion_tag("utils/includes/version_info.html")
-def show_version_info():
-    return {
-        "RELEASE": settings.RELEASE,
-        "GIT_SHA": settings.GIT_SHA,
-    }
