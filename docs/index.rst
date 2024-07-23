@@ -25,3 +25,4 @@ To get you started, you might find some of these links relevant:
    :hidden:
 
    introduction/index
+   installation/index

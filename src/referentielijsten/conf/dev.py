@@ -16,6 +16,7 @@ os.environ.setdefault("DB_PASSWORD", "referentielijsten")
 
 os.environ.setdefault("RELEASE", "dev")
 os.environ.setdefault("ENVIRONMENT", "development")
+os.environ.setdefault("DISABLE_2FA", "True")
 
 from .base import *  # noqa isort:skip
 
@@ -96,10 +97,6 @@ DEBUG_TOOLBAR_PANELS = [
     "debug_toolbar.panels.redirects.RedirectsPanel",
     "debug_toolbar.panels.profiling.ProfilingPanel",
 ]
-
-# None of the authentication backends require two-factor authentication.
-if config("DISABLE_2FA", default=True):
-    MAYKIN_2FA_ALLOW_MFA_BYPASS_BACKENDS = AUTHENTICATION_BACKENDS
 
 # THOU SHALT NOT USE NAIVE DATETIMES
 warnings.filterwarnings(
