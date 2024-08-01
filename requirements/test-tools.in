@@ -5,6 +5,7 @@ factory-boy
 freezegun
 requests-mock
 tblib
+vcrpy
 
 # Code formatting
 isort
