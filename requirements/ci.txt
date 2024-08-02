@@ -116,6 +116,8 @@ cryptography==43.0.0
     #   mozilla-django-oidc
     #   pyopenssl
     #   webauthn
+cssselect==1.2.0
+    # via pyquery
 diff-match-patch==20230430
     # via
     #   -r requirements/base.txt
@@ -375,6 +377,8 @@ kombu==5.3.7
     # via
     #   -r requirements/base.txt
     #   celery
+lxml==5.2.2
+    # via pyquery
 markupsafe==2.1.5
     # via
     #   -r requirements/base.txt
@@ -463,6 +467,8 @@ pypng==0.20220715.0
     # via
     #   -r requirements/base.txt
     #   qrcode
+pyquery==2.0.0
+    # via -r requirements/test-tools.in
 python-dateutil==2.9.0.post0
     # via
     #   -r requirements/base.txt
