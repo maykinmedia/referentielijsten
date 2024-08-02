@@ -156,6 +156,11 @@ cryptography==43.0.0
     #   mozilla-django-oidc
     #   pyopenssl
     #   webauthn
+cssselect==1.2.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   pyquery
 diff-match-patch==20230430
     # via
     #   -c requirements/ci.txt
@@ -497,6 +502,11 @@ kombu==5.3.7
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   celery
+lxml==5.2.2
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   pyquery
 markupsafe==2.1.5
     # via
     #   -c requirements/ci.txt
@@ -635,6 +645,10 @@ pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
+pyquery==2.0.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 python-dateutil==2.9.0.post0
     # via
     #   -c requirements/ci.txt
