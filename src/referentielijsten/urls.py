@@ -37,9 +37,9 @@ urlpatterns = [
         name="password_reset_done",
     ),
     # Use custom login views for the admin + support hardware tokens
+    path("admin/login/failure/", AdminLoginFailure.as_view(), name="admin-oidc-error"),
     path("admin/", include((urlpatterns, "maykin_2fa"))),
     path("admin/", include((webauthn_urlpatterns, "two_factor"))),
-    path("admin/login/failure/", AdminLoginFailure.as_view(), name="admin-oidc-error"),
     path("admin/", admin.site.urls),
     path(
         "reset/<uidb64>/<token>/",
