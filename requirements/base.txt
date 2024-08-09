@@ -73,7 +73,7 @@ cryptography==43.0.0
     #   webauthn
 diff-match-patch==20230430
     # via django-import-export
-django==4.2.14
+django==4.2.15
     # via
     #   commonground-api-common
     #   django-admin-index
