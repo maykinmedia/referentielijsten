@@ -7,6 +7,9 @@
 # includes compilers and build tooling to create the environment
 FROM python:3.11-slim-bookworm AS backend-build
 
+# Ensure we use the latest version of pip
+RUN pip install pip "setuptools>70" -U
+
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
         pkg-config \
         build-essential \
