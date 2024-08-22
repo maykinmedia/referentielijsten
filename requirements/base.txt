@@ -15,8 +15,6 @@ asgiref==3.8.1
     #   django-cors-headers
 asn1crypto==1.5.1
     # via webauthn
-async-timeout==4.0.3
-    # via redis
 attrs==23.2.0
     # via
     #   glom
@@ -237,7 +235,7 @@ mozilla-django-oidc-db==0.19.0
     # via open-api-framework
 notifications-api-common==0.2.2
     # via commonground-api-common
-open-api-framework==0.6.1
+open-api-framework==0.7.1
     # via -r requirements/base.in
 openpyxl==3.1.5
     # via tablib
@@ -308,7 +306,7 @@ rpds-py==0.19.1
     # via
     #   jsonschema
     #   referencing
-sentry-sdk==2.12.0
+sentry-sdk==2.13.0
     # via open-api-framework
 six==1.16.0
     # via

@@ -22,10 +22,6 @@ asn1crypto==1.5.1
     # via
     #   -r requirements/base.txt
     #   webauthn
-async-timeout==4.0.3
-    # via
-    #   -r requirements/base.txt
-    #   redis
 attrs==23.2.0
     # via
     #   -r requirements/base.txt
@@ -405,7 +401,7 @@ notifications-api-common==0.2.2
     # via
     #   -r requirements/base.txt
     #   commonground-api-common
-open-api-framework==0.6.1
+open-api-framework==0.7.1
     # via -r requirements/base.txt
 openpyxl==3.1.5
     # via
@@ -529,7 +525,7 @@ rpds-py==0.19.1
     #   -r requirements/base.txt
     #   jsonschema
     #   referencing
-sentry-sdk==2.12.0
+sentry-sdk==2.13.0
     # via
     #   -r requirements/base.txt
     #   open-api-framework
