@@ -49,6 +49,18 @@ Elastic APM
 * ``ELASTIC_APM_TRANSACTION_SAMPLE_RATE``: By default, the agent will sample every transaction (e.g. request to your service). To reduce overhead and storage requirements, set the sample rate to a value between 0.0 and 1.0. Defaults to: ``0.1``.
 
 
+Content Security Policy
+-----------------------
+
+* ``CSP_EXTRA_DEFAULT_SRC``: Extra default source URLs for CSP other than ``self``. Used for ``img-src``, ``style-src`` and ``script-src``. Defaults to: ``[]``.
+* ``CSP_REPORT_URI``: URI of the``report-uri`` directive. Defaults to: ``None``.
+* ``CSP_REPORT_PERCENTAGE``: Percentage of requests that get the ``report-uri`` directive. Defaults to: ``0``.
+* ``CSP_EXTRA_FORM_ACTION``: Add additional ``form-action`` source to the default . Defaults to: ``[]``.
+* ``CSP_FORM_ACTION``: Override the default ``form-action`` source. Defaults to: ``[&#x27;&quot;\&#x27;self\&#x27;&quot;&#x27;]``.
+* ``CSP_EXTRA_IMG_SRC``: Extra ``img-src`` sources for CSP other than ``CSP_DEFAULT_SRC``. Defaults to: ``[]``.
+* ``CSP_OBJECT_SRC``: ``object-src`` urls. Defaults to: ``[&#x27;&quot;\&#x27;none\&#x27;&quot;&#x27;]``.
+
+
 Optional
 --------
 
