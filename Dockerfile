@@ -63,6 +63,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
         # libxslt \
     && rm -rf /var/lib/apt/lists/*
 
+# update setuptools
+RUN pip install pip "setuptools>=70.0.0"
+
+
 WORKDIR /app
 COPY ./bin/docker_start.sh /start.sh
 # Uncomment if you use celery
