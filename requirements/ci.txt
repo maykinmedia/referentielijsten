@@ -90,6 +90,8 @@ click-repl==0.3.0
     # via
     #   -r requirements/base.txt
     #   celery
+codecov==2.1.13
+    # via -r requirements/ci.in
 commonground-api-common==1.13.2
     # via
     #   -r requirements/base.txt
@@ -103,7 +105,9 @@ coreschema==0.0.4
     #   -r requirements/base.txt
     #   coreapi
 coverage==7.6.0
-    # via -r requirements/test-tools.in
+    # via
+    #   -r requirements/test-tools.in
+    #   codecov
 cryptography==43.0.0
     # via
     #   -r requirements/base.txt
@@ -520,6 +524,7 @@ requests==2.32.3
     # via
     #   -r requirements/base.txt
     #   ape-pie
+    #   codecov
     #   commonground-api-common
     #   coreapi
     #   django-log-outgoing-requests
