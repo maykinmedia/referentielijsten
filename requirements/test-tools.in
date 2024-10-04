@@ -15,3 +15,7 @@ flake8
 
 # SPDX header checks
 click
+
+# Documentation
+sphinx
+sphinx_rtd_theme
