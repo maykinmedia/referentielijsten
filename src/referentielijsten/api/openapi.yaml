@@ -10,7 +10,7 @@ info:
     name: EUPL
     url: https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md
 paths:
-  /api/v1/item:
+  /api/v1/items:
     get:
       operationId: getitems
       description: De operatie waarmee alle items van een tabel wordt opgehaald.
