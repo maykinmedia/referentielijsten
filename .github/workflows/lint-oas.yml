@@ -3,8 +3,8 @@ name: lint-oas
 on:
   push:
     paths:
-      - "src/referentielijsten/api/v*/openapi.yaml"
-      - .github/workflows/lint-oas.yml
+      - "src/referentielijsten/api/openapi.yaml"
+      - ".github/workflows/lint-oas.yml"
     branches:
       - '**'
   workflow_dispatch:

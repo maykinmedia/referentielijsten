@@ -3,7 +3,7 @@ name: generate-postman-collection
 on:
   push:
     paths:
-      - "src/referentielijsten/api/v*/openapi.yaml"
+      - "src/referentielijsten/api/openapi.yaml"
       - ".github/workflows/generate-postman-collection.yml"
     branches:
       - '**'

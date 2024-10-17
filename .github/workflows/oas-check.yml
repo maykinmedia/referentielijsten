@@ -3,8 +3,8 @@ name: check-oas
 on:
   push:
     paths:
-      - "src/referentielijsten/api/*/openapi.yaml"
-      - .github/workflows/oas-check.yml
+      - "src/referentielijsten/api/openapi.yaml"
+      - ".github/workflows/oas-check.yml"
     branches:
       - '**'
   workflow_dispatch:

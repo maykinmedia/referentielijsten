@@ -3,7 +3,7 @@ name: generate-sdks
 on:
   push:
     paths:
-      - "src/referentielijsten/api/v*/openapi.yaml"
+      - "src/referentielijsten/api/openapi.yaml"
       - ".github/workflows/generate-sdks.yml"
     branches:
       - '**'
