@@ -11,7 +11,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
         pkg-config \
         build-essential \
         # only relevant when using editable/github dependencies, which is discouraged
-        # git \
         libpq-dev \
         shared-mime-info \
     && rm -rf /var/lib/apt/lists/*
