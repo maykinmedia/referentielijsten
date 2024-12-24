@@ -128,7 +128,7 @@ diff-match-patch==20230430
     # via
     #   -r requirements/base.txt
     #   django-import-export
-django==4.2.15
+django==4.2.17
     # via
     #   -r requirements/base.txt
     #   commonground-api-common
@@ -150,6 +150,7 @@ django==4.2.15
     #   django-relativedelta
     #   django-rest-framework-condition
     #   django-sendfile2
+    #   django-sessionprofile
     #   django-setup-configuration
     #   django-simple-certmanager
     #   django-solo
@@ -242,6 +243,10 @@ django-sendfile2==0.7.1
     # via
     #   -r requirements/base.txt
     #   django-privates
+django-sessionprofile==3.0.0
+    # via
+    #   -r requirements/base.txt
+    #   open-api-framework
 django-setup-configuration==0.3.0
     # via
     #   -r requirements/base.txt
@@ -376,7 +381,7 @@ itypes==1.2.0
     # via
     #   -r requirements/base.txt
     #   coreapi
-jinja2==3.1.4
+jinja2==3.1.5
     # via
     #   -r requirements/base.txt
     #   coreschema
@@ -425,7 +430,7 @@ notifications-api-common==0.3.1
     # via
     #   -r requirements/base.txt
     #   commonground-api-common
-open-api-framework==0.8.1
+open-api-framework @ git+https://github.com/maykinmedia/open-api-framework.git@issue/93-security-patches
     # via -r requirements/base.txt
 openpyxl==3.1.5
     # via
@@ -606,7 +611,7 @@ tablib[xlsx]==3.5.0
     #   django-import-export
 tblib==3.0.0
     # via -r requirements/test-tools.in
-tornado==6.4.1
+tornado==6.4.2
     # via
     #   -r requirements/base.txt
     #   flower
@@ -644,7 +649,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-waitress==3.0.0
+waitress==3.0.1
     # via webtest
 wcwidth==0.2.13
     # via
