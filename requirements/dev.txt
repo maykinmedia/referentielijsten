@@ -192,6 +192,7 @@ django==4.2.15
     #   django-relativedelta
     #   django-rest-framework-condition
     #   django-sendfile2
+    #   django-sessionprofile
     #   django-setup-configuration
     #   django-simple-certmanager
     #   django-solo
@@ -308,6 +309,11 @@ django-sendfile2==0.7.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-privates
+django-sessionprofile==3.0.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   open-api-framework
 django-setup-configuration==0.3.0
     # via
     #   -c requirements/ci.txt
@@ -563,7 +569,7 @@ notifications-api-common==0.3.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.8.1
+open-api-framework==0.9.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
