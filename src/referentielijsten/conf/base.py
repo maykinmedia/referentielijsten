@@ -71,3 +71,11 @@ TWO_FACTOR_WEBAUTHN_RP_NAME = "referentielijsten"
 # django-import-export
 #
 IMPORT_EXPORT_FORMATS = DEFAULT_FORMATS
+
+
+#
+# Django setup configuration
+#
+SETUP_CONFIGURATION_STEPS = (
+    "mozilla_django_oidc_db.setup_configuration.steps.AdminOIDCConfigurationStep",
+)

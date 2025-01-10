@@ -2,6 +2,8 @@
 #    ./bin/compile_dependencies.sh
 amqp==5.2.0
     # via kombu
+annotated-types==0.7.0
+    # via pydantic
 ape-pie==0.2.0
     # via
     #   commonground-api-common
@@ -152,8 +154,10 @@ django-sendfile2==0.7.1
     # via django-privates
 django-sessionprofile==3.0.0
     # via open-api-framework
-django-setup-configuration==0.3.0
-    # via open-api-framework
+django-setup-configuration==0.5.0
+    # via
+    #   mozilla-django-oidc-db
+    #   open-api-framework
 django-simple-certmanager==2.3.0
     # via zgw-consumers
 django-solo==2.3.0
@@ -235,8 +239,10 @@ maykin-2fa==1.0.1
     # via open-api-framework
 mozilla-django-oidc==4.0.1
     # via mozilla-django-oidc-db
-mozilla-django-oidc-db==0.19.0
-    # via open-api-framework
+mozilla-django-oidc-db==0.21.1
+    # via
+    #   -r requirements/base.in
+    #   open-api-framework
 notifications-api-common==0.3.1
     # via commonground-api-common
 open-api-framework==0.9.2
@@ -259,6 +265,14 @@ psycopg2==2.9.9
     # via open-api-framework
 pycparser==2.22
     # via cffi
+pydantic==2.10.5
+    # via
+    #   django-setup-configuration
+    #   pydantic-settings
+pydantic-core==2.27.2
+    # via pydantic
+pydantic-settings==2.7.1
+    # via django-setup-configuration
 pyjwt==2.8.0
     # via
     #   commonground-api-common
@@ -276,7 +290,9 @@ python-dateutil==2.9.0.post0
 python-decouple==3.8
     # via open-api-framework
 python-dotenv==1.0.1
-    # via open-api-framework
+    # via
+    #   open-api-framework
+    #   pydantic-settings
 pytz==2024.1
     # via
     #   drf-yasg
@@ -286,6 +302,7 @@ pyyaml==6.0.1
     #   drf-spectacular
     #   drf-yasg
     #   oyaml
+    #   pydantic-settings
 qrcode==7.4.2
     # via django-two-factor-auth
 redis==5.0.8
@@ -328,6 +345,8 @@ tornado==6.4.2
 typing-extensions==4.12.2
     # via
     #   mozilla-django-oidc-db
+    #   pydantic
+    #   pydantic-core
     #   qrcode
     #   zgw-consumers
 tzdata==2024.1
