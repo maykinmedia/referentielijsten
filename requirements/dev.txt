@@ -10,6 +10,11 @@ amqp==5.2.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   kombu
+annotated-types==0.7.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   pydantic
 ape-pie==0.2.0
     # via
     #   -c requirements/ci.txt
@@ -314,7 +319,7 @@ django-sessionprofile==3.0.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
-django-setup-configuration==0.3.0
+django-setup-configuration==0.5.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -549,7 +554,7 @@ mozilla-django-oidc==4.0.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   mozilla-django-oidc-db
-mozilla-django-oidc-db==0.19.0
+mozilla-django-oidc-db==0.21.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -645,6 +650,22 @@ pycparser==2.22
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   cffi
+pydantic==2.10.5
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-setup-configuration
+    #   pydantic-settings
+pydantic-core==2.27.2
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   pydantic
+pydantic-settings==2.7.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-setup-configuration
 pyflakes==3.2.0
     # via
     #   -c requirements/ci.txt
@@ -702,6 +723,7 @@ python-dotenv==1.0.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
+    #   pydantic-settings
 pytz==2024.1
     # via
     #   -c requirements/ci.txt
@@ -715,6 +737,7 @@ pyyaml==6.0.1
     #   drf-spectacular
     #   drf-yasg
     #   oyaml
+    #   pydantic-settings
     #   vcrpy
 qrcode==7.4.2
     # via
@@ -855,6 +878,8 @@ typing-extensions==4.12.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   mozilla-django-oidc-db
+    #   pydantic
+    #   pydantic-core
     #   qrcode
     #   zgw-consumers
 tzdata==2024.1
