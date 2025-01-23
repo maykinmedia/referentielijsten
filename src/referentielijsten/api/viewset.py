@@ -40,7 +40,7 @@ from .serializers import ItemSerializer, TabelSerializer
     )
 )
 class ItemViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    queryset = Item.objects.all()
+    queryset = Item.objects.order_by("-pk")
     serializer_class = ItemSerializer
     filterset_class = ItemFilterset
 
@@ -55,6 +55,6 @@ class ItemViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     ),
 )
 class TabelViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    queryset = Tabel.objects.all()
+    queryset = Tabel.objects.order_by("-pk")
     serializer_class = TabelSerializer
     filterset_class = TabelFilterset
