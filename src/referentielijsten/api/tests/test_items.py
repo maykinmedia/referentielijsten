@@ -42,9 +42,9 @@ class ItemsApiTests(APITestCase):
         self.assertEqual(response_data["count"], 3)
         results = response_data["results"]
 
-        self.assertEqual(results[0]["code"], item1.code)
+        self.assertEqual(results[0]["code"], item3.code)
         self.assertEqual(results[1]["code"], item2.code)
-        self.assertEqual(results[2]["code"], item3.code)
+        self.assertEqual(results[2]["code"], item1.code)
 
     def test_items_with_none_existing_tabel_code(self):
         TabelFactory.create(code="123")
@@ -101,10 +101,10 @@ class ItemsApiTests(APITestCase):
         self.assertEqual(response_data["count"], 4)
         results = response_data["results"]
 
-        self.assertEqual(results[0]["code"], "1")
-        self.assertEqual(results[1]["code"], "2")
-        self.assertEqual(results[2]["code"], "3")
-        self.assertEqual(results[3]["code"], "4")
+        self.assertEqual(results[0]["code"], "4")
+        self.assertEqual(results[1]["code"], "3")
+        self.assertEqual(results[2]["code"], "2")
+        self.assertEqual(results[3]["code"], "1")
 
         response = self.client.get(
             self.url, {"tabel__code": "123", "isGeldig": "false"}
@@ -115,5 +115,5 @@ class ItemsApiTests(APITestCase):
         self.assertEqual(response_data["count"], 2)
         results = response_data["results"]
 
-        self.assertEqual(results[0]["code"], "5")
-        self.assertEqual(results[1]["code"], "6")
+        self.assertEqual(results[0]["code"], "6")
+        self.assertEqual(results[1]["code"], "5")
