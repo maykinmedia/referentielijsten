@@ -10,7 +10,7 @@ Change history
 **New features**
 
 * [#31] Updated open-api-framework to 0.8.1, which includes adding CSRF, CSP and HSTS settings (#438).
-  All new environment variables are added to the `documentation <https://objects-and-objecttypes-api.readthedocs.io/en/latest/installation/config.html>`_
+  All new environment variables are added to the `documentation <https://referentielijsten-api.readthedocs.io/en/latest/installation/config.html>`_
 * [#15] Add import export to item admin
 * [#7] Add OIDC login
 

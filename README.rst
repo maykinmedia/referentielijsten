@@ -17,18 +17,18 @@ Ontwikkeld en gefinancierd door `Maykin B.V.`_.
 Introductie
 ===========
 
-Er zijn op dit moment 3 initiatieven voor referentielijsten. In de VNG API 
-standaard voor Zaakgericht Werken is een variant aanwezig die nooit is 
-geformaliseerd. In het VNG initiatief voor een Klantinteracties API is ook een 
-variant die net even afwijkt en ook niet formeel is vastgesteld. Ten slotte is 
+Er zijn op dit moment 3 initiatieven voor referentielijsten. In de VNG API
+standaard voor Zaakgericht Werken is een variant aanwezig die nooit is
+geformaliseerd. In het VNG initiatief voor een Klantinteracties API is ook een
+variant die net even afwijkt en ook niet formeel is vastgesteld. Ten slotte is
 er nog de Objecten API, die voor dit doel soms gebruikt wordt. Deze kan echter
-geen uniekheid afdwingen van items in de lijst en bevat teveel vrijheid in de 
+geen uniekheid afdwingen van items in de lijst en bevat teveel vrijheid in de
 attributen.
 
 Vandaar dat er is gekozen voor een generieke aanpak voor referentielijsten, die
-zijn eigen API verdient. De API is bedoeld als registratie van herbruikbare 
-lijsten waarbij de waarden van deze lijsten mag worden opgeslagen in andere 
-registraties. Dit voorkomt onnodige calls naar deze API voor enkel een 
+zijn eigen API verdient. De API is bedoeld als registratie van herbruikbare
+lijsten waarbij de waarden van deze lijsten mag worden opgeslagen in andere
+registraties. Dit voorkomt onnodige calls naar deze API voor enkel een
 tekstuele waarde.
 
 
@@ -47,7 +47,7 @@ latest          n/a             `ReDoc <https://redocly.github.io/redoc/?url=htt
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/openapi.yaml>`_
 ==============  ==============  =============================
 
-Vorige versies worden nog 6 maanden ondersteund nadat de volgende versie is 
+Vorige versies worden nog 6 maanden ondersteund nadat de volgende versie is
 uitgebracht.
 
 Zie: `Alle versies en wijzigingen <https://github.com/maykinmedia/referentielijsten/blob/master/CHANGELOG.rst>`_
@@ -107,8 +107,8 @@ Licensed under the EUPL_
     :alt: Build status
     :target: https://github.com/maykinmedia/referentielijsten/actions/workflows/ci.yml
 
-.. |docs| image:: https://readthedocs.org/projects/referentielijsten-and-objecttypes-api/badge/?version=latest
-    :target: https://referentielijsten-and-objecttypes-api.readthedocs.io/
+.. |docs| image:: https://readthedocs.org/projects/referentielijsten-api/badge/?version=latest
+    :target: https://referentielijsten-api.readthedocs.io/
     :alt: Documentation Status
 
 .. |coverage| image:: https://codecov.io/github/maykinmedia/referentielijsten/branch/master/graphs/badge.svg?branch=master
