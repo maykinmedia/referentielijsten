@@ -8,11 +8,17 @@
 import os
 import sys
 
+import django
+from django.utils.translation import activate
+
 sys.path.insert(0, os.path.abspath("../src"))
 
 import referentielijsten  # noqa isort:skip
 
-# from objects.setup import setup_env  # noqa isort:skip
+from referentielijsten.setup import setup_env  # noqa isort:skip
+
+setup_env()
+django.setup()
 
 # TODO: This needs to be enabled when we want to use autodoc to grab
 # documentation from classes and functions. However, enabling django.setup()
@@ -42,6 +48,9 @@ extensions = [
     # "sphinx_tabs.tabs",
     # "recommonmark",
     # "sphinx_markdown_tables",
+    "sphinx.ext.autodoc",
+    "django_setup_configuration.documentation.setup_config_example",
+    "django_setup_configuration.documentation.setup_config_usage",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -53,6 +62,10 @@ templates_path = ["_templates"]
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 language = "en"
+
+# Also set the language to English for Django, to make sure that any translatable text
+# is also shown in English (for instance the help texts for setup configuration examples)
+activate("en")
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

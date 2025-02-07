@@ -15,4 +15,4 @@ this.
    :caption: Further reading
 
    config
-   setup_configuraiton
+   setup_configuration
