@@ -292,7 +292,7 @@ django-sessionprofile==3.0.0
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   open-api-framework
-django-setup-configuration==0.5.0
+django-setup-configuration==0.7.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -346,8 +346,11 @@ djangorestframework-inclusions==1.2.0
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   open-api-framework
-docutils==0.20.1
+docutils==0.21.2
     # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-setup-configuration
     #   sphinx
     #   sphinx-rtd-theme
 drf-nested-routers==0.94.1
@@ -496,7 +499,7 @@ mozilla-django-oidc==4.0.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   mozilla-django-oidc-db
-mozilla-django-oidc-db==0.21.1
+mozilla-django-oidc-db==0.22.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -686,6 +689,16 @@ rpds-py==0.19.1
     #   -r requirements/base.txt
     #   jsonschema
     #   referencing
+ruamel-yaml==0.18.10
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-setup-configuration
+ruamel-yaml-clib==0.2.12
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   ruamel-yaml
 sentry-sdk==2.13.0
     # via
     #   -c requirements/base.txt
@@ -709,7 +722,7 @@ sphinx==7.4.7
     #   -r requirements/test-tools.in
     #   sphinx-rtd-theme
     #   sphinxcontrib-jquery
-sphinx-rtd-theme==2.0.0
+sphinx-rtd-theme==3.0.2
     # via -r requirements/test-tools.in
 sphinxcontrib-applehelp==2.0.0
     # via sphinx
