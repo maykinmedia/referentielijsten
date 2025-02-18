@@ -15,6 +15,8 @@ annotated-types==0.7.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   pydantic
+anyio==4.8.0
+    # via httpx
 ape-pie==0.2.0
     # via
     #   -c requirements/ci.txt
@@ -71,9 +73,11 @@ boltons==24.0.0
     #   -r requirements/ci.txt
     #   face
     #   glom
+bracex==2.5.post1
+    # via wcmatch
 build==1.2.1
     # via pip-tools
-bump2version==1.0.1
+bump-my-version==0.32.1
     # via -r requirements/dev.in
 cbor2==5.6.4
     # via
@@ -92,6 +96,8 @@ certifi==2024.7.4
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   elastic-apm
+    #   httpcore
+    #   httpx
     #   requests
     #   sentry-sdk
 cffi==1.16.0
@@ -109,11 +115,13 @@ click==8.1.7
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   black
+    #   bump-my-version
     #   celery
     #   click-didyoumean
     #   click-plugins
     #   click-repl
     #   pip-tools
+    #   rich-click
 click-didyoumean==0.3.1
     # via
     #   -c requirements/ci.txt
@@ -458,6 +466,12 @@ glom==23.5.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   mozilla-django-oidc-db
+h11==0.14.0
+    # via httpcore
+httpcore==1.0.7
+    # via httpx
+httpx==0.28.1
+    # via bump-my-version
 humanize==4.10.0
     # via
     #   -c requirements/ci.txt
@@ -467,6 +481,8 @@ idna==3.7
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   anyio
+    #   httpx
     #   requests
     #   yarl
 imagesize==1.4.1
@@ -535,6 +551,8 @@ lxml==5.2.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   pyquery
+markdown-it-py==3.0.0
+    # via rich
 markupsafe==2.1.5
     # via
     #   -c requirements/ci.txt
@@ -550,6 +568,8 @@ mccabe==0.7.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   flake8
+mdurl==0.1.2
+    # via markdown-it-py
 mozilla-django-oidc==4.0.1
     # via
     #   -c requirements/ci.txt
@@ -636,6 +656,7 @@ prompt-toolkit==3.0.47
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   click-repl
+    #   questionary
 psycopg2==2.9.9
     # via
     #   -c requirements/ci.txt
@@ -655,6 +676,7 @@ pydantic==2.10.5
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   bump-my-version
     #   django-setup-configuration
     #   pydantic-settings
 pydantic-core==2.27.2
@@ -666,6 +688,7 @@ pydantic-settings==2.7.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   bump-my-version
     #   django-setup-configuration
 pyflakes==3.2.0
     # via
@@ -676,6 +699,7 @@ pygments==2.18.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   rich
     #   sphinx
 pyjwt==2.8.0
     # via
@@ -745,6 +769,8 @@ qrcode==7.4.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-two-factor-auth
+questionary==2.1.0
+    # via bump-my-version
 redis==5.0.8
     # via
     #   -c requirements/ci.txt
@@ -775,6 +801,12 @@ requests-mock==1.12.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
+rich==13.9.4
+    # via
+    #   bump-my-version
+    #   rich-click
+rich-click==1.8.5
+    # via bump-my-version
 rpds-py==0.19.1
     # via
     #   -c requirements/ci.txt
@@ -809,6 +841,8 @@ six==1.16.0
     #   python-dateutil
 smmap==5.0.1
     # via gitdb
+sniffio==1.3.1
+    # via anyio
 snowballstemmer==2.2.0
     # via
     #   -c requirements/ci.txt
@@ -879,6 +913,8 @@ tblib==3.0.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+tomlkit==0.13.2
+    # via bump-my-version
 tornado==6.4.2
     # via
     #   -c requirements/ci.txt
@@ -888,10 +924,12 @@ typing-extensions==4.12.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   anyio
     #   mozilla-django-oidc-db
     #   pydantic
     #   pydantic-core
     #   qrcode
+    #   rich-click
     #   zgw-consumers
 tzdata==2024.1
     # via
@@ -933,6 +971,8 @@ waitress==3.0.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   webtest
+wcmatch==10.0
+    # via bump-my-version
 wcwidth==0.2.13
     # via
     #   -c requirements/ci.txt
