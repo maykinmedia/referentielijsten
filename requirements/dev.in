@@ -3,7 +3,7 @@
 
 # Helpers
 pip-tools
-bump2version
+bump-my-version
 gitpython
 
 # Debug tooling
