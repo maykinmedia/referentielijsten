@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-13 20:35+0100\n"
+"POT-Creation-Date: 2025-02-24 15:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,45 +18,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: foobar/accounts/models.py:18
+#: referentielijsten/accounts/models.py:18
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: foobar/accounts/models.py:22
+#: referentielijsten/accounts/models.py:22
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
 msgstr ""
 "Vereist. 150 tekens of minder. Alleen letters, cijfers en @/,/+/-/_ tekens "
 "zijn toegestaan."
 
-#: foobar/accounts/models.py:26
+#: referentielijsten/accounts/models.py:26
 msgid "A user with that username already exists."
 msgstr "Een gebruiker met deze gebruikersnaam bestaat al."
 
-#: foobar/accounts/models.py:29
+#: referentielijsten/accounts/models.py:29
 msgid "first name"
 msgstr "voornaam"
 
-#: foobar/accounts/models.py:30
+#: referentielijsten/accounts/models.py:30
 msgid "last name"
 msgstr "achternaam"
 
-#: foobar/accounts/models.py:31
+#: referentielijsten/accounts/models.py:31
 msgid "email address"
 msgstr "e-mailadres"
 
-#: foobar/accounts/models.py:33
+#: referentielijsten/accounts/models.py:33
 msgid "staff status"
 msgstr "stafstatus"
 
-#: foobar/accounts/models.py:35
+#: referentielijsten/accounts/models.py:35
 msgid "Designates whether the user can log into this admin site."
 msgstr "Bepaalt of de gebruiker zich op deze beheerwebsite kan aanmelden."
 
-#: foobar/accounts/models.py:38
+#: referentielijsten/accounts/models.py:38
 msgid "active"
 msgstr "actief"
 
-#: foobar/accounts/models.py:41
+#: referentielijsten/accounts/models.py:41
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
@@ -64,74 +64,219 @@ msgstr ""
 "Bepaalt of deze gebruiker als actief dient te worden behandeld. U kunt dit "
 "uitvinken in plaats van een gebruiker te verwijderen."
 
-#: foobar/accounts/models.py:45
+#: referentielijsten/accounts/models.py:45
 msgid "date joined"
 msgstr "datum toegetreden"
 
-#: foobar/accounts/models.py:53
+#: referentielijsten/accounts/models.py:53
 msgid "user"
 msgstr "gebruiker"
 
-#: foobar/accounts/models.py:54
+#: referentielijsten/accounts/models.py:54
 msgid "users"
 msgstr "gebruikers"
 
-#: foobar/accounts/utils.py:18
+#: referentielijsten/accounts/tests/test_oidc.py:38
+#: referentielijsten/accounts/tests/test_oidc.py:56
+#: referentielijsten/accounts/tests/test_oidc.py:76
+#: referentielijsten/accounts/tests/test_oidc.py:109
+#: referentielijsten/accounts/tests/test_oidc.py:131
+#: referentielijsten/templates/maykin_2fa/login.html:16
+msgid "Login with organization account"
+msgstr "Inloggen met organisatie account"
+
+#: referentielijsten/accounts/utils.py:18
 msgid "You need to be superuser to create other superusers."
 msgstr ""
 "U dient een supergebruiker te zijn om andere supergebruikers aan te maken."
 
-#: foobar/accounts/utils.py:44
+#: referentielijsten/accounts/utils.py:44
 msgid "You cannot create or update a user with more permissions than yourself."
 msgstr "U kunt een gebruiker niet meer rechten geven dan u zelf heeft."
 
-#: foobar/templates/admin/base_site.html:5
-#: foobar/templates/admin/base_site.html:24
+#: referentielijsten/api/admin.py:38 referentielijsten/api/admin.py:79
+#: referentielijsten/api/admin_list_filters.py:6
+msgid "Is geldig"
+msgstr ""
+
+#: referentielijsten/api/admin.py:67
+msgid "Beheerder"
+msgstr ""
+
+#: referentielijsten/api/filterset.py:10
+msgid "De waarde van de `code` van een specifieke `tabel`."
+msgstr ""
+
+#: referentielijsten/api/filterset.py:14
+msgid "Of de `einddatum_geldigheid` niet in het verleden ligt."
+msgstr ""
+
+#: referentielijsten/api/filterset.py:31
+msgid ""
+"Of de `begindatum_geldigheid` niet in de toekomst ligt en de "
+"`einddatum_geldigheid` niet in het verleden ligt."
+msgstr ""
+
+#: referentielijsten/api/filterset.py:37
+msgid "De waarde van de `tabel__code` die gelinkt is aan de items."
+msgstr ""
+
+#: referentielijsten/api/models.py:11 referentielijsten/api/models.py:85
+msgid "code"
+msgstr ""
+
+#: referentielijsten/api/models.py:12
+msgid "De unique code van het tabel."
+msgstr ""
+
+#: referentielijsten/api/models.py:17 referentielijsten/api/models.py:31
+#: referentielijsten/api/models.py:90
+msgid "naam"
+msgstr ""
+
+#: referentielijsten/api/models.py:18
+msgid "De naam van het tabel."
+msgstr ""
+
+#: referentielijsten/api/models.py:22 referentielijsten/api/models.py:101
+msgid "einddatum geldigheid"
+msgstr ""
+
+#: referentielijsten/api/models.py:23 referentielijsten/api/models.py:102
+msgid "De datum tot wanneer deze tabel geldig is."
+msgstr ""
+
+#: referentielijsten/api/models.py:33
+msgid "De naam van de beheerder van dit tabel."
+msgstr ""
+
+#: referentielijsten/api/models.py:37
+msgid "mail"
+msgstr ""
+
+#: referentielijsten/api/models.py:38
+msgid "De email van de beheerder van dit tabel."
+msgstr ""
+
+#: referentielijsten/api/models.py:42
+msgid "afdeling"
+msgstr ""
+
+#: referentielijsten/api/models.py:44
+msgid "De afdelings naam van de beheerder van dit tabel."
+msgstr ""
+
+#: referentielijsten/api/models.py:48
+msgid "organisatie"
+msgstr ""
+
+#: referentielijsten/api/models.py:50
+msgid "De organisatie naam van de beheerder van dit tabel."
+msgstr ""
+
+#: referentielijsten/api/models.py:71 referentielijsten/api/models.py:81
+msgid "tabel"
+msgstr ""
+
+#: referentielijsten/api/models.py:72
+msgid "tabellen"
+msgstr ""
+
+#: referentielijsten/api/models.py:86
+msgid "De unique code (per tabel) van het item."
+msgstr ""
+
+#: referentielijsten/api/models.py:91
+msgid "De naam van het item."
+msgstr ""
+
+#: referentielijsten/api/models.py:95
+msgid "begindatum geldigheid"
+msgstr ""
+
+#: referentielijsten/api/models.py:96
+msgid "De datum vanaf waneer deze tabel geldig is."
+msgstr ""
+
+#: referentielijsten/api/models.py:107
+msgid "aanvullende gegevens"
+msgstr ""
+
+#: referentielijsten/api/models.py:108
+msgid "Extra gegevens die niet standaard gekoppeld zijn aan een item."
+msgstr ""
+
+#: referentielijsten/api/models.py:116
+msgid "item"
+msgstr ""
+
+#: referentielijsten/api/models.py:117
+msgid "items"
+msgstr ""
+
+#: referentielijsten/api/serializers.py:31
+msgid "De informatie van de beheerder van deze tabel."
+msgstr ""
+
+#: referentielijsten/api/viewset.py:34
+msgid "Dit veld is vereist."
+msgstr ""
+
+#: referentielijsten/templates/admin/base_site.html:5
+#: referentielijsten/templates/admin/base_site.html:23
 msgid "Administration"
 msgstr "Beheer"
 
-#: foobar/templates/admin/base_site.html:41
-msgid "View 2fa profile"
-msgstr "Tweestapsauthenticatie beheren"
+#: referentielijsten/templates/admin/base_site.html:34
+msgid "View site"
+msgstr "Website bekijken"
 
-#: foobar/templates/admin/base_site.html:44
+#: referentielijsten/templates/admin/base_site.html:40
+msgid "Account security"
+msgstr "Accountbeveiliging"
+
+#: referentielijsten/templates/admin/base_site.html:43
 msgid "Change password"
 msgstr "Wachtwoord wijzigen"
 
-#: foobar/templates/admin/base_site.html:46
+#: referentielijsten/templates/admin/base_site.html:45
 msgid "Log out"
 msgstr "Afmelden"
 
-#: foobar/templates/admin/base_site__admintools.html:4
-msgid "admin"
-msgstr "beheer"
+#: referentielijsten/templates/maykin_2fa/login.html:14
+msgid "or"
+msgstr "of"
 
-#: foobar/templates/admin/base_site__admintools.html:17
-msgid "administration"
-msgstr "beheer"
+#: referentielijsten/templates/maykin_2fa/login.html:26
+msgid "Contact support"
+msgstr "Neem contact op met support"
 
-#: foobar/templates/hijack/contrib/admin/button.html:6
-msgid "hijack"
-msgstr "overnemen"
-
-#: foobar/templates/hijack/contrib/admin/button.html:8
-#, python-format
-msgid "Hijack %(username)s"
-msgstr "Inloggen als %(username)s"
-
-#: foobar/utils/management/commands/clear_cache.py:10
+#: referentielijsten/utils/management/commands/clear_cache.py:10
 msgid "Clear given cache only"
 msgstr "Leeg alleen de opgegeven cache"
 
-#: foobar/utils/validators.py:22
+#: referentielijsten/utils/templates/utils/includes/version_info.html:4
+#, python-format
+msgid "version %(RELEASE)s"
+msgstr "versie %(RELEASE)s"
+
+#: referentielijsten/utils/templates/utils/includes/version_info.html:8
+#, python-format
+msgid "GIT SHA: %(GIT_SHA)s"
+msgstr ""
+
+#: referentielijsten/utils/tests/test_validators.py:24
+#: referentielijsten/utils/validators.py:23
 #, python-format
 msgid "The provided value contains an invalid character: %s"
 msgstr "Uw invoer bevat een ongeldig teken: %s"
 
-#: foobar/utils/validators.py:30
-msgid "Invalid mobile phonenumber."
-msgstr "Ongeldig mobiel telefoonnumer."
-
-#: foobar/utils/validators.py:50
+#: referentielijsten/utils/tests/test_validators.py:61
+#: referentielijsten/utils/validators.py:52
 msgid "Invalid postal code."
 msgstr "Ongeldige postcode."
+
+#: referentielijsten/utils/tests/test_validators.py:85
+#: referentielijsten/utils/validators.py:32
+msgid "Invalid mobile phonenumber."
+msgstr "Ongeldig mobiel telefoonnumer."
