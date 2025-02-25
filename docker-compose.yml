@@ -18,39 +18,40 @@ services:
   web:
     build: .
     image: maykinmedia/referentielijsten-api:latest
-    environment:
-      - DJANGO_SETTINGS_MODULE=referentielijsten.conf.docker
-      - SECRET_KEY=${SECRET_KEY:-django-insecure-4foe-_dk9x=88*0sljyo1_ga!!nj*x8ye6u0p(@871e)zg^+q}
-      - DB_NAME=referentielijsten
-      - DB_USER=referentielijsten
-      - DB_HOST=db
-      - CACHE_DEFAULT=redis:6379/0
-      - CACHE_AXES=redis:6379/0
-      - SUBPATH=${SUBPATH:-/}
-      - DISABLE_2FA=${DISABLE_2FA:-True}
+    environment: &app-env
+      DJANGO_SETTINGS_MODULE: referentielijsten.conf.docker
+      SECRET_KEY: ${SECRET_KEY:-django-insecure-4foe-_dk9x=88*0sljyo1_ga!!nj*x8ye6u0p(@871e)zg^+q}
+      DB_NAME: referentielijsten
+      DB_USER: referentielijsten
+      DB_HOST: db
+      CACHE_DEFAULT: redis:6379/0
+      CACHE_AXES: redis:6379/0
+      SUBPATH: ${SUBPATH:-/}
+      DISABLE_2FA: ${DISABLE_2FA:-True}
       # Only allow all hosts for development/testing purposes!
-      - ALLOWED_HOSTS=*
+      ALLOWED_HOSTS: '*'
     ports:
       - 8000:8000
+    volumes: &app-volumes
+      - media:/app/media  # Shared media volume to get access to saved OAS files
+      - ./docker/setup_configuration:/app/setup_configuration
+    depends_on:
+      web-init:
+        condition: service_completed_successfully
+
+  web-init:
+    build: .
+    environment:
+      <<: *app-env
+      #
+      # Django-setup-configuration
+      RUN_SETUP_CONFIG: ${RUN_SETUP_CONFIG:-true}
+    command: /setup_configuration.sh
     depends_on:
       - db
       - redis
+    volumes: *app-volumes
 
-# See: src/referentielijsten/conf/docker.py
-# Optional containers below:
-#  elasticsearch:
-#    # NOTE: No persistance storage configured.
-#    # See: https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
-#    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
-#    container_name: elasticsearch
-#    environment:
-#      - discovery.type=single-node
-#      - cluster.routing.allocation.disk.threshold_enabled=false
-#    ports:
-#      - 9200:9200
-#  redis:
-#    # NOTE: No persistance storage configured.
-#    # See: https://hub.docker.com/_/redis/
-#    image: redis
-#    ports:
-#        - 6379:6379
+volumes:
+  media:
+  db:

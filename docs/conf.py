@@ -48,6 +48,7 @@ extensions = [
     # "sphinx_tabs.tabs",
     # "recommonmark",
     # "sphinx_markdown_tables",
+    "sphinx.ext.extlinks",
     "sphinx.ext.autodoc",
     "django_setup_configuration.documentation.setup_config_example",
     "django_setup_configuration.documentation.setup_config_usage",
@@ -99,3 +100,14 @@ linkcheck_ignore = [
     r"http://localhost:3000*",
     r"https://some-app.gemeente.nl*",
 ]
+
+extlinks = {
+    "referentielijsten": (
+        "https://github.com/maykinmedia/referentielijsten/issues/%s",
+        "#%s",
+    ),
+    "open-api-framework": (
+        "https://github.com/maykinmedia/open-api-framework/issues/%s",
+        "#%s",
+    ),
+}

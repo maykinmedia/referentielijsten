@@ -26,3 +26,4 @@ To get you started, you might find some of these links relevant:
 
    introduction/index
    installation/index
+   changelog
