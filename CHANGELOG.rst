@@ -2,10 +2,49 @@
 Change history
 ==============
 
-0.2.0
-=====
+0.3.0 (2025-03-04)
+------------------
 
-*October 04, 2024*
+**New features**
+
+* [:open-api-framework:`23`] Add support for new version of ``django-setup-configuration``, the following steps were
+  added/updated. For more information on how to provide configuration for these steps, see
+  :ref:`installation_configuration_cli`
+
+    * Configuration of OpenID Connect authentication for admin users (Single Sign On)
+
+
+**Bugfixes and QOL**
+
+* [:referentielijsten:`41`] Order API endpoints by pk (descending)
+* [:open-api-framework:`79`] disable admin nav sidebar
+
+
+**Documentation**
+
+* [:referentielijsten:`43`] Update documentation for setup-configuration
+* Add configuration for readthedocs
+
+**Project maintenance**
+
+* Upgrading dependencies:
+
+   * Upgrade npm packages to fix vulnerabilities
+   * Upgrade python packages to fix vulnerabilities
+   * Upgrade open-api-framework to 0.9.3
+   * Upgrade mozilla-django-oidc-db to 0.22.0
+   * Upgrade django-setup-configuration to 0.7.1
+   * Upgrade zgw-consumers to 0.35.1
+   * Upgrade commonground-api-common to 2.5.1
+* [:open-api-framework:`107`] Add bump-my-version to dev dependencies
+* [:open-api-framework:`102`] Add quick-start workflow to test docker-compose.yml
+* [:open-api-framework:`44`] add workflow to CI to auto-update open-api-framework
+* [:open-api-framework:`81`] Switch from pip-compile to UV
+* [:open-api-framework:`92`] Fix docker latest tag publish
+* [:open-api-framework:`13`] Switch to use reusable open-api-workflows in github actions
+
+0.2.0 (2024-10-04)
+------------------
 
 **New features**
 
@@ -52,9 +91,8 @@ Change history
 * [#20] Update dependencies and fixed broken oidc tests
 * [#17] Refactor base settings
 
-0.1.0
-=====
+0.1.0 (2024-05-28)
+------------------
 
-*May 28, 2024*
 
 * Initial release.
