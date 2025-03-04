@@ -22,6 +22,8 @@ ${SCRIPTPATH}/wait_for_db.sh
 >&2 echo "Apply database migrations"
 python src/manage.py migrate
 
+${SCRIPTPATH}/load_fixtures.sh
+
 # Start server
 >&2 echo "Starting server"
 exec uwsgi \

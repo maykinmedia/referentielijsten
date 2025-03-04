@@ -73,6 +73,7 @@ COPY ./bin/docker_start.sh /start.sh
 # COPY ./bin/celery_beat.sh /celery_beat.sh
 # COPY ./bin/celery_flower.sh /celery_flower.sh
 COPY ./bin/wait_for_db.sh /wait_for_db.sh
+COPY ./bin/load_fixtures.sh /load_fixtures.sh
 COPY ./bin/setup_configuration.sh /setup_configuration.sh
 RUN mkdir /app/bin /app/log /app/media
 
