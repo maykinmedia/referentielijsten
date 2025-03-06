@@ -280,3 +280,11 @@ msgstr "Ongeldige postcode."
 #: referentielijsten/utils/validators.py:32
 msgid "Invalid mobile phonenumber."
 msgstr "Ongeldig mobiel telefoonnumer."
+
+#: conf/base.py:200
+msgid "A page number within the paginated result set."
+msgstr "Een pagina binnen de gepagineerde set resultaten."
+
+#: conf/base.py:201
+msgid "Number of results to return per page."
+msgstr "Het aantal resultaten terug te geven per pagina."
