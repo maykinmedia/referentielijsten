@@ -53,7 +53,7 @@ jobs:
 
     strategy:
       matrix:
-        postgres: ['15', '16']
+        postgres: ['15', '16', '17']
 
     name: Tests (PG ${{ matrix.postgres }})
 

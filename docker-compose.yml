@@ -4,9 +4,9 @@ version: '3'
 services:
   db:
     # NOTE: No persistance storage configured.
-    # Using v14 to prevent schema permissions. See also docker-init-db.sql.
+    # Using v17 to prevent schema permissions. See also docker-init-db.sql.
     # See: https://hub.docker.com/_/postgres/
-    image: postgres:${PG_VERSION:-14}
+    image: postgres:${PG_VERSION:-17}
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:

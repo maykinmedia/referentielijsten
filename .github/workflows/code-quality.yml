@@ -21,6 +21,6 @@ jobs:
       python-version: '3.11'
       node-version: '18'
 
-      postgres-image: 'postgres:15'
+      postgres-image: 'postgres:17'
 
       django-settings-module: 'referentielijsten.conf.ci'
