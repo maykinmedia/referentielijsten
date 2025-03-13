@@ -13,5 +13,5 @@ jobs:
   open-api-workflow-lint-oas:
     uses: maykinmedia/open-api-workflows/.github/workflows/lint-oas.yml@v5
     with:
-      node-version: '18'
+      node-version: '20'
       schema-path: 'src/referentielijsten/api/openapi.yaml'
