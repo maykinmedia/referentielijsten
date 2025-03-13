@@ -2,6 +2,17 @@
 Change history
 ==============
 
+0.x.x (2025-03-31)
+------------------
+
+**Project maintenance**
+
+* Confirm support for Postgres 17
+* Upgrade nodejs version in CI pipeline to 20
+* Upgrade dependencies
+
+  * Development tools: black to 25.1.0, flake to 7.1.2 and isort to 6.0.1
+
 0.3.0 (2025-03-04)
 ------------------
 
