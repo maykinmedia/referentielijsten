@@ -16,11 +16,11 @@ on:
 
 jobs:
   open-api-workflow-code-quality:
-    uses: maykinmedia/open-api-workflows/.github/workflows/code-quality.yml@v1
+    uses: maykinmedia/open-api-workflows/.github/workflows/code-quality.yml@v5
     with:
       python-version: '3.11'
-      node-version: '18'
+      node-version: '20'
 
-      postgres-image: 'postgres:15'
+      postgres-image: 'postgres:17'
 
       django-settings-module: 'referentielijsten.conf.ci'
