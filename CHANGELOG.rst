@@ -2,16 +2,33 @@
 Change history
 ==============
 
-0.x.x (2025-03-31)
+0.3.1 (2025-04-11)
 ------------------
+
+**Bugfixes**
+
+* [:referentielijsten:`55`] Load fixtures automatically in docker
 
 **Project maintenance**
 
-* Confirm support for Postgres 17
-* Upgrade nodejs version in CI pipeline to 20
-* Upgrade dependencies
+* [:open-api-framework:`117`] Confirm support for Postgres 17
+* [:open-api-framework:`117`] Upgrade nodejs version in CI pipeline to 20
+* [:open-api-framework:`117`] Upgrade development dependencies
 
   * Development tools: black to 25.1.0, flake to 7.1.2 and isort to 6.0.1
+
+* Upgrade dependencies
+
+  * ``open-api-framework`` to 0.9.6
+  * ``django`` to 4.2.20
+  * ``cryptography`` to 44.0.1
+  * ``jinja2`` to 3.1.5
+  * ``commonground-api-common`` to 2.5.5
+  * ``notifications-api-common`` to 0.7.1
+  * ``django-setup-configuration`` to 0.7.2
+
+* Remove tj-actions/changed-files action from CI and replace it with a script
+* [:open-api-framework:`115`] Ensure OAS check always runs in CI
 
 0.3.0 (2025-03-04)
 ------------------
