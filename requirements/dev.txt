@@ -161,7 +161,7 @@ coverage==7.6.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   codecov
-cryptography==43.0.3
+cryptography==44.0.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -180,7 +180,7 @@ diff-match-patch==20230430
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-import-export
-django==4.2.19
+django==4.2.20
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -699,7 +699,7 @@ pyjwt==2.8.0
     #   -r requirements/ci.txt
     #   commonground-api-common
     #   zgw-consumers
-pyopenssl==24.2.1
+pyopenssl==25.0.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -918,6 +918,7 @@ typing-extensions==4.12.2
     #   mozilla-django-oidc-db
     #   pydantic
     #   pydantic-core
+    #   pyopenssl
     #   qrcode
     #   rich-click
     #   zgw-consumers

@@ -135,7 +135,7 @@ coverage==7.6.0
     # via
     #   -r requirements/test-tools.in
     #   codecov
-cryptography==43.0.3
+cryptography==44.0.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -151,7 +151,7 @@ diff-match-patch==20230430
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-import-export
-django==4.2.19
+django==4.2.20
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -588,7 +588,7 @@ pyjwt==2.8.0
     #   -r requirements/base.txt
     #   commonground-api-common
     #   zgw-consumers
-pyopenssl==24.2.1
+pyopenssl==25.0.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -750,6 +750,7 @@ typing-extensions==4.12.2
     #   mozilla-django-oidc-db
     #   pydantic
     #   pydantic-core
+    #   pyopenssl
     #   qrcode
     #   zgw-consumers
 tzdata==2024.1
