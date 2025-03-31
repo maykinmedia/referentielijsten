@@ -57,13 +57,13 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-commonground-api-common==2.5.1
+commonground-api-common==2.5.5
     # via open-api-framework
 coreapi==2.3.3
     # via commonground-api-common
 coreschema==0.0.4
     # via coreapi
-cryptography==43.0.3
+cryptography==44.0.1
     # via
     #   django-simple-certmanager
     #   josepy
@@ -72,7 +72,7 @@ cryptography==43.0.3
     #   webauthn
 diff-match-patch==20230430
     # via django-import-export
-django==4.2.19
+django==4.2.20
     # via
     #   commonground-api-common
     #   django-admin-index
@@ -153,7 +153,7 @@ django-sendfile2==0.7.1
     # via django-privates
 django-sessionprofile==3.0.0
     # via open-api-framework
-django-setup-configuration==0.7.1
+django-setup-configuration==0.7.2
     # via
     #   mozilla-django-oidc-db
     #   open-api-framework
@@ -241,9 +241,9 @@ mozilla-django-oidc-db==0.22.0
     # via
     #   -r requirements/base.in
     #   open-api-framework
-notifications-api-common==0.3.1
+notifications-api-common==0.7.1
     # via commonground-api-common
-open-api-framework==0.9.3
+open-api-framework==0.9.6
     # via -r requirements/base.in
 openpyxl==3.1.5
     # via tablib
@@ -273,7 +273,7 @@ pyjwt==2.8.0
     # via
     #   commonground-api-common
     #   zgw-consumers
-pyopenssl==24.2.1
+pyopenssl==25.0.0
     # via
     #   josepy
     #   webauthn
@@ -344,6 +344,7 @@ typing-extensions==4.12.2
     #   mozilla-django-oidc-db
     #   pydantic
     #   pydantic-core
+    #   pyopenssl
     #   qrcode
     #   zgw-consumers
 tzdata==2024.1
