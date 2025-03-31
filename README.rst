@@ -42,7 +42,11 @@ Versie          Release datum   API specificatie
 ==============  ==============  =============================
 latest          n/a             `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
-                                (`verschillen <https://github.com/maykinmedia/referentielijsten/compare/0.1.0..master#diff-b9c28fec6c3f3fa5cff870d24601d6ab7027520f3b084cc767aefd258cb8c40a>`_)
+                                (`verschillen <https://github.com/maykinmedia/referentielijsten/compare/0.3.0..master#diff-b9c28fec6c3f3fa5cff870d24601d6ab7027520f3b084cc767aefd258cb8c40a>`_)
+0.3.0           2025-03-04      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.3.0/src/referentielijsten/api/openapi.yaml>`_,
+                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.3.0/src/referentielijsten/api/openapi.yaml>`_
+0.2.0           2024-10-04      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.2.0/src/referentielijsten/api/openapi.yaml>`_,
+                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.2.0/src/referentielijsten/api/openapi.yaml>`_
 0.1.0           2024-05-28      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.1.0/src/referentielijsten/api/openapi.yaml>`_
 ==============  ==============  =============================
@@ -81,11 +85,10 @@ Quickstart
 Links
 =====
 
-* `Documentatie <https://TODO>`_
+* `Documentatie <https://referentielijsten-api.readthedocs.io/en/latest/>`_
 * `Docker image <https://hub.docker.com/r/maykinmedia/referentielijsten-api>`_
 * `Issues <https://github.com/maykinmedia/referentielijsten/issues>`_
 * `Code <https://github.com/maykinmedia/referentielijsten>`_
-* `Community <https://TODO>`_
 
 
 Licentie
