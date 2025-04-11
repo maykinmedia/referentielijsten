@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-24 15:13+0000\n"
+"POT-Creation-Date: 2025-03-27 08:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -280,11 +280,3 @@ msgstr "Ongeldige postcode."
 #: referentielijsten/utils/validators.py:32
 msgid "Invalid mobile phonenumber."
 msgstr "Ongeldig mobiel telefoonnumer."
-
-#: conf/base.py:200
-msgid "A page number within the paginated result set."
-msgstr "Een pagina binnen de gepagineerde set resultaten."
-
-#: conf/base.py:201
-msgid "Number of results to return per page."
-msgstr "Het aantal resultaten terug te geven per pagina."
