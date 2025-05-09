@@ -1,10 +1,14 @@
+from django.contrib.admin.sites import AdminSite
 from django.test import override_settings
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 from freezegun import freeze_time
 from rest_framework import status
 from rest_framework.test import APITestCase
 
+from ..admin import TabelAdmin
+from ..models import Tabel
 from .factories import TabelFactory
 
 
@@ -71,3 +75,16 @@ class TabellenApiTests(APITestCase):
         self.assertEqual(response_data["count"], 1)
         self.assertEqual(response_data["results"][0]["code"], "2")
         self.assertEqual(response_data["results"][0]["naam"], "ongeldig")
+
+    def test_items_link_returns_correct_admin_url(self):
+        site = AdminSite()
+        admin = TabelAdmin(Tabel, site)
+        tabel = TabelFactory.create()
+
+        link = admin.items_link(tabel)
+        expected_url = reverse("admin:api_item_changelist") + f"?tabel__id={tabel.id}"
+        expected_html = (
+            f'<a href="{expected_url}">{_("Show items in item list view")}</a>'
+        )
+
+        self.assertHTMLEqual(link, expected_html)
