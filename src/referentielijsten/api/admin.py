@@ -90,6 +90,7 @@ class TabelAdmin(admin.ModelAdmin):
     @admin.display(description=_("Actions"))
     def items_link(self, obj):
         url = (
+            # TODO replace with reverse(..., query=...) once Django is upgraded to 5.2
             reverse("admin:api_item_changelist")
             + "?"
             + urlencode({"tabel__id": obj.id})
