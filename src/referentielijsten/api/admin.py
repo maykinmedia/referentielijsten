@@ -11,6 +11,18 @@ from .admin_list_filters import GeldigListFilter
 from .models import Item, Tabel
 
 
+class ItemInline(admin.StackedInline):
+    model = Item
+    extra = 1
+    fields = (
+        "code",
+        "naam",
+        "begindatum_geldigheid",
+        "einddatum_geldigheid",
+        "aanvullende_gegevens",
+    )
+
+
 class ItemResource(resources.ModelResource):
 
     class Meta:
@@ -51,6 +63,7 @@ class ItemAdmin(ImportExportModelAdmin):
 class TabelAdmin(admin.ModelAdmin):
     list_display = ("naam", "code", "is_geldig")
     list_filter = (GeldigListFilter,)
+    inlines = [ItemInline]
 
     fieldsets = [
         (
