@@ -1,5 +1,9 @@
+from urllib.parse import urlencode
+
 from django.contrib import admin
+from django.urls import reverse
 from django.utils import timezone
+from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
 from import_export import resources
@@ -83,7 +87,7 @@ class ItemAdmin(ImportExportModelAdmin):
 
 @admin.register(Tabel)
 class TabelAdmin(admin.ModelAdmin):
-    list_display = ("naam", "code", "is_geldig")
+    list_display = ("naam", "code", "is_geldig", "items_link")
     list_filter = (GeldigListFilter,)
     inlines = [ItemInline]
 
@@ -117,3 +121,14 @@ class TabelAdmin(admin.ModelAdmin):
             return True
 
         return False
+
+    @admin.display(description=_("Actions"))
+    def items_link(self, obj):
+        url = (
+            reverse("admin:api_item_changelist")
+            + "?"
+            + urlencode({"tabel__id": obj.id})
+        )
+        return format_html(
+            '<a href="{}">{}</a>', url, _("Show items in item list view")
+        )
