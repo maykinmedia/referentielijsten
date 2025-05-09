@@ -48,6 +48,7 @@ class ItemAdmin(ImportExportModelAdmin):
     list_filter = (
         GeldigListFilter,
         ("tabel__naam", filter_title("tabel naam")),
+        ("tabel__code", filter_title("tabel code")),
     )
     fields = (
         "tabel",
@@ -125,9 +126,10 @@ class TabelAdmin(admin.ModelAdmin):
     @admin.display(description=_("Actions"))
     def items_link(self, obj):
         url = (
+            # TODO replace with reverse(..., query=...) once Django is upgraded to 5.2
             reverse("admin:api_item_changelist")
             + "?"
-            + urlencode({"tabel__id": obj.id})
+            + urlencode({"tabel__code": obj.code})
         )
         return format_html(
             '<a href="{}">{}</a>', url, _("Show items in item list view")
