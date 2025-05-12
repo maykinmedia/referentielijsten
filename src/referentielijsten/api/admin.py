@@ -8,8 +8,8 @@ from import_export.admin import ImportExportModelAdmin
 from referentielijsten.utils.admin import filter_title
 
 from .admin_list_filters import GeldigListFilter
+from .forms import ItemConfirmImportForm, ItemImportForm
 from .models import Item, Tabel
-from .forms import ItemImportForm, ItemConfirmImportForm
 
 
 class ItemResource(resources.ModelResource):
