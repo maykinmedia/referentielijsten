@@ -2,6 +2,20 @@
 Change history
 ==============
 
+0.3.2 (2025-05-13)
+------------------
+
+**Project maintenance**
+
+* Upgrade Python dependencies
+
+  * ``jinja2`` to 3.1.6
+  * ``httpcore`` to 1.0.9
+  * ``h11`` to 0.16.0
+
+* Upgrade npm packages to fix vulnerabilities
+
+
 0.3.1 (2025-04-11)
 ------------------
 
