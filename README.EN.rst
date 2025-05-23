@@ -53,7 +53,7 @@ See: `All versions and changes <https://github.com/maykinmedia/referentielijsten
 Developers
 ==========
 
-|build-status| |coverage| |ruff| |docker| |python-versions|
+|build-status| |coverage| |code-style| |codeql| |ruff| |python-versions|
 
 This repository contains the source code for Referentielijsten API. To quickly
 get started, we recommend using the Docker image. You can also build the
@@ -114,12 +114,20 @@ Licensed under the EUPL_
 .. |ruff| image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
     :target: https://github.com/astral-sh/ruff
     :alt: Ruff
+    
+.. |code-style| image:: https://github.com/maykinmedia/referentielijsten/actions/workflows/code-quality.yml/badge.svg?branch=master
+    :alt: Code style
+    :target: https://github.com/maykinmedia/referentielijsten/actions/workflows/code-quality.yml
 
-.. |docker| image:: https://img.shields.io/docker/v/maykinmedia/referentielijsten-api?sort=semver
+.. |codeql| image:: https://github.com/maykinmedia/referentielijsten/actions/workflows/codeql-analysis.yml/badge.svg?branch=master
+    :alt: CodeQL scan
+    :target: https://github.com/maykinmedia/referentielijsten/actions/workflows/codeql-analysis.yml
+
+.. |docker| image:: https://img.shields.io/docker/v/maykinmedia/referentielijsten-api.svg?sort=semver
     :alt: Docker image
     :target: https://hub.docker.com/r/maykinmedia/referentielijsten-api
 
-.. |python-versions| image:: https://img.shields.io/badge/python-3.11%2B-blue.svg
+.. |python-versions| image:: https://img.shields.io/badge/python-3.12%2B-blue.svg
     :alt: Supported Python version
 
 .. |lint-oas| image:: https://github.com/maykinmedia/referentielijsten/workflows/lint-oas/badge.svg

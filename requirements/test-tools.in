@@ -12,7 +12,6 @@ tblib
 vcrpy
 
 # CI tools
-pytest
 codecov
 
 # Code formatting
