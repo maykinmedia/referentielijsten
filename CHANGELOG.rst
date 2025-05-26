@@ -2,6 +2,39 @@
 Change history
 ==============
 
+0.4.0 (2025-05-28)
+------------------
+
+.. warning::
+
+    This release upgrades Django to version 5.2.1, which requires PostgreSQL version 14 or higher.
+    Attempting to deploy with PostgreSQL <14 will cause errors during deployment.
+
+**New features**
+
+* [:referentielijsten:`70`] Simplified CSV/Excel import with table selection and optional fields
+* [:referentielijsten:`72`] Add link to related items in Admin List View
+
+**Project maintenance**
+
+* Upgrade dependencies
+
+  * [:open-api-framework:`140`] Python to 3.12
+  * [:referentielijsten:`82`] Django to 5.2.1
+  * tornado to 6.5.1
+  * open-api-framework to 0.10.1
+  * commonground-api-common to 2.6.4
+  * setuptools to 80.8.0
+
+* Replace OAS GitHub actions workflows with single workflow
+* [:open-api-framework:`132`] Remove ``pytest`` and ``check_sphinx.py``, replace with simpler commands
+* [:open-api-framework:`133`] Replace ``black``, ``isort`` and ``flake8`` with ``ruff`` and update code-quality workflow
+
+**Bugfixes**
+
+* Do not use ``save_outgoing_requests`` log handler if ``LOG_REQUESTS`` is set to false
+
+
 0.3.2 (2025-05-13)
 ------------------
 
