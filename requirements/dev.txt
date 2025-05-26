@@ -138,7 +138,7 @@ codecov==2.1.13
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-commonground-api-common==2.5.5
+commonground-api-common==2.6.4
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -488,17 +488,7 @@ inflection==0.5.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   drf-spectacular
-iniconfig==2.0.0
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   pytest
-iso-639==0.4.5
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   commonground-api-common
-isodate==0.6.1
+iso639-lang==2.6.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -575,7 +565,7 @@ notifications-api-common==0.7.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.9.6
+open-api-framework==0.10.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -598,7 +588,6 @@ packaging==24.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   build
-    #   pytest
     #   sphinx
 phonenumberslite==8.13.42
     # via
@@ -611,11 +600,6 @@ pip-tools==7.4.1
     # via -r requirements/dev.in
 platformdirs==4.3.8
     # via virtualenv
-pluggy==1.5.0
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   pytest
 pre-commit==4.2.0
     # via -r requirements/dev.in
 prometheus-client==0.20.0
@@ -685,10 +669,6 @@ pyproject-hooks==1.1.0
     #   build
     #   pip-tools
 pyquery==2.0.0
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-pytest==8.3.3
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -801,7 +781,6 @@ six==1.16.0
     #   -r requirements/ci.txt
     #   bleach
     #   furl
-    #   isodate
     #   orderedmultidict
     #   python-dateutil
 smmap==5.0.1
