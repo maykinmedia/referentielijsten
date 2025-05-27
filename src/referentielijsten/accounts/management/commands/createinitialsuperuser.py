@@ -9,6 +9,7 @@ from django.contrib.auth.management.commands.createsuperuser import (
 )
 from django.core.mail import send_mail
 from django.urls import reverse
+from django.utils.crypto import get_random_string
 
 PASSWORD_FROM_ENV_SUPPORTED = django.VERSION[:2] > (2, 2)
 
@@ -67,7 +68,7 @@ class Command(BaseCommand):
         user = qs.get()
 
         if not password and options["generate_password"]:
-            options["password"] = self.UserModel.objects.make_random_password(length=20)
+            options["password"] = get_random_string(length=20)
 
         if options["password"] or not PASSWORD_FROM_ENV_SUPPORTED:
             self.stdout.write("Setting user password...")
