@@ -31,11 +31,17 @@ asgiref==3.8.1
     #   django
     #   django-axes
     #   django-cors-headers
+    #   django-structlog
 asn1crypto==1.5.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   webauthn
+async-timeout==5.0.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   redis
 attrs==23.2.0
     # via
     #   -c requirements/ci.txt
@@ -208,6 +214,7 @@ django==5.2.1
     #   django-setup-configuration
     #   django-simple-certmanager
     #   django-solo
+    #   django-structlog
     #   django-two-factor-auth
     #   django-upgrade-check
     #   djangorestframework
@@ -265,6 +272,11 @@ django-import-export==4.1.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+django-ipware==7.0.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-structlog
 django-jsonform==2.22.0
     # via
     #   -c requirements/ci.txt
@@ -345,6 +357,10 @@ django-solo==2.3.0
     #   mozilla-django-oidc-db
     #   notifications-api-common
     #   zgw-consumers
+django-structlog==9.1.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 django-two-factor-auth==1.16.0
     # via
     #   -c requirements/ci.txt
@@ -424,6 +440,8 @@ et-xmlfile==1.1.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   openpyxl
+exceptiongroup==1.3.0
+    # via anyio
 face==20.1.1
     # via
     #   -c requirements/ci.txt
@@ -697,6 +715,11 @@ python-dotenv==1.0.1
     #   -r requirements/ci.txt
     #   open-api-framework
     #   pydantic-settings
+python-ipware==3.0.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-ipware
 pytz==2024.1
     # via
     #   -c requirements/ci.txt
@@ -859,6 +882,11 @@ sqlparse==0.5.1
     #   -r requirements/ci.txt
     #   django
     #   django-debug-toolbar
+structlog==25.4.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   django-structlog
 tablib==3.5.0
     # via
     #   -c requirements/ci.txt
@@ -868,6 +896,13 @@ tblib==3.0.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+tomli==2.2.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   build
+    #   pip-tools
+    #   sphinx
 tomlkit==0.13.2
     # via bump-my-version
 tornado==6.5.1
@@ -880,12 +915,17 @@ typing-extensions==4.12.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   anyio
+    #   asgiref
+    #   django-solo
+    #   exceptiongroup
     #   mozilla-django-oidc-db
     #   pydantic
     #   pydantic-core
     #   pyopenssl
     #   qrcode
+    #   rich
     #   rich-click
+    #   structlog
     #   zgw-consumers
 tzdata==2024.1
     # via
