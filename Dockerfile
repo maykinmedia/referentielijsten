@@ -12,6 +12,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
         build-essential \
         # only relevant when using editable/github dependencies, which is discouraged
         libpq-dev \
+        # required for (log) routing support in uwsgi
+        libpcre3 \
+        libpcre3-dev \
         shared-mime-info \
     && rm -rf /var/lib/apt/lists/*
 
@@ -57,6 +60,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
         mime-support \
         postgresql-client \
         gettext \
+        libpcre3 \
         shared-mime-info \
         # lxml deps
         # libxslt \
@@ -75,6 +79,7 @@ COPY ./bin/docker_start.sh /start.sh
 COPY ./bin/wait_for_db.sh /wait_for_db.sh
 COPY ./bin/load_fixtures.sh /load_fixtures.sh
 COPY ./bin/setup_configuration.sh /setup_configuration.sh
+COPY ./bin/uwsgi.ini /
 RUN mkdir /app/bin /app/log /app/media
 
 VOLUME ["/app/log", "/app/media"]
