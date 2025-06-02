@@ -1,4 +1,4 @@
-import logging
+import logging  # noqa: TID251 - correct use to replace stdlib logging
 
 from decouple import Csv, config as _config, undefined
 

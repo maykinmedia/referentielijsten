@@ -10,7 +10,7 @@ they are available for Django settings initialization.
     before Django is initialized.
 """
 
-import logging
+import logging  # noqa: TID251 - correct use to replace stdlib logging
 import os
 from pathlib import Path
 
