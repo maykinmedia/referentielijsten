@@ -76,8 +76,7 @@ select = [
     "B010",
     # https://docs.astral.sh/ruff/rules/#pep8-naming-n
     "N",
-    "TID251",# tidy-imports
-    "TID253",
+    "TID251",
 ]
 
 ignore = [
@@ -143,3 +142,6 @@ section-order = [
 
 [tool.ruff.format]
 line-ending = "lf"
+
+[lint.flake8-tidy-imports.banned-api]
+"logging".msg = "Use `structlog.stdlib.get_logger(__name__)` instead of the stdlib logging module."
