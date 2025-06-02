@@ -10,15 +10,15 @@ they are available for Django settings initialization.
     before Django is initialized.
 """
 
-import logging  # noqa: TID251 - correct use to replace stdlib logging
 import os
 from pathlib import Path
 
 from django.conf import settings
 
+import structlog
 from dotenv import load_dotenv
 
-logger = logging.getLogger(__name__)
+logger = structlog.stdlib.get_logger(__name__)
 
 
 def setup_env():
