@@ -10,21 +10,23 @@ they are available for Django settings initialization.
     before Django is initialized.
 """
 
-import logging
 import os
 from pathlib import Path
 
 from django.conf import settings
 
+import structlog
 from dotenv import load_dotenv
 
-logger = logging.getLogger(__name__)
+logger = structlog.stdlib.get_logger(__name__)
 
 
 def setup_env():
     # load the environment variables containing the secrets/config
     dotenv_path = Path(__file__).resolve().parent.parent.parent / ".env"
     load_dotenv(dotenv_path)
+
+    structlog.contextvars.bind_contextvars(source="app")
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "referentielijsten.conf.dev")
 
