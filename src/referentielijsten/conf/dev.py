@@ -31,6 +31,11 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGGING["loggers"].update(
     {
+        "referentielijsten.api.signals": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
         "referentielijsten": {
             "handlers": ["console"],
             "level": "DEBUG",
