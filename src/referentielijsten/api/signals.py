@@ -5,7 +5,7 @@ import structlog
 
 from .models import Item, Tabel
 
-logger = structlog.get_logger()
+logger = structlog.get_logger(__name__)
 
 
 @receiver(post_save, sender=Tabel)
