@@ -3,7 +3,14 @@ Generic admin styling overrides.
 
 DO NOT PUT ANY TARGET APP-SPECIFIC RULES HERE.
 */
+@use './themes/dark' as dark-theme;
+@use './themes/light' as light-theme;
+
 @import "./vars";
+
+@include light-theme.styles;
+@include dark-theme.styles;
+
 
 // override django CSS variables
 // see admin/static/admin/css/base.css for a reference
@@ -55,6 +62,7 @@ body {
  * Branding
  */
 #branding h1 {
+
   a:link,
   a:visited {
     font-weight: bold;
@@ -74,7 +82,7 @@ body {
 #user-tools button {
   border-bottom: none;
   text-decoration: underline;
-  
+
   &:focus,
   &:hover {
     color: var(--header-link-color);
@@ -84,6 +92,7 @@ body {
 
 div.breadcrumbs {
   a {
+
     &:focus,
     &:hover {
       color: $color-darkest;
@@ -93,6 +102,7 @@ div.breadcrumbs {
 
 /* Important is used because Django templates include their own style, after ours */
 #changelist-filter {
+
   a:focus,
   a:hover {
     color: var(--link-fg) !important;
@@ -118,7 +128,9 @@ div.breadcrumbs {
 .calendar td,
 .timelist {
   a {
-    &:focus, &:hover {
+
+    &:focus,
+    &:hover {
       background: $color-primary-dark !important;
     }
   }
@@ -131,22 +143,63 @@ div.breadcrumbs {
   font-weight: bold !important;
 }
 
+
+@mixin icon-override($iconUrl) {
+  background: none;
+  // display: inline-flex;
+  // align-items: center;
+  // padding-left: 0;
+  color: var(--body-fg);
+  position: relative;
+
+  // need to use pseudo element, otherwise the text in the same element is not visible
+  // because of the mask clipping
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    background: var(--body-fg) !important;
+    color: var(--body-fg);
+    mask-image: url($iconUrl);
+    mask-repeat: no-repeat;
+    mask-size: 14px 14px;
+    mask-position: 0px 0px;
+  }
+}
+
 /* Icons */
 .addlink {
-  background: url("../img/admin/plus-square-regular.svg") 0 0/14px 14px no-repeat;
+  @include icon-override('../img/admin/plus-square-regular.svg');
 }
+
+.object-tools a.addlink {
+  &:before {
+    display: none;
+  }
+}
+
 .changelink,
 .inlinechangelink {
-  background: url("../img/admin/edit-regular.svg") 0 0/14px 14px no-repeat;
+  @include icon-override('../img/admin/edit-regular.svg');
 }
+
 .deletelink {
-  background: url("../img/admin/trash-alt-regular.svg") 0 0/14px 14px no-repeat;
+  background: url('../img/admin/trash-alt-regular.svg') 0 0/14px 14px no-repeat;
 }
+
 .datetimeshortcuts .clock-icon {
-  background: url("../img/admin/clock-regular.svg") 0 0/14px 14px no-repeat !important;
+  @include icon-override('../img/admin/clock-regular.svg');
+  background: none !important;
 }
+
 .datetimeshortcuts .date-icon {
-  background: url("../img/admin/calendar-alt-regular.svg") 0 0/14px 14px no-repeat !important;
+  @include icon-override('../img/admin/calendar-alt-regular.svg');
+  background: none !important;
 }
 
 /**
@@ -177,7 +230,7 @@ div.help {
   position: relative; // provides an anchor for the nested div absolute positioning
 
   // the actual content is nested in a div, so we can easily hide it by default
-  > div {
+  >div {
     display: none;
   }
 
@@ -185,7 +238,7 @@ div.help {
   &:hover {
     background-image: none;
 
-    > div {
+    >div {
       display: block;
       position: absolute;
       top: 1px;
@@ -243,12 +296,12 @@ div.help:not(:has(div)) {
   overflow: visible;
 }
 
-div:has(> div.help ) {
+div:has(> div.help) {
   display: flex;
 }
 
 
-.related-widget-wrapper ~ div.help {
+.related-widget-wrapper~div.help {
   margin-top: 8px !important;
 
   &:hover {
@@ -257,21 +310,23 @@ div:has(> div.help ) {
 }
 
 /* Overrides default Django CSS */
-.aligned label + p,
-.aligned label + div.readonly {
+.aligned label+p,
+.aligned label+div.readonly {
   display: inline-block;
   margin-left: inherit !important;
 }
-.aligned label + div.help {
+
+.aligned label+div.help {
   margin-left: 2px !important;
 }
-div:has(> div.help ) {
+
+div:has(> div.help) {
   display: flex;
 }
 
 /* Additional components seem to need the same behaviour */
 /* TODO: TinyMCE is different... */
-.aligned label + ul {
+.aligned label+ul {
   display: inline-block;
   margin-left: inherit !important;
 }
