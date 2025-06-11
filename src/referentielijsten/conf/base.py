@@ -240,7 +240,7 @@ LOGGING = {
         PROJECT_DIRNAME: {
             "handlers": logging_root_handlers,
             "level": LOG_LEVEL,
-            "propagate": True,
+            "propagate": False,
         },
         "mozilla_django_oidc": {
             "handlers": logging_root_handlers,
