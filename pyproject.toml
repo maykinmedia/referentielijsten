@@ -1,3 +1,49 @@
+[project]
+requires-python = "== 3.12"
+
+# Bumpversion configuration
+
+[tool.bumpversion]
+current_version = "0.4.0"
+commit = false
+tag = false
+pre_commit_hooks = [
+    "npm i",  # ensure that package-lock.json is updated
+]
+parse = '''
+(?P<major>\d+)\.(?P<minor>\d+)\.(?P<patch>\d+)
+(\-(?P<pre>[a-z]+)\.(?P<build>\d+))?
+'''
+
+serialize = [
+    "{major}.{minor}.{patch}-{pre}.{build}",
+    "{major}.{minor}.{patch}"
+]
+
+[tool.bumpversion.part.pre]
+first_value = "alpha"
+values = ["alpha", "beta", "rc"]
+
+[[tool.bumpversion.files]]
+filename = "src/referentielijsten/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "README.rst"
+search = ":Version: {current_version}"
+replace = ":Version: {new_version}"
+
+[[tool.bumpversion.files]]
+filename = "README.EN.rst"
+search = ":Version: {current_version}"
+replace = ":Version: {new_version}"
+
+[[tool.bumpversion.files]]
+filename = "package.json"
+search = "\"version\": \"{current_version}\""
+replace = "\"version\": \"{new_version}\""
+
+# Ruff configuration
+[tool.ruff]
 # Exclude folders and files
 exclude = [
     "migrations",
@@ -11,7 +57,7 @@ indent-width = 4
 
 target-version = "py312"
 
-[lint]
+[tool.ruff.lint]
 select = [
     # https://docs.astral.sh/ruff/rules/#isort-i
     "I",
@@ -30,6 +76,8 @@ select = [
     "B010",
     # https://docs.astral.sh/ruff/rules/#pep8-naming-n
     "N",
+    "TID251",# tidy-imports
+    "TID253",
 ]
 
 ignore = [
@@ -77,9 +125,7 @@ ignore = [
     "SIM117",
 ]
 
-
-# Import sorting configuration (equivalent to isort)
-[lint.isort]
+[tool.ruff.lint.isort]
 combine-as-imports = true
 force-wrap-aliases = false
 known-first-party = ["referentielijsten"]
@@ -95,6 +141,5 @@ section-order = [
     "local-folder",
 ]
 
-
-[format]
+[tool.ruff.format]
 line-ending = "lf"
