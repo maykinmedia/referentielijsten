@@ -21,7 +21,7 @@ services:
 
   web:
     build: .
-    image: maykinmedia/referentielijsten-api:latest
+    # image: maykinmedia/referentielijsten-api:latest
     environment: &app-env
       DJANGO_SETTINGS_MODULE: referentielijsten.conf.docker
       SECRET_KEY: ${SECRET_KEY:-django-insecure-4foe-_dk9x=88*0sljyo1_ga!!nj*x8ye6u0p(@871e)zg^+q}
