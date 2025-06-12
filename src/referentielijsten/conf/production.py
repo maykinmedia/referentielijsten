@@ -36,12 +36,12 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesSto
 LOGGING["loggers"].update(
     {
         "django": {
-            "handlers": logging_django_handlers,
+            "handlers": logging_root_handlers,
             "level": "INFO",
-            "propagate": True,
+            "propagate": False,
         },
         "django.security.DisallowedHost": {
-            "handlers": logging_django_handlers,
+            "handlers": logging_root_handlers,
             "level": "CRITICAL",
             "propagate": False,
         },

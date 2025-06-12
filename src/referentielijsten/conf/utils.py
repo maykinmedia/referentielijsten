@@ -1,8 +1,7 @@
-import logging
-
+import structlog
 from decouple import Csv, config as _config, undefined
 
-logger = logging.getLogger(__name__)
+logger = structlog.get_logger()
 
 
 def config(option: str, default=undefined, *args, **kwargs):
