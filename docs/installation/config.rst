@@ -103,7 +103,6 @@ Optional
 * ``SITE_DOMAIN``: Defines the primary domain where the application is hosted. Defaults to: ``(empty string)``.
 * ``SENTRY_DSN``: URL of the sentry project to send error reports to. Default empty, i.e. -> no monitoring set up. Highly recommended to configure this.
 * ``DISABLE_2FA``: Whether or not two factor authentication should be disabled. Defaults to: ``False``.
-* ``LOG_OUTGOING_REQUESTS``:  Defaults to: ``True``.
 
 
 

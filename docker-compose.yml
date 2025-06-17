@@ -33,7 +33,6 @@ services:
       SUBPATH: ${SUBPATH:-/}
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
       DISABLE_2FA: ${DISABLE_2FA:-True}
-      LOG_NOTIFICATIONS_IN_DB: ${LOG_NOTIFICATIONS_IN_DB:-yes}
       # Only allow all hosts for development/testing purposes!
       ALLOWED_HOSTS: '*'
     ports:

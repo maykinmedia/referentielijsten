@@ -81,23 +81,6 @@ SETUP_CONFIGURATION_STEPS = (
     "mozilla_django_oidc_db.setup_configuration.steps.AdminOIDCConfigurationStep",
 )
 
-LOG_STDOUT = config(
-    "LOG_STDOUT",
-    default=True,
-    help_text="whether to log to stdout or not",
-    group="Logging",
-)
-LOG_OUTGOING_REQUESTS = config("LOG_OUTGOING_REQUESTS", default=True)
-LOG_LEVEL = config(
-    "LOG_LEVEL",
-    default="INFO",
-    help_text=(
-        "control the verbosity of logging output. "
-        "Available values are ``CRITICAL``, ``ERROR``, ``WARNING``, ``INFO`` and ``DEBUG``"
-    ),
-    group="Logging",
-)
-
 # XXX: this should be renamed to `LOG_REQUESTS` in the next major release
 _log_requests_via_middleware = config(
     "ENABLE_STRUCTLOG_REQUESTS",
@@ -322,4 +305,3 @@ structlog.configure(
 # DJANGO-STRUCTLOG
 #
 DJANGO_STRUCTLOG_IP_LOGGING_ENABLED = False
-DJANGO_STRUCTLOG_CELERY_ENABLED = True
