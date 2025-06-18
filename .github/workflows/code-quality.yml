@@ -5,11 +5,7 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "ruff.toml"
   pull_request:
-    paths:
-      - "ruff.toml"
   workflow_dispatch:
 
 jobs:
