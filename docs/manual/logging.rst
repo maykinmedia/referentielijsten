@@ -27,7 +27,7 @@ Each log line will contain an ``event`` type, a ``timestamp`` and a ``level``.
 Dependent on your configured ``LOG_LEVEL`` (see :ref:`installation_env_config` for more information),
 only log lines with of that level or higher will be emitted.
 
-REFERENTIELIJSTEN log events
+Referentielijsten log events
 ----------------------------
 
 Below is the list of logging ``event`` types that referentielijsten can emit. In addition to the mentioned
@@ -36,8 +36,6 @@ context variables, these events will also have the **request bound metadata** de
 API
 ~~~
 
-* ``referentielijsten_request_failure``: a request to the referentielijsten API has failed. Additional context: ``exc_info``.
-* ``search_failed_for_datastore``: attempted to perform ``jsonpath`` search for a backend that does not support this operation. Additional context: ``exc_info``.
 * ``tabel_created``: created an ``Tabel`` via the API. Additional context: ``id``, ``code``, ``naam``.
 * ``tabel_updated``: updated an ``Tabel`` via the API. Additional context: ``id``, ``code``, ``naam``.
 * ``item_created``: created an ``Item`` via the API. Additional context: ``id``, ``code``, ``naam``.
