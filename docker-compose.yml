@@ -11,9 +11,13 @@ services:
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - ./docker-init-db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    networks:
+      - referentielijsten-dev
 
   redis:
     image: redis
+    networks:
+      - referentielijsten-dev
 
   web:
     build: .
@@ -27,6 +31,7 @@ services:
       CACHE_DEFAULT: redis:6379/0
       CACHE_AXES: redis:6379/0
       SUBPATH: ${SUBPATH:-/}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
       DISABLE_2FA: ${DISABLE_2FA:-True}
       # Only allow all hosts for development/testing purposes!
       ALLOWED_HOSTS: '*'
@@ -38,6 +43,11 @@ services:
     depends_on:
       web-init:
         condition: service_completed_successfully
+    labels:
+      - app=referentielijsten
+      - service=api
+    networks:
+      - referentielijsten-dev
 
   web-init:
     build: .
@@ -51,7 +61,13 @@ services:
       - db
       - redis
     volumes: *app-volumes
+    networks:
+      - referentielijsten-dev
 
 volumes:
   media:
   db:
+
+networks:
+  referentielijsten-dev:
+    name: referentielijsten-dev

@@ -3,3 +3,5 @@ open-api-framework
 django-import-export[xlsx]
 
 mozilla-django-oidc-db[setup_configuration]
+
+django-structlog

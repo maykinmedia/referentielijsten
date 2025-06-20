@@ -17,6 +17,9 @@ import referentielijsten  # noqa isort:skip
 
 from referentielijsten.setup import setup_env  # noqa isort:skip
 
+# Import as private variable to avoid errors on build
+from importlib.metadata import version as _version
+
 setup_env()
 django.setup()
 
@@ -50,6 +53,7 @@ extensions = [
     # "sphinx_markdown_tables",
     "sphinx.ext.extlinks",
     "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
     "django_setup_configuration.documentation.setup_config_example",
     "django_setup_configuration.documentation.setup_config_usage",
 ]
@@ -109,5 +113,13 @@ extlinks = {
     "open-api-framework": (
         "https://github.com/maykinmedia/open-api-framework/issues/%s",
         "#%s",
+    ),
+}
+
+django_structlog_version = _version("django-structlog")
+intersphinx_mapping = {
+    "django-structlog": (
+        f"https://django-structlog.readthedocs.io/en/{django_structlog_version}",
+        None,
     ),
 }
