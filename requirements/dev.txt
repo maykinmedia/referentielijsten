@@ -180,7 +180,7 @@ diff-match-patch==20230430
     #   django-import-export
 distlib==0.3.9
     # via virtualenv
-django==5.2.1
+django==5.2.3
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -582,7 +582,7 @@ notifications-api-common==0.7.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.10.3
+open-api-framework==0.11.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -630,11 +630,16 @@ prompt-toolkit==3.0.47
     #   -r requirements/ci.txt
     #   click-repl
     #   questionary
-psycopg2==2.9.9
+psycopg==3.2.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
+psycopg-binary==3.2.9
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   psycopg
 pycparser==2.22
     # via
     #   -c requirements/ci.txt
@@ -745,7 +750,7 @@ referencing==0.35.1
     #   -r requirements/ci.txt
     #   jsonschema
     #   jsonschema-specifications
-requests==2.32.3
+requests==2.32.4
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -902,6 +907,7 @@ typing-extensions==4.12.2
     #   -r requirements/ci.txt
     #   anyio
     #   mozilla-django-oidc-db
+    #   psycopg
     #   pydantic
     #   pydantic-core
     #   pyopenssl
@@ -919,19 +925,20 @@ uritemplate==4.1.1
     #   -r requirements/ci.txt
     #   coreapi
     #   drf-spectacular
-urllib3==2.2.2
+urllib3==2.5.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   elastic-apm
     #   requests
     #   sentry-sdk
+    #   vcrpy
 uwsgi==2.0.26
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
-vcrpy==6.0.1
+vcrpy==7.0.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt

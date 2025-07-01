@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 12:04+0000\n"
+"POT-Creation-Date: 2025-07-02 15:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,14 +94,22 @@ msgstr ""
 msgid "You cannot create or update a user with more permissions than yourself."
 msgstr "U kunt een gebruiker niet meer rechten geven dan u zelf heeft."
 
-#: referentielijsten/api/admin.py:38 referentielijsten/api/admin.py:79
+#: referentielijsten/api/admin.py:65 referentielijsten/api/admin.py:119
 #: referentielijsten/api/admin_list_filters.py:6
 msgid "Is geldig"
 msgstr ""
 
-#: referentielijsten/api/admin.py:67
+#: referentielijsten/api/admin.py:107
 msgid "Beheerder"
 msgstr ""
+
+#: referentielijsten/api/admin.py:126
+msgid "Actions"
+msgstr "Acties"
+
+#: referentielijsten/api/admin.py:135
+msgid "Show items in item list view"
+msgstr "Toon items in item lijstweergave"
 
 #: referentielijsten/api/filterset.py:10
 msgid "De waarde van de `code` van een specifieke `tabel`."
@@ -119,6 +127,12 @@ msgstr ""
 
 #: referentielijsten/api/filterset.py:37
 msgid "De waarde van de `tabel__code` die gelinkt is aan de items."
+msgstr ""
+
+#: referentielijsten/api/forms.py:15
+msgid ""
+"Selecteer een tabel voor alle geïmporteerde items. Als je hier een tabel "
+"selecteert, wordt een eventuele 'table_id' in het bestand genegeerd."
 msgstr ""
 
 #: referentielijsten/api/models.py:11 referentielijsten/api/models.py:85
@@ -227,19 +241,19 @@ msgstr ""
 msgid "Administration"
 msgstr "Beheer"
 
-#: referentielijsten/templates/admin/base_site.html:34
+#: referentielijsten/templates/admin/base_site.html:38
 msgid "View site"
 msgstr "Website bekijken"
 
-#: referentielijsten/templates/admin/base_site.html:40
+#: referentielijsten/templates/admin/base_site.html:44
 msgid "Account security"
 msgstr "Accountbeveiliging"
 
-#: referentielijsten/templates/admin/base_site.html:43
+#: referentielijsten/templates/admin/base_site.html:47
 msgid "Change password"
 msgstr "Wachtwoord wijzigen"
 
-#: referentielijsten/templates/admin/base_site.html:45
+#: referentielijsten/templates/admin/base_site.html:51
 msgid "Log out"
 msgstr "Afmelden"
 
