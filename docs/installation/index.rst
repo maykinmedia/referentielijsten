@@ -14,5 +14,6 @@ this.
    :maxdepth: 1
    :caption: Further reading
 
+   prerequisites
    config
    setup_configuration
