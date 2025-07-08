@@ -582,7 +582,7 @@ notifications-api-common==0.7.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.10.3
+open-api-framework==0.11.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -630,11 +630,16 @@ prompt-toolkit==3.0.47
     #   -r requirements/ci.txt
     #   click-repl
     #   questionary
-psycopg2==2.9.9
+psycopg==3.2.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
+psycopg-binary==3.2.9
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   psycopg
 pycparser==2.22
     # via
     #   -c requirements/ci.txt
@@ -902,6 +907,7 @@ typing-extensions==4.12.2
     #   -r requirements/ci.txt
     #   anyio
     #   mozilla-django-oidc-db
+    #   psycopg
     #   pydantic
     #   pydantic-core
     #   pyopenssl
