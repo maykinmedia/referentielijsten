@@ -73,7 +73,7 @@ cryptography==44.0.1
     #   webauthn
 diff-match-patch==20230430
     # via django-import-export
-django==5.2.1
+django==5.2.3
     # via
     #   commonground-api-common
     #   django-admin-index
@@ -250,7 +250,7 @@ mozilla-django-oidc-db==0.22.0
     #   open-api-framework
 notifications-api-common==0.7.1
     # via commonground-api-common
-open-api-framework==0.10.3
+open-api-framework==0.11.0
     # via -r requirements/base.in
 openpyxl==3.1.5
     # via tablib
@@ -264,8 +264,10 @@ prometheus-client==0.20.0
     # via flower
 prompt-toolkit==3.0.47
     # via click-repl
-psycopg2==2.9.9
+psycopg==3.2.9
     # via open-api-framework
+psycopg-binary==3.2.9
+    # via psycopg
 pycparser==2.22
     # via cffi
 pydantic==2.10.5
@@ -313,7 +315,7 @@ referencing==0.35.1
     # via
     #   jsonschema
     #   jsonschema-specifications
-requests==2.32.3
+requests==2.32.4
     # via
     #   ape-pie
     #   commonground-api-common
@@ -354,6 +356,7 @@ tornado==6.5.1
 typing-extensions==4.12.2
     # via
     #   mozilla-django-oidc-db
+    #   psycopg
     #   pydantic
     #   pydantic-core
     #   pyopenssl
@@ -365,7 +368,7 @@ uritemplate==4.1.1
     # via
     #   coreapi
     #   drf-spectacular
-urllib3==2.2.2
+urllib3==2.5.0
     # via
     #   elastic-apm
     #   requests

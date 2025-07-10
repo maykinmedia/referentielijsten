@@ -2,6 +2,37 @@
 Change history
 ==============
 
+0.5.0 (2025-07-10)
+------------------
+
+.. warning::
+
+    The logging format has been changed from unstructured to structured with `structlog <https://www.structlog.org/en/stable/>`_.
+    For more information on the available log events and their context, see :ref:`manual_logging`.
+
+**New features**
+
+    * [:referentielijsten:`88`] Add structlog for observability
+
+**Project maintenance**
+
+    * [:open-api-framework:`139`] Integrate django-upgrade-check for easier Django upgrades and compatibility.
+    * [:open-api-framework:`151`] Configure pyproject.toml, moving ruff and bump-my-version configs for cleaner setup.
+
+* Upgrade dependencies
+
+    * Django to 5.2.3
+    * open-api-framework to 0.11.0
+    * requests to 2.32.4
+    * urllib3 to 2.5.0
+    * uwsgi to 2.0.26
+    * vcrpy to 7.0.0
+
+**Bugfixes**
+
+* [:referentielijsten:`89`] Fix dark/light theme in the Django Admin interface.
+
+
 0.4.0 (2025-05-28)
 ------------------
 
