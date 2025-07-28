@@ -2,7 +2,7 @@
 Referentielijsten API
 =====================
 
-:Version: 0.5.0
+:Version: 0.5.1
 :Source: https://github.com/maykinmedia/referentielijsten
 :Keywords: referentielijsten, stamtabellen
 

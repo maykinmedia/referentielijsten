@@ -2,6 +2,29 @@
 Change history
 ==============
 
+0.5.1 (2025-09-08)
+------------------
+
+.. warning::
+     The default number of `UWSGI_THREADS` has been changed to 4.
+
+**Project maintenance**
+
+    * [:open-api-framework:`159`] Refactor code to make use of commonground.
+
+    * [:open-api-framework:`85`] Set UWSGI_THREADS to 4 for improved concurrency.
+
+**Documentation**
+
+     * [:open-api-framework:`159`] Add model image docs creation.
+
+* Upgrade dependencies
+
+    * open-api-framework to 0.12.0
+    * zgw-consumers to 1.0.0
+    * django-privates to 3.1.1
+    * commonground-api-common to 2.9.0
+
 0.5.0 (2025-07-10)
 ------------------
 
