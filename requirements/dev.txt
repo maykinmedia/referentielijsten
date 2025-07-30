@@ -428,7 +428,7 @@ multidict==6.0.5
     #   yarl
 nodeenv==1.9.1
     # via pre-commit
-open-api-framework @ git+https://github.com/maykinmedia/open-api-framework.git@514d9f7e910b3ba0df36ae351605376617a64e59
+open-api-framework==0.11.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
