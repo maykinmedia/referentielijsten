@@ -2,7 +2,7 @@
 #    ./bin/compile_dependencies.sh
 alabaster==0.7.16
     # via sphinx
-amqp==5.2.0
+amqp==5.3.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -43,12 +43,12 @@ babel==2.16.0
     # via sphinx
 beautifulsoup4==4.12.3
     # via webtest
-billiard==4.2.0
+billiard==4.2.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   celery
-bleach==6.1.0
+bleach==6.2.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -64,7 +64,7 @@ cbor2==5.6.4
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   webauthn
-celery==5.4.0
+celery==5.5.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -88,7 +88,7 @@ charset-normalizer==3.3.2
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   requests
-click==8.1.7
+click==8.2.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -102,7 +102,7 @@ click-didyoumean==0.3.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   celery
-click-plugins==1.1.1
+click-plugins==1.1.1.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -114,21 +114,11 @@ click-repl==0.3.0
     #   celery
 codecov==2.1.13
     # via -r requirements/test-tools.in
-commonground-api-common==2.6.4
+commonground-api-common==2.8.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   open-api-framework
-coreapi==2.3.3
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   commonground-api-common
-coreschema==0.0.4
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   coreapi
 coverage==7.6.0
     # via
     #   -r requirements/test-tools.in
@@ -180,6 +170,7 @@ django==5.2.3
     #   django-two-factor-auth
     #   django-upgrade-check
     #   djangorestframework
+    #   djangorestframework-gis
     #   djangorestframework-inclusions
     #   drf-nested-routers
     #   drf-spectacular
@@ -205,12 +196,12 @@ django-axes==6.5.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   open-api-framework
-django-cors-headers==4.4.0
+django-cors-headers==4.7.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   open-api-framework
-django-csp==3.8
+django-csp==4.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -220,6 +211,7 @@ django-filter==24.2
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   commonground-api-common
+    #   djangorestframework-gis
     #   open-api-framework
 django-formtools==2.5.1
     # via
@@ -246,7 +238,7 @@ django-log-outgoing-requests==0.6.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   open-api-framework
-django-markup==1.8.1
+django-markup==1.10
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -271,7 +263,7 @@ django-privates==3.1.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-simple-certmanager
-django-redis==5.4.0
+django-redis==6.0.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -348,7 +340,7 @@ djangorestframework-camel-case==1.4.2
     #   -r requirements/base.txt
     #   commonground-api-common
     #   notifications-api-common
-djangorestframework-gis==1.0
+djangorestframework-gis==1.2.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -365,7 +357,7 @@ docutils==0.21.2
     #   django-setup-configuration
     #   sphinx
     #   sphinx-rtd-theme
-drf-nested-routers==0.94.1
+drf-nested-routers==0.94.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -422,7 +414,7 @@ glom==23.5.0
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   mozilla-django-oidc-db
-humanize==4.10.0
+humanize==4.12.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -440,22 +432,13 @@ inflection==0.5.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   drf-spectacular
-iso639-lang==2.6.0
+iso639-lang==2.6.3
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   commonground-api-common
-itypes==1.2.0
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   coreapi
 jinja2==3.1.6
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   coreschema
-    #   sphinx
+    # via sphinx
 josepy==1.14.0
     # via
     #   -c requirements/base.txt
@@ -471,7 +454,7 @@ jsonschema-specifications==2023.12.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   jsonschema
-kombu==5.3.7
+kombu==5.5.4
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -479,10 +462,7 @@ kombu==5.3.7
 lxml==5.2.2
     # via pyquery
 markupsafe==2.1.5
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   jinja2
+    # via jinja2
 maykin-2fa==1.0.1
     # via
     #   -c requirements/base.txt
@@ -500,11 +480,6 @@ mozilla-django-oidc-db==0.22.0
     #   open-api-framework
 multidict==6.0.5
     # via yarl
-notifications-api-common==0.7.1
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   commonground-api-common
 open-api-framework==0.11.0
     # via
     #   -c requirements/base.txt
@@ -523,19 +498,24 @@ oyaml==1.0
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   commonground-api-common
-packaging==24.1
-    # via sphinx
+packaging==25.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-csp
+    #   kombu
+    #   sphinx
 phonenumberslite==8.13.42
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-two-factor-auth
-prometheus-client==0.20.0
+prometheus-client==0.22.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   flower
-prompt-toolkit==3.0.47
+prompt-toolkit==3.0.51
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -573,7 +553,7 @@ pydantic-settings==2.7.1
     #   django-setup-configuration
 pygments==2.18.0
     # via sphinx
-pyjwt==2.8.0
+pyjwt==2.10.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -616,7 +596,7 @@ python-ipware==3.0.0
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-ipware
-pytz==2024.1
+pytz==2025.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -634,7 +614,7 @@ qrcode==7.4.2
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-two-factor-auth
-redis==5.0.8
+redis==6.2.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -652,7 +632,6 @@ requests==2.32.4
     #   ape-pie
     #   codecov
     #   commonground-api-common
-    #   coreapi
     #   django-log-outgoing-requests
     #   mozilla-django-oidc
     #   open-api-framework
@@ -660,11 +639,7 @@ requests==2.32.4
     #   sphinx
     #   zgw-consumers
 requests-mock==1.12.1
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   -r requirements/test-tools.in
-    #   commonground-api-common
+    # via -r requirements/test-tools.in
 rpds-py==0.19.1
     # via
     #   -c requirements/base.txt
@@ -697,7 +672,6 @@ six==1.16.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-    #   bleach
     #   furl
     #   orderedmultidict
     #   python-dateutil
@@ -759,16 +733,15 @@ typing-extensions==4.12.2
     #   pyopenssl
     #   qrcode
     #   zgw-consumers
-tzdata==2024.1
+tzdata==2025.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-    #   celery
+    #   kombu
 uritemplate==4.1.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-    #   coreapi
     #   drf-spectacular
 urllib3==2.5.0
     # via
@@ -778,7 +751,7 @@ urllib3==2.5.0
     #   requests
     #   sentry-sdk
     #   vcrpy
-uwsgi==2.0.26
+uwsgi==2.0.30
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -821,7 +794,7 @@ wrapt==1.16.0
     #   vcrpy
 yarl==1.9.4
     # via vcrpy
-zgw-consumers==0.35.1
+zgw-consumers==1.0.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
