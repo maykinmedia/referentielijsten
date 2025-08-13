@@ -11,7 +11,8 @@ import sys
 import django
 from django.utils.translation import activate
 
-sys.path.insert(0, os.path.abspath("../src"))
+sys.path.insert(0, os.path.abspath("."))
+sys.path.insert(1, os.path.abspath("../src"))
 
 import referentielijsten  # noqa isort:skip
 
@@ -19,6 +20,8 @@ from referentielijsten.setup import setup_env  # noqa isort:skip
 
 # Import as private variable to avoid errors on build
 from importlib.metadata import version as _version
+
+from model_graph import generate_model_graphs
 
 setup_env()
 django.setup()
@@ -47,15 +50,17 @@ release = referentielijsten.__version__
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    # "sphinx.ext.todo",
-    # "sphinx_tabs.tabs",
-    # "recommonmark",
-    # "sphinx_markdown_tables",
+    "sphinx.ext.todo",
+    "sphinx_tabs.tabs",
+    "recommonmark",
+    "sphinx_markdown_tables",
     "sphinx.ext.extlinks",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.graphviz",
     "django_setup_configuration.documentation.setup_config_example",
     "django_setup_configuration.documentation.setup_config_usage",
+    "uml_directive.uml",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -123,3 +128,13 @@ intersphinx_mapping = {
         None,
     ),
 }
+
+
+#
+#   Datamodel image creation
+#
+graphviz_output_format = "png"
+
+
+def setup(app):
+    app.connect("builder-inited", generate_model_graphs)
