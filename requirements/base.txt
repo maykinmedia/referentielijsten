@@ -58,12 +58,8 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-commonground-api-common==2.6.4
+commonground-api-common==2.9.0
     # via open-api-framework
-coreapi==2.3.3
-    # via commonground-api-common
-coreschema==0.0.4
-    # via coreapi
 cryptography==44.0.1
     # via
     #   django-simple-certmanager
@@ -226,10 +222,6 @@ inflection==0.5.1
     # via drf-spectacular
 iso639-lang==2.6.0
     # via commonground-api-common
-itypes==1.2.0
-    # via coreapi
-jinja2==3.1.6
-    # via coreschema
 josepy==1.14.0
     # via mozilla-django-oidc
 jsonschema==4.23.0
@@ -238,8 +230,6 @@ jsonschema-specifications==2023.12.1
     # via jsonschema
 kombu==5.3.7
     # via celery
-markupsafe==2.1.5
-    # via jinja2
 maykin-2fa==1.0.1
     # via open-api-framework
 mozilla-django-oidc==4.0.1
@@ -278,7 +268,7 @@ pydantic-core==2.27.2
     # via pydantic
 pydantic-settings==2.7.1
     # via django-setup-configuration
-pyjwt==2.8.0
+pyjwt==2.10.1
     # via
     #   commonground-api-common
     #   zgw-consumers
@@ -319,14 +309,10 @@ requests==2.32.4
     # via
     #   ape-pie
     #   commonground-api-common
-    #   coreapi
     #   django-log-outgoing-requests
     #   mozilla-django-oidc
     #   open-api-framework
-    #   requests-mock
     #   zgw-consumers
-requests-mock==1.12.1
-    # via commonground-api-common
 rpds-py==0.19.1
     # via
     #   jsonschema
@@ -365,9 +351,7 @@ typing-extensions==4.12.2
 tzdata==2024.1
     # via celery
 uritemplate==4.1.1
-    # via
-    #   coreapi
-    #   drf-spectacular
+    # via drf-spectacular
 urllib3==2.5.0
     # via
     #   elastic-apm
@@ -388,7 +372,7 @@ webencodings==0.5.1
     # via bleach
 wrapt==1.16.0
     # via elastic-apm
-zgw-consumers==0.35.1
+zgw-consumers==1.0.0
     # via
     #   commonground-api-common
     #   notifications-api-common

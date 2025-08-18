@@ -8,4 +8,3 @@ Manual
    :caption: Further reading
 
    logging
-   uml-diagram

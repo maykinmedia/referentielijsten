@@ -11,8 +11,7 @@ import sys
 import django
 from django.utils.translation import activate
 
-sys.path.insert(0, os.path.abspath("."))
-sys.path.insert(1, os.path.abspath("../src"))
+sys.path.insert(0, os.path.abspath("../src"))
 
 import referentielijsten  # noqa isort:skip
 
@@ -20,8 +19,6 @@ from referentielijsten.setup import setup_env  # noqa isort:skip
 
 # Import as private variable to avoid errors on build
 from importlib.metadata import version as _version
-
-from model_graph import generate_model_graphs
 
 setup_env()
 django.setup()
@@ -60,7 +57,7 @@ extensions = [
     "sphinx.ext.graphviz",
     "django_setup_configuration.documentation.setup_config_example",
     "django_setup_configuration.documentation.setup_config_usage",
-    "uml_directive.uml",
+    "vng_api_common.diagrams.uml_images",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -83,6 +80,9 @@ activate("en")
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 source_suffix = [".rst", ".md"]
+
+#   Datamodel image settings
+graphviz_output_format = "png"
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -128,13 +128,3 @@ intersphinx_mapping = {
         None,
     ),
 }
-
-
-#
-#   Datamodel image creation
-#
-graphviz_output_format = "png"
-
-
-def setup(app):
-    app.connect("builder-inited", generate_model_graphs)
