@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-02 15:46+0000\n"
+"POT-Creation-Date: 2025-07-28 15:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,8 +79,8 @@ msgstr "gebruikers"
 #: referentielijsten/accounts/tests/test_oidc.py:38
 #: referentielijsten/accounts/tests/test_oidc.py:56
 #: referentielijsten/accounts/tests/test_oidc.py:76
-#: referentielijsten/accounts/tests/test_oidc.py:109
-#: referentielijsten/accounts/tests/test_oidc.py:131
+#: referentielijsten/accounts/tests/test_oidc.py:112
+#: referentielijsten/accounts/tests/test_oidc.py:134
 #: referentielijsten/templates/maykin_2fa/login.html:16
 msgid "Login with organization account"
 msgstr "Inloggen met organisatie account"
