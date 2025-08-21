@@ -139,21 +139,16 @@ codecov==2.1.13
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-commonground-api-common==2.6.4
+commonground-api-common==2.9.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
-coreapi==2.3.3
+commonmark==0.9.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-    #   commonground-api-common
-coreschema==0.0.4
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   coreapi
+    #   recommonmark
 coverage==7.6.0
     # via
     #   -c requirements/ci.txt
@@ -402,8 +397,10 @@ docutils==0.21.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-setup-configuration
+    #   recommonmark
     #   sphinx
     #   sphinx-rtd-theme
+    #   sphinx-tabs
 drf-nested-routers==0.94.1
     # via
     #   -c requirements/ci.txt
@@ -510,16 +507,10 @@ iso639-lang==2.6.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-itypes==1.2.0
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   coreapi
 jinja2==3.1.6
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-    #   coreschema
     #   sphinx
 josepy==1.14.0
     # via
@@ -546,6 +537,11 @@ lxml==5.2.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   pyquery
+markdown==3.8.2
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   sphinx-markdown-tables
 markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.5
@@ -669,7 +665,10 @@ pygments==2.18.0
     #   -r requirements/ci.txt
     #   rich
     #   sphinx
-pyjwt==2.8.0
+    #   sphinx-tabs
+pygraphviz==1.14
+    # via -r requirements/dev.in
+pyjwt==2.10.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -739,6 +738,10 @@ qrcode==7.4.2
     #   django-two-factor-auth
 questionary==2.1.0
     # via bump-my-version
+recommonmark==0.7.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 redis==5.0.8
     # via
     #   -c requirements/ci.txt
@@ -757,7 +760,6 @@ requests==2.32.4
     #   ape-pie
     #   codecov
     #   commonground-api-common
-    #   coreapi
     #   django-log-outgoing-requests
     #   mozilla-django-oidc
     #   open-api-framework
@@ -768,7 +770,6 @@ requests-mock==1.12.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-    #   commonground-api-common
 rich==13.9.4
     # via
     #   bump-my-version
@@ -833,9 +834,19 @@ sphinx==7.4.7
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   recommonmark
     #   sphinx-rtd-theme
+    #   sphinx-tabs
     #   sphinxcontrib-jquery
+sphinx-markdown-tables==0.0.17
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 sphinx-rtd-theme==3.0.2
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+sphinx-tabs==3.4.7
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -923,7 +934,6 @@ uritemplate==4.1.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-    #   coreapi
     #   drf-spectacular
 urllib3==2.5.0
     # via

@@ -10,5 +10,6 @@ TODO
    :caption: Further reading
 
    team
+   uml-diagram
    open-source/index
 
