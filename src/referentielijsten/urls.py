@@ -18,7 +18,7 @@ from referentielijsten.accounts.views.password_reset import PasswordResetView
 
 monkeypatch_admin()
 
-handler500 = "referentielijsten.utils.views.server_error"
+handler500 = "maykin_common.views.server_error"
 admin.site.site_header = "Referentielijsten admin"
 admin.site.site_title = "Referentielijsten admin"
 admin.site.index_title = "Referentielijsten dashboard"
