@@ -93,6 +93,7 @@ COPY --from=backend-build /app/src/ /app/src/
 
 # copy frontend build statics
 COPY --from=frontend-build /app/src/referentielijsten/static /app/src/referentielijsten/static
+COPY --from=frontend-build /app/node_modules/@fortawesome/fontawesome-free/webfonts /app/node_modules/@fortawesome/fontawesome-free/webfonts
 
 # copy source code
 COPY ./src /app/src
