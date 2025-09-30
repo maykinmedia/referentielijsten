@@ -45,6 +45,8 @@ LOGIN_URLS = [reverse_lazy("admin:login")]
 # Default (connection timeout, read timeout) for the requests library (in seconds)
 REQUESTS_DEFAULT_TIMEOUT = (10, 30)
 
+MIDDLEWARE += ["vng_api_common.middleware.APIVersionHeaderMiddleware"]
+
 ##############################
 #                            #
 # 3RD PARTY LIBRARY SETTINGS #

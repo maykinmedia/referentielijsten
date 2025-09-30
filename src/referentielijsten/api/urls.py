@@ -1,11 +1,9 @@
 from django.urls import include, path, re_path
 
-from drf_spectacular.views import (
-    SpectacularJSONAPIView,
-    SpectacularRedocView,
-    SpectacularYAMLAPIView,
-)
+from drf_spectacular.views import SpectacularRedocView
 from vng_api_common import routers
+
+from referentielijsten.utils.views import SpectacularJSONAPIView, SpectacularYAMLAPIView
 
 from .viewset import ItemViewSet, TabelViewSet
 
