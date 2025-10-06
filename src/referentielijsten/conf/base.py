@@ -31,7 +31,7 @@ INSTALLED_APPS = INSTALLED_APPS + [
 #
 # SECURITY settings
 #
-CSRF_FAILURE_VIEW = "referentielijsten.accounts.views.csrf_failure"
+CSRF_FAILURE_VIEW = "maykin_common.views.csrf_failure"
 
 #
 # Custom settings
