@@ -55,7 +55,7 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-commonground-api-common==2.10.0
+commonground-api-common==2.10.1
     # via open-api-framework
 cryptography==44.0.1
     # via
@@ -66,7 +66,7 @@ cryptography==44.0.1
     #   webauthn
 diff-match-patch==20230430
     # via django-import-export
-django==5.2.3
+django==5.2.7
     # via
     #   commonground-api-common
     #   django-admin-index
@@ -233,7 +233,7 @@ mozilla-django-oidc-db==0.22.0
     #   open-api-framework
 notifications-api-common==0.7.1
     # via commonground-api-common
-open-api-framework==0.13.0
+open-api-framework==0.13.1
     # via -r requirements/base.in
 openpyxl==3.1.5
     # via tablib

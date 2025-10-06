@@ -108,6 +108,7 @@ linkcheck_ignore = [
     r"https://.*sentry.*",
     r"http://localhost:3000*",
     r"https://some-app.gemeente.nl*",
+    "https://github.com/maykinmedia/django-setup-configuration/blob/main/README.rst#environment-variable-substitution",
 ]
 
 extlinks = {
