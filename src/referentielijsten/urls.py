@@ -9,10 +9,9 @@ from django.views.generic.base import TemplateView
 
 from maykin_2fa import monkeypatch_admin
 from maykin_2fa.urls import urlpatterns, webauthn_urlpatterns
+from maykin_common.accounts.views import PasswordResetView
 from mozilla_django_oidc_db.views import AdminLoginFailure
 from rest_framework.settings import api_settings
-
-from referentielijsten.accounts.views.password_reset import PasswordResetView
 
 # Configure admin
 
