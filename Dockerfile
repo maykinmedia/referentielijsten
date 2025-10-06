@@ -10,6 +10,8 @@ FROM python:3.12-slim-bookworm AS backend-build
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
         pkg-config \
         build-essential \
+        # TODO Temp
+        git \
         # only relevant when using editable/github dependencies, which is discouraged
         libpq-dev \
         # required for (log) routing support in uwsgi
@@ -58,6 +60,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
         procps \
         nano \
         mime-support \
+        # TODO Temp
+        git \
         postgresql-client \
         gettext \
         libpcre3 \
