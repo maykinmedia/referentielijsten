@@ -20,6 +20,7 @@ from .api import *  # noqa
 #
 INSTALLED_APPS = INSTALLED_APPS + [
     "maykin_common",
+    "capture_tag",
     "import_export",
     # Project applications.
     "referentielijsten.accounts",
