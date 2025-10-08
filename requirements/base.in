@@ -3,3 +3,8 @@ open-api-framework[cors,markup,geo,csp,commonground,inclusions,sanitization,serv
 django-import-export[xlsx]
 
 mozilla-django-oidc-db[setup_configuration]
+
+# Django packages
+django-capture-tag
+
+git+https://github.com/maykinmedia/django-common.git@main[axes,mfa]

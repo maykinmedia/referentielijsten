@@ -7,6 +7,7 @@ def settings(request):
         "ENVIRONMENT",
         "ENVIRONMENT_SHOWN_IN_ADMIN",
         "PROJECT_NAME",
+        "SITE_TITLE",
     )
 
     context = {
