@@ -6,7 +6,7 @@ REST_FRAMEWORK["PAGE_SIZE"] = 100
 REST_FRAMEWORK["DEFAULT_PAGINATION_CLASS"] = (
     "rest_framework.pagination.PageNumberPagination"
 )
-REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "drf_spectacular.openapi.AutoSchema"
+REST_FRAMEWORK["DEFAULT_SCHEMA_CLASS"] = "referentielijsten.utils.schema.AutoSchema"
 
 SPECTACULAR_SETTINGS = {
     "REDOC_DIST": "SIDECAR",
@@ -20,10 +20,13 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Een API om referentielijsten te raadplegen en de waarden te gebruiken in andere registraties.",
     "CONTACT": {
         "url": "https://github.com/maykinmedia/referentielijsten",
+        "name": "Maykin Media",
+        "email": "support@maykinmedia.nl",
     },
     "LICENSE": {
         "name": "EUPL",
         "url": "https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md",
     },
     "VERSION": "0.1.0",
+    "SERVERS": [{"url": "/api/v1"}],
 }
