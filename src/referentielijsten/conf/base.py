@@ -19,6 +19,8 @@ from .api import *  # noqa
 # APPLICATIONS enabled for this project
 #
 INSTALLED_APPS = INSTALLED_APPS + [
+    "maykin_common",
+    "capture_tag",
     "import_export",
     # Project applications.
     "referentielijsten.accounts",
@@ -29,12 +31,13 @@ INSTALLED_APPS = INSTALLED_APPS + [
 #
 # SECURITY settings
 #
-CSRF_FAILURE_VIEW = "referentielijsten.accounts.views.csrf_failure"
+CSRF_FAILURE_VIEW = "maykin_common.views.csrf_failure"
 
 #
 # Custom settings
 #
 PROJECT_NAME = "Referentielijsten"
+SITE_TITLE = "API dashboard"
 
 # This setting is used by the csrf_failure view (accounts app).
 # You can specify any path that should match the request.path
@@ -58,7 +61,7 @@ MIDDLEWARE += ["vng_api_common.middleware.APIVersionHeaderMiddleware"]
 # Django-Admin-Index
 #
 ADMIN_INDEX_DISPLAY_DROP_DOWN_MENU_CONDITION_FUNCTION = (
-    "referentielijsten.utils.django_two_factor_auth.should_display_dropdown_menu"
+    "maykin_common.django_two_factor_auth.should_display_dropdown_menu"
 )
 
 #

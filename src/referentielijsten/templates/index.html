@@ -1,43 +1,29 @@
-{% extends "master.html" %}
+{% extends "maykin_common/api/index_base.html" %}
+{% load i18n %}
 
-{% block content %}
 
-  <div class="title">
-    <h1 class="title__header">{{ settings.PROJECT_NAME }} API</h1>
-    <p class="title__description">{{ settings.SITE_TITLE }}</p>
-  </div>
+{% block page_title %}{{ settings.PROJECT_NAME }}{% endblock %}
+{% block page_subtitle %}{{ settings.SITE_TITLE }}{% endblock page_subtitle %}
 
-  <div class="container container--center">
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item" data-id="nl">Nederlands</li>
-        <li class="nav__item" data-id="en">English</li>
-      </ul>
 
-      <div class="nav__content">
-        <div class="nav__pane" id="nl">
-          <p>Deze API is bedoeld als registratie van herbruikbare lijsten waarbij de waarden van deze lijsten mag worden opgeslagen in andere registraties. Dit voorkomt onnodige calls naar deze API voor enkel een tekstuele waarde.</p>
-        </div>
-        <div class="nav__pane" id="en">
-          <p>This API is intended as a registration of reusable data lists where the values of these lists may be stored in others registrations. This prevents unnecessary calls to this API for just one textual value.</p>
-        </div>
-      </div>
-    </nav>
+{% block content_nl %}
+<p>Deze API is bedoeld als registratie van herbruikbare lijsten waarbij de waarden van deze lijsten mag worden opgeslagen in andere registraties. Dit voorkomt onnodige calls naar deze API voor enkel een tekstuele waarde.</p>
+{% endblock content_nl %}
 
-    <p>
-      <b>Licensed under the <a class="link" href="https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md">
-        European Union Public License (EUPL) 1.2</a></b>
-    </p>
+{% block content_en %}
+<p>This API is intended as a registration of reusable data lists where the values of these lists may be stored in others registrations. This prevents unnecessary calls to this API for just one textual value.</p>
+{% endblock content_en %}
 
-    <p>
-      <a href="{% url "schema" version=version %}" class="button"><i class="fas fa-file-alt"></i> Open API specification</a>
-      <a href="{% url "api-root" version=version %}" class="button"><i class="fas fa-wifi"></i> API root</a>
-    </p>
 
-    <p>
-      <a href="{% url 'admin:index' %}" class="button button--alert"><i class="fas fa-lock"></i> Administration</a>
-    </p>
+{% block license_link %}https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md{% endblock %}
 
-  </div>
+
+{% block api_links %}
+    {% url "schema" version=version as api_docs_link %}
+    {% url "api-root" version=version as api_schema_link %}
+
+    {% with api_docs_link=api_docs_link api_schema_link=api_schema_link %}
+        {{ block.super }}
+    {% endwith %}
 
 {% endblock %}
