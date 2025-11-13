@@ -5,7 +5,7 @@
 
 # Stage 1 - Backend build environment
 # includes compilers and build tooling to create the environment
-FROM python:3.12-slim-bookworm AS backend-build
+FROM python:3.12-slim-trixie AS backend-build
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
         pkg-config \
@@ -13,8 +13,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
         # only relevant when using editable/github dependencies, which is discouraged
         libpq-dev \
         # required for (log) routing support in uwsgi
-        libpcre3 \
-        libpcre3-dev \
+        libpcre2-8-0 \
+        libpcre2-dev \
         shared-mime-info \
     && rm -rf /var/lib/apt/lists/*
 
@@ -27,7 +27,7 @@ RUN pip install -r requirements/production.txt
 RUN pip install pip "setuptools>=70.0.0"
 
 # Stage 2 - Install frontend deps and build assets
-FROM node:24-bookworm-slim AS frontend-build
+FROM node:24-trixie-slim AS frontend-build
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
@@ -50,17 +50,17 @@ RUN npm run build
 
 
 # Stage 3 - Build docker image suitable for production
-FROM python:3.12-slim-bookworm
+FROM python:3.12-slim-trixie
 
 # Stage 3.1 - Set up the needed production dependencies
 # install all the dependencies for GeoDjango
 RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
         procps \
         nano \
-        mime-support \
+        media-types \
         postgresql-client \
         gettext \
-        libpcre3 \
+        libpcre2-8-0 \
         shared-mime-info \
         # lxml deps
         # libxslt \
