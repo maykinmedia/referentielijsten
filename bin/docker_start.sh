@@ -18,9 +18,12 @@ mountpoint=${SUBPATH:-/}
 # wait for required services
 ${SCRIPTPATH}/wait_for_db.sh
 
+# Set defaults for OTEL
+export OTEL_SERVICE_NAME="${OTEL_SERVICE_NAME:-referentielijsten}"
+
 # Apply database migrations
 >&2 echo "Apply database migrations"
-python src/manage.py migrate
+OTEL_SDK_DISABLED=True python src/manage.py migrate
 
 ${SCRIPTPATH}/load_fixtures.sh
 
