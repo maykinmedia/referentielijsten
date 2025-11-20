@@ -7,4 +7,4 @@ mozilla-django-oidc-db[setup_configuration]
 # Django packages
 django-capture-tag
 
-maykin-common[axes,mfa]
+maykin-common[axes,mfa,otel]
