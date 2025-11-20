@@ -15,7 +15,7 @@ os.environ.setdefault("IS_HTTPS", "no")
 os.environ.setdefault("SECRET_KEY", "dummy")
 
 os.environ.setdefault("OTEL_SDK_DISABLED", "true")
-os.environ.setdefault("OTEL_SERVICE_NAME", "openzaak-ci")
+os.environ.setdefault("OTEL_SERVICE_NAME", "referentielijsten-ci")
 # Do not log requests in CI/tests:
 #
 # * overhead making tests slower
