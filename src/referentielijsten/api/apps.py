@@ -5,4 +5,7 @@ class ApiConfig(AppConfig):
     name = "referentielijsten.api"
 
     def ready(self):
-        from . import signals  # noqa: F401
+        from . import (
+            metrics,  # noqa
+            signals,  # noqa: F401
+        )
