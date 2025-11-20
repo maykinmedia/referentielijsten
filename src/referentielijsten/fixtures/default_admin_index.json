@@ -20,12 +20,16 @@
                 ],
                 [
                     "mozilla_django_oidc_db",
-                    "openidconnectconfig"
+                    "oidcprovider"
                 ],
-                            [
-                "sessionprofile",
-                "sessionprofile"
-            ]
+                [
+                    "mozilla_django_oidc_db",
+                    "oidcclient"
+                ],
+                [
+                    "sessionprofile",
+                    "sessionprofile"
+                ]
             ]
         }
     },
