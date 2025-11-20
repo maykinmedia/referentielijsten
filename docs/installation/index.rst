@@ -17,3 +17,4 @@ this.
    prerequisites
    config
    setup_configuration
+   observability/index
