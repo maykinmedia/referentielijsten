@@ -89,13 +89,13 @@ Accounts
 Tabels
 ------
 
-``referentielijsten.api.tabel.creates``
+``referentielijsten.tabel.creates``
     Reports the number of tabels created.
 
-``referentielijsten.api.tabel.updates``
+``referentielijsten.tabel.updates``
     Reports the number of tabels updated.
 
-``referentielijsten.api.tabel.deletes``
+``referentielijsten.tabel.deletes``
     Reports the number of tabels deleted.
 
 These metrics provide insight into changes to reference list structures.  
@@ -105,18 +105,18 @@ Sample PromQL query:
 
 .. code-block:: promql
 
-    sum by (otel_scope_name) (otel_referentielijsten_api_tabel_updates_total)
+    sum by (otel_scope_name) (otel_referentielijsten_tabel_updates_total)
 
 Items
 -----
 
-``referentielijsten.api.item.creates``
+``referentielijsten.item.creates``
     Reports the number of items created.
 
-``referentielijsten.api.item.updates``
+``referentielijsten.item.updates``
     Reports the number of items updated.
 
-``referentielijsten.api.item.deletes``
+``referentielijsten.item.deletes``
     Reports the number of items deleted.
 
 These metrics indicate how many records within reference lists are being modified.  
@@ -126,4 +126,4 @@ Sample PromQL query:
 
 .. code-block:: promql
 
-    sum by (otel_scope_name) (otel_referentielijsten_api_item_creates_total)
+    sum by (otel_scope_name) (otel_referentielijsten_item_creates_total)
