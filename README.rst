@@ -2,7 +2,7 @@
 Referentielijsten API
 =====================
 
-:Version: 0.6.0
+:Version: 0.7.0
 :Source: https://github.com/maykinmedia/referentielijsten
 :Keywords: referentielijsten, stamtabellen
 
@@ -42,7 +42,9 @@ Versie          Release datum   API specificatie
 ==============  ==============  =============================
 latest          n/a             `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
-                                (`verschillen <https://github.com/maykinmedia/referentielijsten/compare/0.6.0..master>`_)
+                                (`verschillen <https://github.com/maykinmedia/referentielijsten/compare/0.7.0..master>`_)
+0.7.0           2025-12-01      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.7.0/src/referentielijsten/api/openapi.yaml>`_,
+                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.7.0/src/referentielijsten/api/openapi.yaml>`_                                
 0.6.0           2025-10-03      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.6.0/src/referentielijsten/api/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.6.0/src/referentielijsten/api/openapi.yaml>`_
 0.5.1           2025-09-23      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.5.1/src/referentielijsten/api/openapi.yaml>`_,
