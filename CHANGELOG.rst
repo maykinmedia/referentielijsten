@@ -33,6 +33,10 @@ Change history
     For detailed configuration, see :ref:`Admin OIDC Configuration Step  <ref_step_mozilla_django_oidc_db.setup_configuration.steps.AdminOIDCConfigurationStep>`.
     Make sure to check which fields are marked as ``DEPRECATED`` and replace them with the fields that are mentioned as replacements.
 
+    **Experimental:** — connection pooling is *not yet recommended for production use*.
+    It may not behave as expected when running uWSGI with multiple processes or threads.
+    Use this feature cautiously and test thoroughly before deployment.
+    See the :ref:`documentation <database_connections>` for details.
 
 0.6.0 (2025-10-06)
 ------------------
