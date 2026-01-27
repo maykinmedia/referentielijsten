@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Referentielijsten API
-  version: 0.1.0
+  version: 0.2.0
   description: Een API om referentielijsten te raadplegen en de waarden te gebruiken
     in andere registraties.
   contact:

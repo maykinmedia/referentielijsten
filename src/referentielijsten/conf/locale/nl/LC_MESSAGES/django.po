@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-28 15:13+0000\n"
+"POT-Creation-Date: 2026-01-27 15:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,11 +76,12 @@ msgstr "gebruiker"
 msgid "users"
 msgstr "gebruikers"
 
-#: referentielijsten/accounts/tests/test_oidc.py:38
-#: referentielijsten/accounts/tests/test_oidc.py:56
-#: referentielijsten/accounts/tests/test_oidc.py:76
-#: referentielijsten/accounts/tests/test_oidc.py:112
-#: referentielijsten/accounts/tests/test_oidc.py:134
+#: referentielijsten/accounts/tests/test_oidc.py:41
+#: referentielijsten/accounts/tests/test_oidc.py:57
+#: referentielijsten/accounts/tests/test_oidc.py:73
+#: referentielijsten/accounts/tests/test_oidc.py:94
+#: referentielijsten/accounts/tests/test_oidc.py:135
+#: referentielijsten/accounts/tests/test_oidc.py:166
 #: referentielijsten/templates/maykin_2fa/login.html:16
 msgid "Login with organization account"
 msgstr "Inloggen met organisatie account"
@@ -236,26 +237,46 @@ msgstr ""
 msgid "Dit veld is vereist."
 msgstr ""
 
+#: referentielijsten/templates/403.html:13
+msgid "Sorry, you don't have access to this page (403)"
+msgstr "Sorry, je hebt geen toegang tot deze pagina (403)"
+
+#: referentielijsten/templates/404.html:13
+msgid "Sorry, the requested page could not be found (404)"
+msgstr "Sorry, de gevraagde pagina kon niet worden gevonden (404)"
+
 #: referentielijsten/templates/admin/base_site.html:5
-#: referentielijsten/templates/admin/base_site.html:23
+#: referentielijsten/templates/admin/base_site.html:24
 msgid "Administration"
 msgstr "Beheer"
 
-#: referentielijsten/templates/admin/base_site.html:38
+#: referentielijsten/templates/admin/base_site.html:39
 msgid "View site"
 msgstr "Website bekijken"
 
-#: referentielijsten/templates/admin/base_site.html:44
+#: referentielijsten/templates/admin/base_site.html:45
 msgid "Account security"
 msgstr "Accountbeveiliging"
 
-#: referentielijsten/templates/admin/base_site.html:47
+#: referentielijsten/templates/admin/base_site.html:48
 msgid "Change password"
 msgstr "Wachtwoord wijzigen"
 
-#: referentielijsten/templates/admin/base_site.html:51
+#: referentielijsten/templates/admin/base_site.html:53
 msgid "Log out"
 msgstr "Afmelden"
+
+#: referentielijsten/templates/includes/footer.html:16
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: referentielijsten/templates/includes/footer.html:21
+msgid "Docker image"
+msgstr ""
+
+#: referentielijsten/templates/includes/footer.html:26
+msgid "Code on Github"
+msgstr ""
 
 #: referentielijsten/templates/maykin_2fa/login.html:14
 msgid "or"
@@ -265,9 +286,11 @@ msgstr "of"
 msgid "Contact support"
 msgstr "Neem contact op met support"
 
-#: referentielijsten/utils/management/commands/clear_cache.py:10
-msgid "Clear given cache only"
-msgstr "Leeg alleen de opgegeven cache"
+#: referentielijsten/utils/schema.py:32
+msgid ""
+"Geeft een specifieke API-versie aan in de context van een specifieke "
+"aanroep. Voorbeeld: 1.2.1."
+msgstr ""
 
 #: referentielijsten/utils/templates/utils/includes/version_info.html:4
 #, python-format
@@ -294,3 +317,6 @@ msgstr "Ongeldige postcode."
 #: referentielijsten/utils/validators.py:32
 msgid "Invalid mobile phonenumber."
 msgstr "Ongeldig mobiel telefoonnumer."
+
+#~ msgid "Clear given cache only"
+#~ msgstr "Leeg alleen de opgegeven cache"

@@ -2,7 +2,7 @@
 Referentielijsten API
 =====================
 
-:Version: 0.7.0
+:Version: 0.7.1
 :Source: https://github.com/maykinmedia/referentielijsten
 :Keywords: referentielijsten, stamtabellen
 
@@ -17,16 +17,16 @@ Developed and financed by `Maykin B.V.`_.
 Introduction
 =============
 
-There are currently 3 initiatives for reference lists. In the VNG API standard 
-for Zaakgericht Werken there is a variant that was never formalized. The VNG 
-initiative for Klantinteracties API also includes a variant that differs 
-slightly and has not been formally acknowledged. Finally, there is also the 
-Objects API that is sometimes used for this purpose. However, it cannot enforce 
+There are currently 3 initiatives for reference lists. In the VNG API standard
+for Zaakgericht Werken there is a variant that was never formalized. The VNG
+initiative for Klantinteracties API also includes a variant that differs
+slightly and has not been formally acknowledged. Finally, there is also the
+Objects API that is sometimes used for this purpose. However, it cannot enforce
 uniqueness of items in the list and offers too much freedom in attributes.
 
 That is why a generic approach for reference lists was chosen, which
-deserves its own API. The API is intended as a registration of reusable data 
-lists where the values of these lists may be stored in others registrations. 
+deserves its own API. The API is intended as a registration of reusable data
+lists where the values of these lists may be stored in others registrations.
 This prevents unnecessary calls to this API for just one textual value.
 
 
@@ -40,7 +40,9 @@ Version         Release date    API specification
 ==============  ==============  =============================
 latest          n/a             `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/master/src/referentielijsten/api/openapi.yaml>`_,
-                                (`diff <https://github.com/maykinmedia/referentielijsten/compare/0.7.0..master>`_)
+                                (`diff <https://github.com/maykinmedia/referentielijsten/compare/0.7.1..master>`_)
+0.7.1           2026-02-05      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.7.1/src/referentielijsten/api/openapi.yaml>`_,
+                                `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.7.1/src/referentielijsten/api/openapi.yaml>`_
 0.7.0           2025-12-01      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.7.0/src/referentielijsten/api/openapi.yaml>`_,
                                 `Swagger <https://petstore.swagger.io/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.7.0/src/referentielijsten/api/openapi.yaml>`_
 0.6.0           2025-10-03      `ReDoc <https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/referentielijsten/0.6.0/src/referentielijsten/api/openapi.yaml>`_,
@@ -75,7 +77,7 @@ Developers
 
 This repository contains the source code for Referentielijsten API. To quickly
 get started, we recommend using the Docker image. You can also build the
-project from the source code. For this, please look at 
+project from the source code. For this, please look at
 `INSTALL.rst <INSTALL.rst>`_.
 
 Quickstart
@@ -121,8 +123,8 @@ Licensed under the EUPL_
     :alt: Build status
     :target: https://github.com/maykinmedia/referentielijsten/actions/workflows/ci.yml
 
-.. |docs| image:: https://readthedocs.org/projects/referentielijsten-and-objecttypes-api/badge/?version=latest
-    :target: https://referentielijsten-and-objecttypes-api.readthedocs.io/
+.. |docs| image:: https://readthedocs.org/projects/referentielijsten-api/badge/?version=latest
+    :target: https://referentielijsten-api.readthedocs.io/
     :alt: Documentation Status
 
 .. |coverage| image:: https://codecov.io/github/maykinmedia/referentielijsten/branch/master/graphs/badge.svg?branch=master
@@ -132,7 +134,7 @@ Licensed under the EUPL_
 .. |ruff| image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
     :target: https://github.com/astral-sh/ruff
     :alt: Ruff
-    
+
 .. |code-style| image:: https://github.com/maykinmedia/referentielijsten/actions/workflows/code-quality.yml/badge.svg?branch=master
     :alt: Code style
     :target: https://github.com/maykinmedia/referentielijsten/actions/workflows/code-quality.yml

@@ -1,5 +1,8 @@
 from vng_api_common.conf.api import *  # noqa
 
+API_VERSION = "0.2.0"
+
+
 # DRF
 REST_FRAMEWORK = BASE_REST_FRAMEWORK.copy()
 REST_FRAMEWORK["PAGE_SIZE"] = 100
@@ -28,6 +31,6 @@ SPECTACULAR_SETTINGS = {
         "name": "EUPL",
         "url": "https://github.com/maykinmedia/referentielijsten/blob/master/LICENSE.md",
     },
-    "VERSION": "0.1.0",
+    "VERSION": API_VERSION,
     "SERVERS": [{"url": "/api/v1"}],
 }
