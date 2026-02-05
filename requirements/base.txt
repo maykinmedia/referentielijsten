@@ -9,7 +9,7 @@ ape-pie==0.2.0
     #   commonground-api-common
     #   notifications-api-common
     #   zgw-consumers
-asgiref==3.8.1
+asgiref==3.11.0
     # via
     #   django
     #   django-axes
@@ -30,7 +30,7 @@ boltons==24.0.0
     # via
     #   face
     #   glom
-cbor2==5.6.4
+cbor2==5.8.0
     # via webauthn
 celery==5.4.0
     # via notifications-api-common
@@ -66,7 +66,7 @@ cryptography==44.0.1
     #   webauthn
 diff-match-patch==20230430
     # via django-import-export
-django==5.2.8
+django==5.2.11
     # via
     #   commonground-api-common
     #   django-admin-index
@@ -318,7 +318,7 @@ phonenumberslite==8.13.42
     # via django-two-factor-auth
 prompt-toolkit==3.0.47
     # via click-repl
-protobuf==6.33.1
+protobuf==6.33.5
     # via
     #   googleapis-common-protos
     #   opentelemetry-proto
@@ -427,7 +427,7 @@ tzdata==2024.1
     # via celery
 uritemplate==4.1.1
     # via drf-spectacular
-urllib3==2.5.0
+urllib3==2.6.3
     # via
     #   elastic-apm
     #   requests

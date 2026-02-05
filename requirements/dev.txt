@@ -24,7 +24,7 @@ ape-pie==0.2.0
     #   commonground-api-common
     #   notifications-api-common
     #   zgw-consumers
-asgiref==3.8.1
+asgiref==3.11.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -75,7 +75,7 @@ build==1.2.1
     # via pip-tools
 bump-my-version==0.32.1
     # via -r requirements/dev.in
-cbor2==5.6.4
+cbor2==5.8.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -171,7 +171,7 @@ diff-match-patch==20230430
     #   django-import-export
 distlib==0.3.9
     # via virtualenv
-django==5.2.8
+django==5.2.11
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -705,7 +705,7 @@ prompt-toolkit==3.0.47
     #   -r requirements/ci.txt
     #   click-repl
     #   questionary
-protobuf==6.33.1
+protobuf==6.33.5
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -1018,7 +1018,7 @@ uritemplate==4.1.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   drf-spectacular
-urllib3==2.5.0
+urllib3==2.6.3
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt

@@ -2,6 +2,27 @@
 Change history
 ==============
 
+0.7.1 (2026-02-05)
+------------------
+
+**Documentation**
+
+* [:open-api-framework:`197`] Update OpenAPI specification:
+
+    * Add documentation for the ``pageSize`` parameter including maximum value (500).
+    * Use ``DynamicPageSizePagination`` as the default pagination class.
+
+**Project maintenance**
+
+* Avoid using ``event`` key in uwsgi logs
+* Upgrade dependencies
+
+    * ``django`` to 5.2.11
+    * ``commonground-api-common`` to 2.10.7
+    * ``urllib3`` to 2.6.3
+    * ``cbor2`` to 5.8.0
+    * ``protobuf`` to 6.33.5
+
 0.7.0 (2025-12-01)
 ------------------
 
@@ -57,7 +78,7 @@ Change history
     If you do not have an endpoint to send system telemetry to, update your deployment to **disable it** by setting the environment variable:
 
     .. code-block:: bash
-      
+
         OTEL_SDK_DISABLED=true
 
     If this is not done, warnings will be emitted to the container logs. The application will continue to function normally.
