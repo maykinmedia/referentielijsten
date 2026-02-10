@@ -251,7 +251,7 @@ mozilla-django-oidc-db==1.1.0
     #   open-api-framework
 notifications-api-common==0.7.1
     # via commonground-api-common
-open-api-framework==0.13.2
+open-api-framework==0.13.4
     # via -r requirements/base.in
 openpyxl==3.1.5
     # via tablib
