@@ -109,6 +109,7 @@ linkcheck_ignore = [
     r"http://localhost:3000*",
     r"https://some-app.gemeente.nl*",
     "https://github.com/maykinmedia/django-setup-configuration/blob/main/README.rst#environment-variable-substitution",
+    r"https://opentelemetry\.io/docs/.*",  # times out frequently, even with 30s timeouts
 ]
 
 extlinks = {
