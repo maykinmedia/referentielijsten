@@ -137,7 +137,7 @@ diff-match-patch==20230430
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-import-export
-django==5.2.11
+django==5.2.12
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -647,7 +647,7 @@ pygments==2.18.0
     # via
     #   sphinx
     #   sphinx-tabs
-pyjwt==2.10.1
+pyjwt==2.12.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
