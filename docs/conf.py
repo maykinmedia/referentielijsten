@@ -50,7 +50,6 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_tabs.tabs",
     "recommonmark",
-    "sphinx_markdown_tables",
     "sphinx.ext.extlinks",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
