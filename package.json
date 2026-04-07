@@ -1,6 +1,6 @@
 {
   "name": "referentielijsten",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Referentielijsten API project",
   "main": "src/static/referentielijsten/js/referentielijsten.js",
   "directories": {
