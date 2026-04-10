@@ -2,6 +2,43 @@
 Change history
 ==============
 
+0.7.2 (2026-04-10)
+------------------
+
+**Bugfixes**
+
+* Fix styling for ``account_blocked.html`` template
+
+**Project maintenance**
+
+* [:open-api-framework:`211`] Optimize memory usage for uWSGI and celery-flower
+
+  * Make sure uWSGI workers restart after 1000 requests
+  * Set ``FLOWER_MAX_TASKS=1000`` and ``FLOWER_MAX_WORKERS=50``
+
+* Upgrade python dependencies
+
+    * ``cbor2`` to 5.9.0
+    * ``cffi`` to 2.0.0
+    * ``cryptography`` to 46.0.6
+    * ``django`` to 5.2.13
+    * ``mozilla-django-oidc`` to 5.0.2
+    * ``mozilla-django-oidc-db`` to 2.0.1
+    * ``open-api-framework`` to 0.13.4
+    * ``pyjwt`` to 2.12.1
+    * ``pyopenssl`` to 26.0.0
+    * ``requests`` to 2.33.1
+    * ``sqlparse`` to 0.5.5
+    * ``sphinx`` to 9.1.0 and remove unused extensions
+
+* Upgrade NPM dependencies
+* Fix CodeQL warning for codeql-analysis action
+* Add explicit least privilege permissions for each workflow
+
+**Documentation**
+
+* [:open-api-framework:`205`] Describe version policy in documentation (see :ref:`versioning_policy`)
+
 0.7.1 (2026-02-05)
 ------------------
 
