@@ -18,7 +18,7 @@
   },
   "author": "Maykin",
   "license": "EUPL",
-  "homepage": "https://maykinmedia.nl",
+  "homepage": "https://maykin.nl",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "microscope-sass": "latest"
