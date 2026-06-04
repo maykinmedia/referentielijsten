@@ -1,3 +1,8 @@
+.. image:: https://raw.githubusercontent.com/maykinmedia/referentielijsten/refs/heads/master/.github/assets/referentielijsten-logo.svg
+    :height: 100px
+    :alt: Referentielijsten
+    :class: no-scaled-link product-logo
+
 Documentation
 =============
 

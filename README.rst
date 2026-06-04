@@ -2,6 +2,10 @@
 Referentielijsten API
 =====================
 
+.. image:: https://raw.githubusercontent.com/maykinmedia/referentielijsten/refs/heads/master/.github/assets/referentielijsten-logo.svg
+    :height: 100px
+    :alt: Referentielijsten
+
 :Version: 0.7.2
 :Source: https://github.com/maykinmedia/referentielijsten
 :Keywords: referentielijsten, stamtabellen

@@ -36,7 +36,7 @@ CSRF_FAILURE_VIEW = "maykin_common.views.csrf_failure"
 #
 # Custom settings
 #
-PROJECT_NAME = "Referentielijsten"
+PROJECT_NAME = "Referentielijst"
 SITE_TITLE = "API dashboard"
 
 # This setting is used by the csrf_failure view (accounts app).
