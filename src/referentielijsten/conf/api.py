@@ -24,8 +24,8 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Een API om referentielijsten te raadplegen en de waarden te gebruiken in andere registraties.",
     "CONTACT": {
         "url": "https://github.com/maykinmedia/referentielijsten",
-        "name": "Maykin Media",
-        "email": "support@maykinmedia.nl",
+        "name": "Maykin",
+        "email": "support@maykin.nl",
     },
     "LICENSE": {
         "name": "EUPL",

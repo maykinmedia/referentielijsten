@@ -2,6 +2,10 @@
 Referentielijsten API
 =====================
 
+.. image:: https://raw.githubusercontent.com/maykinmedia/referentielijsten/refs/heads/master/.github/assets/referentielijsten-logo.svg
+    :height: 100px
+    :alt: Referentielijsten
+
 :Version: 0.7.2
 :Source: https://github.com/maykinmedia/referentielijsten
 :Keywords: referentielijsten, stamtabellen
@@ -117,7 +121,7 @@ Licensed under the EUPL_
 
 .. _`Nederlandse versie`: README.rst
 
-.. _`Maykin B.V.`: https://www.maykinmedia.nl
+.. _`Maykin B.V.`: https://www.maykin.nl
 
 .. _`EUPL`: LICENSE.md
 
