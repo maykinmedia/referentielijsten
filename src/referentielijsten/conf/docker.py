@@ -1,9 +1,13 @@
 import os
 
-os.environ.setdefault("DB_USER", os.getenv("DATABASE_USER", "referentielijsten"))
-os.environ.setdefault("DB_NAME", os.getenv("DATABASE_NAME", "referentielijsten"))
-os.environ.setdefault("DB_PASSWORD", os.getenv("DATABASE_PASSWORD", ""))
-os.environ.setdefault("DB_HOST", os.getenv("DATABASE_HOST", "db"))
+os.environ.setdefault(
+    "DB_USER", os.getenv("DATABASE_USER", default="referentielijsten")
+)
+os.environ.setdefault(
+    "DB_NAME", os.getenv("DATABASE_NAME", default="referentielijsten")
+)
+os.environ.setdefault("DB_PASSWORD", os.getenv("DATABASE_PASSWORD", default=""))
+os.environ.setdefault("DB_HOST", os.getenv("DATABASE_HOST", default="db"))
 os.environ.setdefault("DB_CONN_MAX_AGE", "60")
 
 os.environ.setdefault("ENVIRONMENT", "docker")
