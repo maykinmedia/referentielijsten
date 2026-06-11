@@ -7,4 +7,8 @@ Manual
    :maxdepth: 1
    :caption: Further reading
 
+   general
+   users
+   referentielijst
+   open-forms
    scripts

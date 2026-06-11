@@ -19,16 +19,16 @@
                     "group"
                 ],
                 [
-                    "mozilla_django_oidc_db",
-                    "oidcprovider"
-                ],
-                [
-                    "mozilla_django_oidc_db",
-                    "oidcclient"
-                ],
-                [
                     "sessionprofile",
                     "sessionprofile"
+                ],
+                [
+                    "otp_totp",
+                    "totpdevice"
+                ],
+                [
+                    "two_factor_webauthn",
+                    "webauthndevice"
                 ]
             ]
         }
@@ -96,17 +96,13 @@
                     "admin_index",
                     "appgroup"
                 ],
-                [
-                    "otp_static",
-                    "staticdevice"
+                                [
+                    "mozilla_django_oidc_db",
+                    "oidcprovider"
                 ],
                 [
-                    "otp_totp",
-                    "totpdevice"
-                ],
-                [
-                    "two_factor_webauthn",
-                    "webauthndevice"
+                    "mozilla_django_oidc_db",
+                    "oidcclient"
                 ]
             ]
         }
