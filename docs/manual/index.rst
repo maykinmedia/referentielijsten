@@ -11,4 +11,5 @@ Manual
    users
    referentielijst
    open-forms
+   oidc
    scripts

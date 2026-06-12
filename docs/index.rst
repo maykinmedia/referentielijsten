@@ -30,5 +30,6 @@ To get you started, you might find some of these links relevant:
 
    introduction/index
    installation/index
+   api
    manual/index
    changelog

@@ -9,7 +9,7 @@ Referentielijsten ondersteunt Single Sign On (SSO) via het OpenID Connect protoc
 Gebruikers kunnen op die manier inloggen op Referentielijsten met hun account bij de OpenID Connect provider. In deze
 flow:
 
-1. Klikt een gebruiker op het inlogscherm op *Inloggen met OIDC*
+1. Klikt een gebruiker op het inlogscherm op *Inloggen met organisatie account*
 2. De gebruiker wordt naar de omgeving van de OpenID Connect provider geleid (bijv. Keycloak) waar ze inloggen met gebruikersnaam
    en wachtwoord (en eventuele Multi Factor Authentication)
 3. De OIDC omgeving stuurt de gebruiker terug naar Referentielijsten (waar de account aangemaakt
@@ -47,23 +47,22 @@ Providersreferentie
 
 ADFS (on premise)
 -----------------
-
-For on premise ADFS, the discovery URL usually has the form
-``https://login.gemeente.nl/adfs/.well-known/openid-configuration``.
+Voor on premise ADFS heeft de discovery URL meestal de vorm:
+``https://login.gemeente.nl/adfs``. (``.well-known`` is automatisch toegevoegd)
 
 Azure AD
 --------
 
-Azure Active Directory is a cloud-hosted identity provider from Microsoft, part of Azure webservices.
+Azure Active Directory is een cloud-hosted identity provider van Microsoft, onderdeel van Azure webservices.
 
-To use AAD as OIDC provider, you require a Tenant ID, usually in the same of a UUID v4.
-This tenant ID is used in the discovery URL, having the form
-``https://login.microsoftonline.com/${tenantId}/v2.0``.
+om AAD als OIDC provider te gebruiken, is een tenant ID nodig, meestal als UUID v4.
+De tenant id wordt gebruikt in de discovery url:
+``https://login.microsoftonline.com/${tenantId}/v2.0``. (``.well-known`` is automatisch toegevoegd)
 
 Keycloak
 --------
 
-Keycloak is a multi-tenant IDP which itself can configure other IDPs.
+Keycloak is a multi-tenant IDP die zelf ander IDP's kan configureren
 
-To use Keycloak, you need to know your relevant ``realm``. The discovery URL has the form
-``https://keycloak.gemeente.nl/auth/realms/${realm}/.well-known/openid-configuration``.
+Om Keycloak te kunnen gebruiken, is de ``realm`` nodig. De discovery URL heeft de vorm:
+``https://keycloak.gemeente.nl/auth/realms/${realm}``. (``.well-known`` is automatisch toegevoegd)

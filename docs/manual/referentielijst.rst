@@ -17,7 +17,7 @@ Op de Tabellen pagina is een lijst met alle tabellen te zien.
     :width: 100%
     :alt: Tabel list view
 
-Door op een tabel te klikken kan een tabel worden aangepast, of via``tabel toevoegen`` kan een nieuwe tabel worden toegevoegd.
+Door op een tabel te klikken kan een tabel worden aangepast, of via ``tabel toevoegen`` kan een nieuwe tabel worden toegevoegd.
 De verplichte velden van een tabel zijn een unieke code en een naam. Daarnaast kan er een einddatum worden ingesteld en een beheerder worden toegevoegd.
 
 .. image:: assets/tabel-detail.png
