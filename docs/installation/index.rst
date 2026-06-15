@@ -14,7 +14,9 @@ this.
    :maxdepth: 1
    :caption: Further reading
 
+   quickstart
    prerequisites
    config
-   setup_configuration
+   config_cli
+   deployment/index
    observability/index
