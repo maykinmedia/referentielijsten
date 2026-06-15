@@ -2,6 +2,71 @@
 Change history
 ==============
 
+0.7.3 (2026-06-15)
+------------------
+
+.. note::
+
+  The defaults for several environment variables for the ``django-log-outgoing-requests``
+  configuration have changed (see :ref:`installation_env_config` > Logging)
+
+  * ``LOG_REQUESTS`` is now ``True`` by default, instead of ``False``
+  * ``LOG_OUTGOING_REQUESTS_DB_SAVE_BODY`` is now ``False`` by default, instead of ``True``
+  * ``LOG_OUTGOING_REQUESTS_RESET_DB_SAVE_AFTER`` (previously not configurable) has a default of ``60`` minutes
+
+**Project maintenance**
+
+* [:open-api-framework:`83`] Upgrade ``open-api-framework`` to ``0.14.0``
+
+  * Use ``maykin-common`` config helper
+  * Replace generated environment variable documentation with the ``envvar`` directive
+  * Remove obsolete environment variable documentation generation code
+
+* Upgrade Python dependencies
+
+  * ``open-api-framework`` to ``0.14.0``
+  * ``maykin-common`` to ``0.19.0``
+  * ``django-log-outgoing-requests`` to ``0.9.1``
+  * ``Django`` to ``5.2.15``
+  * ``cryptography`` to ``49.0.0``
+  * ``urllib3`` to ``2.7.0``
+  * ``idna`` to ``3.18``
+  * ``tornado`` to ``6.5.7``
+  * ``pyopenssl`` to 26.3.0
+  * ``python-dotenv`` to 1.2.2
+
+
+* Upgrade NPM dependencies
+
+  * ``webpack-dev-server`` to ``5.2.5``
+  * ``shell-quote`` to ``1.8.4``
+  * ``tmp`` to ``0.2.7``
+  * ``postcss`` to ``8.5.15``
+  * ``qs`` to ``6.15.2``
+  * ``nanoid`` to ``3.3.12`` 
+
+* [:open-api-framework:`218`] Harden CI workflows
+
+  * Pin GitHub Actions to immutable SHAs
+  * Disable credential persistence in GitHub Actions workflows
+  * Upgrade ``open-api-workflows`` to ``v6.4.0``
+  * Add ``actions: read`` permission to the CodeQL workflow
+
+* Improve ADR validation
+
+  * Add local ``ruleset.yaml`` to stabilize ADR rules
+  * Configure OAS workflow to use the local ruleset
+  * Disable ``duplicated-entry-in-enum`` rule as a workaround for upstream issues
+
+**Documentation**
+
+* Add an Architectural Design Record (ADR) checklist item to the pull request template.
+* [:referentielijsten:`147`] Add manual to documentation
+
+**Design**
+
+* [:open-api-framework:`217`] Update project logos and icons.
+
 0.7.2 (2026-04-10)
 ------------------
 

@@ -57,7 +57,7 @@ click-repl==0.3.0
     # via celery
 commonground-api-common==2.10.7
     # via open-api-framework
-cryptography==46.0.6
+cryptography==49.0.0
     # via
     #   django-simple-certmanager
     #   mozilla-django-oidc
@@ -65,7 +65,7 @@ cryptography==46.0.6
     #   webauthn
 diff-match-patch==20230430
     # via django-import-export
-django==5.2.13
+django==5.2.15
     # via
     #   commonground-api-common
     #   django-admin-index
@@ -224,7 +224,7 @@ googleapis-common-protos==1.72.0
     #   opentelemetry-exporter-otlp-proto-http
 grpcio==1.76.0
     # via opentelemetry-exporter-otlp-proto-grpc
-idna==3.7
+idna==3.18
     # via requests
 importlib-metadata==8.7.0
     # via opentelemetry-api
@@ -371,7 +371,7 @@ pyjwt==2.12.1
     #   commonground-api-common
     #   mozilla-django-oidc
     #   zgw-consumers
-pyopenssl==26.0.0
+pyopenssl==26.3.0
     # via webauthn
 pypng==0.20220715.0
     # via qrcode
@@ -381,7 +381,7 @@ python-dateutil==2.9.0.post0
     #   django-relativedelta
 python-decouple==3.8
     # via maykin-common
-python-dotenv==1.0.1
+python-dotenv==1.2.2
     # via
     #   open-api-framework
     #   pydantic-settings
@@ -457,7 +457,7 @@ tzdata==2024.1
     # via celery
 uritemplate==4.1.1
     # via drf-spectacular
-urllib3==2.6.3
+urllib3==2.7.0
     # via
     #   elastic-apm
     #   requests
