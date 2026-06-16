@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-27 15:16+0000\n"
+"POT-Creation-Date: 2026-06-15 09:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,12 +76,12 @@ msgstr "gebruiker"
 msgid "users"
 msgstr "gebruikers"
 
-#: referentielijsten/accounts/tests/test_oidc.py:41
-#: referentielijsten/accounts/tests/test_oidc.py:57
-#: referentielijsten/accounts/tests/test_oidc.py:73
-#: referentielijsten/accounts/tests/test_oidc.py:94
-#: referentielijsten/accounts/tests/test_oidc.py:135
-#: referentielijsten/accounts/tests/test_oidc.py:166
+#: referentielijsten/accounts/tests/test_oidc.py:60
+#: referentielijsten/accounts/tests/test_oidc.py:76
+#: referentielijsten/accounts/tests/test_oidc.py:92
+#: referentielijsten/accounts/tests/test_oidc.py:114
+#: referentielijsten/accounts/tests/test_oidc.py:155
+#: referentielijsten/accounts/tests/test_oidc.py:186
 #: referentielijsten/templates/maykin_2fa/login.html:16
 msgid "Login with organization account"
 msgstr "Inloggen met organisatie account"
@@ -244,6 +244,14 @@ msgstr "Sorry, je hebt geen toegang tot deze pagina (403)"
 #: referentielijsten/templates/404.html:13
 msgid "Sorry, the requested page could not be found (404)"
 msgstr "Sorry, de gevraagde pagina kon niet worden gevonden (404)"
+
+#: referentielijsten/templates/account_blocked.html:13
+msgid "Sorry, your account has been blocked"
+msgstr "Sorry, uw account is geblokkeerd"
+
+#: referentielijsten/templates/account_blocked.html:14
+msgid "If you you want your account unblocked, please contact the webmaster."
+msgstr "Als u uw account wilt laten deblokkeren, neem dan contact op met de beheerder."
 
 #: referentielijsten/templates/admin/base_site.html:5
 #: referentielijsten/templates/admin/base_site.html:24
