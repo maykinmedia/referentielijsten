@@ -1,20 +1,21 @@
-import factory.fuzzy
+import factory
+from factory.django import DjangoModelFactory
 
 from ..models import Item, Tabel
 
 
-class TabelFactory(factory.django.DjangoModelFactory):
+class TabelFactory(DjangoModelFactory):
     code = factory.Sequence(lambda n: str(n + 1))
     naam = factory.Faker("word")
 
-    class Meta:
+    class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]
         model = Tabel
 
 
-class ItemFactory(factory.django.DjangoModelFactory):
+class ItemFactory(DjangoModelFactory):
     tabel = factory.SubFactory(TabelFactory)
     code = factory.Sequence(lambda n: str(n + 1))
     naam = factory.Faker("word")
 
-    class Meta:
+    class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]
         model = Item

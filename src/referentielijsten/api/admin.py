@@ -79,8 +79,10 @@ class ItemAdmin(ImportExportModelAdmin):
             initial["selected_tabel"] = import_form.cleaned_data.get("selected_tabel")
         return initial
 
-    def get_import_resource_kwargs(self, request, form=None):
-        resource_kwargs = super().get_import_resource_kwargs(request, form=form)
+    def get_import_resource_kwargs(self, request, form=None, **kwargs):
+        resource_kwargs = super().get_import_resource_kwargs(
+            request, form=form, **kwargs
+        )
         if form and form.is_valid():
             resource_kwargs["selected_tabel"] = form.cleaned_data.get("selected_tabel")
         return resource_kwargs

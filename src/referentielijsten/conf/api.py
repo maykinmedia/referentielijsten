@@ -1,4 +1,4 @@
-from vng_api_common.conf.api import *  # noqa
+from vng_api_common.conf.api import *  # type: ignore # noqa
 
 API_VERSION = "0.2.0"
 

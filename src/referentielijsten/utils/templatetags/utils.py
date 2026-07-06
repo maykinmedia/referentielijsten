@@ -9,7 +9,7 @@ class CaptureNode(template.Node):
         self.nodelist = nodelist
         self.var_name = var_name
 
-    def render(self, context):
+    def render(self, context: template.Context) -> str:
         output = self.nodelist.render(context)
         context[self.var_name] = output
         return ""

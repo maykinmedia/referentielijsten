@@ -1,3 +1,5 @@
+from re import Pattern
+
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.utils.encoding import force_str
@@ -25,7 +27,7 @@ def validate_charfield_entry(value, allow_apostrophe=False):
     return value
 
 
-def validate_phone_number(value):
+def validate_phone_number(value: str) -> str:
     try:
         int(value.strip().lstrip("0+").replace("-", "").replace(" ", ""))
     except (ValueError, TypeError):
@@ -43,6 +45,7 @@ class CustomRegexValidator(RegexValidator):
         """
         Validates that the input matches the regular expression.
         """
+        assert isinstance(self.regex, Pattern)
         if not self.regex.search(force_str(value)):
             message = "{0}: {1}".format(self.message, force_str(value))
             raise ValidationError(message, code=self.code)
