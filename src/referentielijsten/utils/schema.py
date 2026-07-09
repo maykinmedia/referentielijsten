@@ -6,16 +6,8 @@ from vng_api_common.constants import VERSION_HEADER
 
 
 class AutoSchema(_AutoSchema):
-    def get_response_serializers(
-        self,
-    ):
-        if self.method == "DELETE":
-            return {204: None}
-
-        return super().get_response_serializers()
-
     def get_override_parameters(self):
-        """Add request GEO headers"""
+        """Add API version request headers"""
         params = super().get_override_parameters()
 
         version_headers = self.get_version_headers()

@@ -11,6 +11,8 @@ from django.core.mail import send_mail
 from django.urls import reverse
 from django.utils.crypto import get_random_string
 
+from ...models import User
+
 PASSWORD_FROM_ENV_SUPPORTED = django.VERSION[:2] > (2, 2)
 
 
@@ -43,6 +45,8 @@ class Command(BaseCommand):
         )
 
     def handle(self, **options):
+        assert self.UserModel is User
+
         username = options[self.UserModel.USERNAME_FIELD]
         database = options["database"]
         qs = self.UserModel._default_manager.db_manager(database).filter(

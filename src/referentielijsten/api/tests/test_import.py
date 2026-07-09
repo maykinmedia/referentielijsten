@@ -1,5 +1,5 @@
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import TestCase
+from django.test import RequestFactory, TestCase
 
 from import_export.formats.base_formats import CSV
 
@@ -12,7 +12,8 @@ from .factories import TabelFactory
 class ItemAdminTests(TestCase):
     def get_test_form(self, form_data):
         dummy_file = SimpleUploadedFile("test.csv", b"code,naam\n123,Test Item\n")
-        dummy_file.tmp_storage_name = "test.csv"
+        # Attribute used by django-import-export
+        dummy_file.tmp_storage_name = "test.csv"  # pyright: ignore[reportAttributeAccessIssue]
 
         form_data["format"] = "0"
         form = ItemImportForm(
@@ -29,7 +30,9 @@ class ItemAdminTests(TestCase):
         self.assertTrue(form.is_valid(), form.errors)
 
         item_admin = ItemAdmin(Item, admin.site)
-        initial_data = item_admin.get_confirm_form_initial(self.client, form)
+        initial_data = item_admin.get_confirm_form_initial(
+            RequestFactory().get("/admin"), form
+        )
 
         self.assertEqual(initial_data["selected_tabel"], tabel)
 
@@ -40,7 +43,9 @@ class ItemAdminTests(TestCase):
         self.assertTrue(form.is_valid(), form.errors)
 
         item_admin = ItemAdmin(Item, admin.site)
-        resource_kwargs = item_admin.get_import_resource_kwargs(self.client, form=form)
+        resource_kwargs = item_admin.get_import_resource_kwargs(
+            RequestFactory().get("/admin"), form=form
+        )
 
         self.assertEqual(resource_kwargs["selected_tabel"], tabel)
 

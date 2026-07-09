@@ -6,8 +6,8 @@ from vng_api_common.serializers import GegevensGroepSerializer
 from .models import Item, Tabel
 
 
-class ItemSerializer(serializers.ModelSerializer):
-    class Meta:
+class ItemSerializer(serializers.ModelSerializer[Item]):
+    class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]
         model = Item
         fields = (
             "code",
@@ -19,19 +19,19 @@ class ItemSerializer(serializers.ModelSerializer):
 
 
 class BeheerderSerializer(GegevensGroepSerializer):
-    class Meta:
+    class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]
         model = Tabel
         gegevensgroep = "beheerder"
 
 
-class TabelSerializer(serializers.ModelSerializer):
+class TabelSerializer(serializers.ModelSerializer[Tabel]):
     beheerder = BeheerderSerializer(
         required=False,
         allow_null=True,
         help_text=_("De informatie van de beheerder van deze tabel."),
     )
 
-    class Meta:
+    class Meta:  # pyright: ignore[reportIncompatibleVariableOverride]
         model = Tabel
         fields = (
             "code",

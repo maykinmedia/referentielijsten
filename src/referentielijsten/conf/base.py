@@ -3,11 +3,11 @@ import os
 from django.urls import reverse_lazy
 
 from import_export.formats.base_formats import DEFAULT_FORMATS
-from notifications_api_common.settings import *  # noqa
+from notifications_api_common.settings import *  # pyright: ignore # noqa
 
 os.environ["_USE_STRUCTLOG"] = "True"
 
-from open_api_framework.conf.base import *  # noqa
+from open_api_framework.conf.base import *  # pyright: ignore  # noqa
 
 from .api import *  # noqa
 
