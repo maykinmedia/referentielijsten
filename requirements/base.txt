@@ -236,7 +236,7 @@ jsonschema==4.23.0
     # via drf-spectacular
 jsonschema-specifications==2023.12.1
     # via jsonschema
-kombu==5.3.7
+kombu==5.6.2
     # via celery
 maykin-2fa==1.0.1
     # via
@@ -341,6 +341,7 @@ oyaml==1.0
 packaging==25.0
     # via
     #   django-csp
+    #   kombu
     #   opentelemetry-instrumentation
 phonenumberslite==8.13.42
     # via django-two-factor-auth
@@ -453,8 +454,10 @@ typing-extensions==4.12.2
     #   pyopenssl
     #   qrcode
     #   zgw-consumers
-tzdata==2024.1
-    # via celery
+tzdata==2026.3
+    # via
+    #   celery
+    #   kombu
 uritemplate==4.1.1
     # via drf-spectacular
 urllib3==2.7.0
