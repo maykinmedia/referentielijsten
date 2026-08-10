@@ -2,6 +2,46 @@
 Change history
 ==============
 
+0.7.4 (2026-08-14)
+------------------
+
+.. note::
+
+  The environment variable used to configure the uWSGI port in the Docker
+  entrypoint has been renamed from ``UWSGI_PORT`` to ``REFERENTIELIJSTEN_PORT``
+  (see :ref:`installation_env_config`). Deployments that override the uWSGI
+  port need to update their configuration accordingly.
+
+**Bugfixes**
+
+* [:open-zaak:`2415`] Fix a uWSGI strict-mode crash by renaming the
+  ``UWSGI_PORT`` environment variable to ``REFERENTIELIJSTEN_PORT``
+
+**Project maintenance**
+
+* [:open-api-framework:`222`] Use ``PreventPrivilegeEscalationMixin`` from
+  ``maykin-common`` in the user admin, replacing the bespoke implementation
+* [:referentielijsten:`153`] Add static type checking (``mypy``) for the
+  Python codebase
+* [:open-api-workflows:`60`] Upgrade ``open-api-workflows`` to ``v7.0.0`` and reenable OAS workflow and replace spectral-cli with vacuum
+* Configure Dependabot to keep GitHub Actions up-to-date, grouped into a
+  single PR, and move ``dependabot.yml`` to the ``.github`` directory
+* Configure ``actions/stale`` to automatically close stale issues/PRs
+* [:referentielijsten:`159`] Prevent npm ``postinstall`` scripts from running
+  via ``.npmrc``
+
+* Upgrade Python dependencies
+
+  * ``kombu`` to ``5.6.2``
+  * ``lxml`` to ``6.1.0``
+  * ``Django`` to ``5.2.16``
+  * ``cryptography`` to ``50.0.0``
+  * ``bleach`` to ``6.4.0``
+  * ``pyjwt`` to ``2.13.0``
+  * ``pyopenssl`` to ``26.4.0``
+  * ``maykin-common`` to ``0.19.1``
+  * ``tzdata`` to ``2026.3``
+
 0.7.3 (2026-06-15)
 ------------------
 
@@ -43,7 +83,7 @@ Change history
   * ``tmp`` to ``0.2.7``
   * ``postcss`` to ``8.5.15``
   * ``qs`` to ``6.15.2``
-  * ``nanoid`` to ``3.3.12`` 
+  * ``nanoid`` to ``3.3.12``
 
 * [:open-api-framework:`218`] Harden CI workflows
 

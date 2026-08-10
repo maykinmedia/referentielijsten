@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 09:35+0000\n"
+"POT-Creation-Date: 2026-08-10 15:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,45 +18,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: referentielijsten/accounts/models.py:18
+#: referentielijsten/accounts/models.py:20
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: referentielijsten/accounts/models.py:22
+#: referentielijsten/accounts/models.py:24
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
 msgstr ""
 "Vereist. 150 tekens of minder. Alleen letters, cijfers en @/,/+/-/_ tekens "
 "zijn toegestaan."
 
-#: referentielijsten/accounts/models.py:26
+#: referentielijsten/accounts/models.py:28
 msgid "A user with that username already exists."
 msgstr "Een gebruiker met deze gebruikersnaam bestaat al."
 
-#: referentielijsten/accounts/models.py:29
+#: referentielijsten/accounts/models.py:31
 msgid "first name"
 msgstr "voornaam"
 
-#: referentielijsten/accounts/models.py:30
+#: referentielijsten/accounts/models.py:32
 msgid "last name"
 msgstr "achternaam"
 
-#: referentielijsten/accounts/models.py:31
+#: referentielijsten/accounts/models.py:33
 msgid "email address"
 msgstr "e-mailadres"
 
-#: referentielijsten/accounts/models.py:33
+#: referentielijsten/accounts/models.py:35
 msgid "staff status"
 msgstr "stafstatus"
 
-#: referentielijsten/accounts/models.py:35
+#: referentielijsten/accounts/models.py:37
 msgid "Designates whether the user can log into this admin site."
 msgstr "Bepaalt of de gebruiker zich op deze beheerwebsite kan aanmelden."
 
-#: referentielijsten/accounts/models.py:38
+#: referentielijsten/accounts/models.py:40
 msgid "active"
 msgstr "actief"
 
-#: referentielijsten/accounts/models.py:41
+#: referentielijsten/accounts/models.py:43
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
@@ -64,15 +64,15 @@ msgstr ""
 "Bepaalt of deze gebruiker als actief dient te worden behandeld. U kunt dit "
 "uitvinken in plaats van een gebruiker te verwijderen."
 
-#: referentielijsten/accounts/models.py:45
+#: referentielijsten/accounts/models.py:47
 msgid "date joined"
 msgstr "datum toegetreden"
 
-#: referentielijsten/accounts/models.py:53
+#: referentielijsten/accounts/models.py:55
 msgid "user"
 msgstr "gebruiker"
 
-#: referentielijsten/accounts/models.py:54
+#: referentielijsten/accounts/models.py:56
 msgid "users"
 msgstr "gebruikers"
 
@@ -86,29 +86,20 @@ msgstr "gebruikers"
 msgid "Login with organization account"
 msgstr "Inloggen met organisatie account"
 
-#: referentielijsten/accounts/utils.py:18
-msgid "You need to be superuser to create other superusers."
-msgstr ""
-"U dient een supergebruiker te zijn om andere supergebruikers aan te maken."
-
-#: referentielijsten/accounts/utils.py:44
-msgid "You cannot create or update a user with more permissions than yourself."
-msgstr "U kunt een gebruiker niet meer rechten geven dan u zelf heeft."
-
-#: referentielijsten/api/admin.py:65 referentielijsten/api/admin.py:119
-#: referentielijsten/api/admin_list_filters.py:6
+#: referentielijsten/api/admin.py:65 referentielijsten/api/admin.py:121
+#: referentielijsten/api/admin_list_filters.py:9
 msgid "Is geldig"
 msgstr ""
 
-#: referentielijsten/api/admin.py:107
+#: referentielijsten/api/admin.py:109
 msgid "Beheerder"
 msgstr ""
 
-#: referentielijsten/api/admin.py:126
+#: referentielijsten/api/admin.py:128
 msgid "Actions"
 msgstr "Acties"
 
-#: referentielijsten/api/admin.py:135
+#: referentielijsten/api/admin.py:137
 msgid "Show items in item list view"
 msgstr "Toon items in item lijstweergave"
 
@@ -251,7 +242,9 @@ msgstr "Sorry, uw account is geblokkeerd"
 
 #: referentielijsten/templates/account_blocked.html:14
 msgid "If you you want your account unblocked, please contact the webmaster."
-msgstr "Als u uw account wilt laten deblokkeren, neem dan contact op met de beheerder."
+msgstr ""
+"Als u uw account wilt laten deblokkeren, neem dan contact op met de "
+"beheerder."
 
 #: referentielijsten/templates/admin/base_site.html:5
 #: referentielijsten/templates/admin/base_site.html:24
@@ -294,7 +287,7 @@ msgstr "of"
 msgid "Contact support"
 msgstr "Neem contact op met support"
 
-#: referentielijsten/utils/schema.py:32
+#: referentielijsten/utils/schema.py:24
 msgid ""
 "Geeft een specifieke API-versie aan in de context van een specifieke "
 "aanroep. Voorbeeld: 1.2.1."
@@ -311,20 +304,21 @@ msgid "GIT SHA: %(GIT_SHA)s"
 msgstr ""
 
 #: referentielijsten/utils/tests/test_validators.py:24
-#: referentielijsten/utils/validators.py:23
+#: referentielijsten/utils/validators.py:25
 #, python-format
 msgid "The provided value contains an invalid character: %s"
 msgstr "Uw invoer bevat een ongeldig teken: %s"
 
 #: referentielijsten/utils/tests/test_validators.py:61
-#: referentielijsten/utils/validators.py:52
+#: referentielijsten/utils/validators.py:55
 msgid "Invalid postal code."
 msgstr "Ongeldige postcode."
 
 #: referentielijsten/utils/tests/test_validators.py:85
-#: referentielijsten/utils/validators.py:32
+#: referentielijsten/utils/validators.py:34
 msgid "Invalid mobile phonenumber."
 msgstr "Ongeldig mobiel telefoonnumer."
+
 
 #~ msgid "Clear given cache only"
 #~ msgstr "Leeg alleen de opgegeven cache"

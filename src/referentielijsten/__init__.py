@@ -1,6 +1,6 @@
 # from .celery import app as celery_app
 
 # __all__ = ("celery_app",)
-__version__ = "0.7.3"
+__version__ = "0.7.4"
 __author__ = "Maykin"
 __homepage__ = "https://github.com/maykinmedia/referentielijsten"
