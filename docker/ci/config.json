@@ -1,0 +1,15 @@
+{
+    "supportedTags": [
+        {
+            "gitRef": "master",
+            "tag": "latest"
+        }
+    ],
+    "dockerOrg": "maykinmedia",
+    "dockerRepo": "referentielijsten-api",
+    "githubOrg": "maykinmedia",
+    "githubRepo": "referentielijsten",
+    "projectName": "Referentielijsten API",
+    "projectDocumentation": "https://referentielijsten-api.readthedocs.io/en/latest/",
+    "projectDescription": "Referentielijsten is an application where tables and items can be managed. Other applications like Open Formulieren can integrate Referentielijsten using its REST API to for example fill a radio components with items of a list.\n\nThis component is designed in line with the Common Ground model.\n\nThis project is and only uses Open-source."
+}
