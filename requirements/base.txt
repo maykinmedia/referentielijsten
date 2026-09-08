@@ -55,7 +55,7 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-commonground-api-common==2.10.7
+commonground-api-common==2.14.0
     # via open-api-framework
 cryptography==50.0.0
     # via
@@ -65,7 +65,7 @@ cryptography==50.0.0
     #   webauthn
 diff-match-patch==20230430
     # via django-import-export
-django==5.2.16
+django==5.2.17
     # via
     #   commonground-api-common
     #   django-admin-index
@@ -242,7 +242,7 @@ maykin-2fa==1.0.1
     # via
     #   maykin-common
     #   open-api-framework
-maykin-common==0.19.1
+maykin-common==0.20.1
     # via
     #   -r requirements/base.in
     #   open-api-framework
@@ -252,9 +252,11 @@ mozilla-django-oidc-db==2.0.1
     # via
     #   -r requirements/base.in
     #   open-api-framework
-notifications-api-common==0.7.1
-    # via commonground-api-common
-open-api-framework==0.14.0
+notifications-api-common==0.13.1
+    # via
+    #   commonground-api-common
+    #   open-api-framework
+open-api-framework==0.14.2
     # via -r requirements/base.in
 openpyxl==3.1.5
     # via tablib
@@ -429,11 +431,13 @@ six==1.16.0
     #   furl
     #   orderedmultidict
     #   python-dateutil
-sqlparse==0.5.5
+sqlparse==0.6.0
     # via django
 structlog==25.4.0
     # via
+    #   commonground-api-common
     #   django-structlog
+    #   notifications-api-common
     #   open-api-framework
 tablib==3.5.0
     # via django-import-export

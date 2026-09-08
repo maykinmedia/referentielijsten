@@ -121,7 +121,7 @@ codecov==2.1.13
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-commonground-api-common==2.10.7
+commonground-api-common==2.14.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -153,7 +153,7 @@ diff-match-patch==20230430
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-import-export
-django==5.2.16
+django==5.2.17
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -466,7 +466,6 @@ idna==3.18
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   requests
-    #   yarl
 imagesize==1.4.1
     # via
     #   -c requirements/ci.txt
@@ -522,7 +521,7 @@ maykin-2fa==1.0.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
-maykin-common==0.19.1
+maykin-common==0.20.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -537,17 +536,12 @@ mozilla-django-oidc-db==2.0.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
-multidict==6.0.5
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   yarl
-notifications-api-common==0.7.1
+notifications-api-common==0.13.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.14.0
+open-api-framework==0.14.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -936,7 +930,7 @@ sphinxcontrib-serializinghtml==2.0.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   sphinx
-sqlparse==0.5.5
+sqlparse==0.6.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -945,7 +939,9 @@ structlog==25.4.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   commonground-api-common
     #   django-structlog
+    #   notifications-api-common
 tablib==3.5.0
     # via
     #   -c requirements/ci.txt
@@ -1035,7 +1031,7 @@ webencodings==0.5.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   bleach
-webob==1.8.10
+webob==1.8.11
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -1054,10 +1050,6 @@ wrapt==1.16.0
     #   opentelemetry-instrumentation-dbapi
     #   opentelemetry-instrumentation-redis
     #   vcrpy
-yarl==1.9.4
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
 zgw-consumers==1.0.0
     # via
     #   -c requirements/ci.txt
