@@ -2,6 +2,41 @@
 Change history
 ==============
 
+0.7.5 (2026-10-05)
+------------------
+
+**Project maintenance**
+
+* [:referentielijsten:`181`] Ensure dependencies are compiled in the correct order
+* [:referentielijsten:`178`] Bump the github-actions group across 1 directory with 4 updates
+
+  * Updates `actions/checkout` from 7.0.0 to 7.0.1
+  * Updates `codecov/codecov-action` from 7.0.0 to 7.1.1
+  * Updates `actions/setup-python` from 6.3.0 to 7.0.0
+  * Updates `actions/stale` from 10.4.0 to 11.0.0
+
+* [:open-api-framework:`223`] Include templates from maykin-common 0.20.1
+* [:referentielijsten:`177`] Update dependencies
+
+  - django==5.2.17
+  - open-api-framework==0.14.1
+  - commonground-api-common==2.14.0
+  - maykin-common==0.20.1
+  - sqlparse==0.6.0
+  - webob==1.8.11
+  - setuptools==84.0.0
+
+* [:open-api-workflows:`64`] Add action to generate and update Docker Hub description
+* Upgrade Python packages to fix vulnerabilities 
+  * ``gitpython`` from ``3.1.58`` to ``3.2.0`` 
+  * ``pyjwt`` from ``2.13.0`` to ``2.15.1``
+  * ``anyio`` from ``4.8.0`` to ``4.14.2``
+  * ``virtualenv`` from ``21.1.0`` to ``21.14.5``
+  * ``urllib3`` from ``2.7.0`` to ``2.8.0``
+  * ``soupsieve`` from ``2.8.4`` to ``2.10``
+  * ``pip`` from ``26.1`` to ``26.2.1``
+  * ``djangorestframework`` from ``3.15.2`` to ``3.18.1``
+
 0.7.4 (2026-08-14)
 ------------------
 
