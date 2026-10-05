@@ -329,15 +329,10 @@ django-structlog==9.1.1
     #   -r requirements/ci.txt
 django-stubs==6.0.6
     # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
     #   -r requirements/type-checking.in
     #   djangorestframework-stubs
 django-stubs-ext==6.0.6
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   django-stubs
+    # via django-stubs
 django-two-factor-auth==1.16.0
     # via
     #   -c requirements/ci.txt
@@ -378,10 +373,7 @@ djangorestframework-inclusions==1.2.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
 djangorestframework-stubs==3.17.0
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   -r requirements/type-checking.in
+    # via -r requirements/type-checking.in
 docutils==0.21.2
     # via
     #   -c requirements/ci.txt
@@ -521,7 +513,7 @@ maykin-2fa==1.0.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
-maykin-common==0.20.1
+maykin-common==0.22.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -541,7 +533,7 @@ notifications-api-common==0.13.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   commonground-api-common
-open-api-framework==0.14.2
+open-api-framework==0.16.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -697,12 +689,12 @@ protobuf==6.33.5
     #   -r requirements/ci.txt
     #   googleapis-common-protos
     #   opentelemetry-proto
-psycopg==3.2.9
+psycopg==3.3.6
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   open-api-framework
-psycopg-binary==3.2.9
+psycopg-binary==3.3.6
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -735,7 +727,7 @@ pygments==2.20.0
     #   django-log-outgoing-requests
     #   sphinx
     #   sphinx-tabs
-pyjwt==2.13.0
+pyjwt==2.15.1
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -842,7 +834,7 @@ ruamel-yaml==0.18.10
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-setup-configuration
-ruamel-yaml-clib==0.2.12
+ruamel-yaml-clib==0.2.15
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -874,7 +866,7 @@ snowballstemmer==2.2.0
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   sphinx
-soupsieve==2.8.4
+soupsieve==2.10
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -953,8 +945,6 @@ tblib==3.0.0
     #   -r requirements/ci.txt
 types-pyyaml==6.0.12.20260518
     # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
     #   django-stubs
     #   djangorestframework-stubs
 typing-extensions==4.12.2
@@ -989,7 +979,7 @@ uritemplate==4.1.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   drf-spectacular
-urllib3==2.7.0
+urllib3==2.8.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
