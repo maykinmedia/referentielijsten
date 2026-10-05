@@ -679,7 +679,7 @@ pygments==2.20.0
     #   django-log-outgoing-requests
     #   sphinx
     #   sphinx-tabs
-pyjwt==2.13.0
+pyjwt==2.15.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -804,7 +804,7 @@ six==1.16.0
     #   python-dateutil
 snowballstemmer==2.2.0
     # via sphinx
-soupsieve==2.8.4
+soupsieve==2.10
     # via beautifulsoup4
 sphinx==9.1.0
     # via
@@ -879,7 +879,7 @@ uritemplate==4.1.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   drf-spectacular
-urllib3==2.7.0
+urllib3==2.8.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt

@@ -369,7 +369,7 @@ pydantic-settings==2.7.1
     # via django-setup-configuration
 pygments==2.20.0
     # via django-log-outgoing-requests
-pyjwt==2.13.0
+pyjwt==2.15.1
     # via
     #   commonground-api-common
     #   mozilla-django-oidc
@@ -463,7 +463,7 @@ tzdata==2026.3
     #   kombu
 uritemplate==4.1.1
     # via drf-spectacular
-urllib3==2.7.0
+urllib3==2.8.0
     # via
     #   elastic-apm
     #   requests
