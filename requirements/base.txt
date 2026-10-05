@@ -242,7 +242,7 @@ maykin-2fa==1.0.1
     # via
     #   maykin-common
     #   open-api-framework
-maykin-common==0.20.1
+maykin-common==0.22.0
     # via
     #   -r requirements/base.in
     #   open-api-framework
@@ -256,7 +256,7 @@ notifications-api-common==0.13.1
     # via
     #   commonground-api-common
     #   open-api-framework
-open-api-framework==0.14.2
+open-api-framework==0.16.0
     # via -r requirements/base.in
 openpyxl==3.1.5
     # via tablib
@@ -353,9 +353,9 @@ protobuf==6.33.5
     # via
     #   googleapis-common-protos
     #   opentelemetry-proto
-psycopg==3.2.9
+psycopg==3.3.6
     # via open-api-framework
-psycopg-binary==3.2.9
+psycopg-binary==3.3.6
     # via psycopg
 pycparser==2.22
     # via cffi
@@ -418,7 +418,7 @@ rpds-py==0.19.1
     #   referencing
 ruamel-yaml==0.18.10
     # via django-setup-configuration
-ruamel-yaml-clib==0.2.12
+ruamel-yaml-clib==0.2.15
     # via ruamel-yaml
 semantic-version==2.10.0
     # via django-upgrade-check
