@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-10 15:35+0000\n"
+"POT-Creation-Date: 2026-10-05 07:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,6 +100,7 @@ msgid "Actions"
 msgstr "Acties"
 
 #: referentielijsten/api/admin.py:137
+#: referentielijsten/api/tests/test_tabellen_admin.py:28
 msgid "Show items in item list view"
 msgstr "Toon items in item lijstweergave"
 
@@ -318,7 +319,6 @@ msgstr "Ongeldige postcode."
 #: referentielijsten/utils/validators.py:34
 msgid "Invalid mobile phonenumber."
 msgstr "Ongeldig mobiel telefoonnumer."
-
 
 #~ msgid "Clear given cache only"
 #~ msgstr "Leeg alleen de opgegeven cache"
