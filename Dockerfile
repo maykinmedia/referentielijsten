@@ -36,11 +36,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # copy configuration/build files
-COPY ./build /app/build/
-COPY ./*.json ./*.js ./.babelrc /app/
+COPY ./*.json /app/
 
 # install WITH dev tooling
-RUN npm ci
+RUN npm ci --legacy-peer-deps
+
+COPY ./*.js /app/
 
 # copy source code
 COPY ./src /app/src
