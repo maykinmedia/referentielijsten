@@ -2,15 +2,15 @@
   "name": "referentielijsten",
   "version": "0.7.5",
   "description": "Referentielijsten API project",
-  "main": "src/static/referentielijsten/js/referentielijsten.js",
+  "type": "module",
+  "main": "src/referentielijsten/static/bundles/index.js",
   "directories": {
     "doc": "doc"
   },
   "scripts": {
-    "build": "npm run bundle",
-    "bundle": "webpack",
-    "test": "karma start",
-    "watch": "webpack -w"
+    "build": "node build.js",
+    "test": "echo 'no tests defined' && exit 1",
+    "watch": "node build.js --watch"
   },
   "repository": {
     "type": "git",
@@ -24,34 +24,8 @@
     "microscope-sass": "latest"
   },
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/polyfill": "latest",
-    "@babel/preset-env": "latest",
-    "autoprefixer": "latest",
-    "babel-loader": "latest",
-    "chai": "latest",
-    "css-loader": "latest",
-    "cssnano": "latest",
-    "karma": "latest",
-    "karma-chrome-launcher": "latest",
-    "karma-coverage": "latest",
-    "karma-junit-reporter": "latest",
-    "karma-mocha": "latest",
-    "karma-spec-reporter": "latest",
-    "karma-webpack": "latest",
-    "mini-css-extract-plugin": "latest",
-    "mocha": "latest",
-    "postcss-loader": "latest",
-    "postcss-selector-lint": "latest",
-    "sass": "latest",
-    "sass-loader": "latest",
-    "simulant": "latest",
-    "sinon": "latest",
-    "url-loader": "latest",
-    "webpack": "latest",
-    "webpack-cli": "latest",
-    "webpack-dev-server": "latest",
-    "webpack-stream": "latest",
-    "yargs": "latest"
+    "esbuild": "latest",
+    "esbuild-sass-plugin": "latest",
+    "sass-embedded": "latest"
   }
 }
