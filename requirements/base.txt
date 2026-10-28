@@ -34,7 +34,7 @@ cbor2==5.9.0
     # via webauthn
 celery==5.4.0
     # via notifications-api-common
-certifi==2024.7.4
+certifi==2026.10.23
     # via
     #   elastic-apm
     #   requests
