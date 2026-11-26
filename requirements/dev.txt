@@ -525,11 +525,6 @@ kombu==5.6.2
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   celery
-legacy-cgi==2.6.4
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   webob
 lxml==6.1.0
     # via
     #   -c requirements/ci.txt
@@ -913,6 +908,11 @@ ruamel-yaml==0.18.10
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django-setup-configuration
+ruamel-yaml-clib==0.2.15
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   ruamel-yaml
 ruff==0.11.10
     # via
     #   -c requirements/ci.txt
@@ -1028,6 +1028,7 @@ typing-extensions==4.12.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   anyio
     #   django-log-outgoing-requests
     #   grpcio
     #   mozilla-django-oidc-db
@@ -1036,8 +1037,10 @@ typing-extensions==4.12.2
     #   opentelemetry-exporter-otlp-proto-http
     #   opentelemetry-sdk
     #   opentelemetry-semantic-conventions
+    #   psycopg
     #   pydantic
     #   pydantic-core
+    #   pyopenssl
     #   qrcode
     #   rich-click
     #   zgw-consumers

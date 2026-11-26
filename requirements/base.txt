@@ -427,6 +427,8 @@ rpds-py==0.19.1
     #   referencing
 ruamel-yaml==0.18.10
     # via django-setup-configuration
+ruamel-yaml-clib==0.2.15
+    # via ruamel-yaml
 semantic-version==2.10.0
     # via django-upgrade-check
 sentry-sdk==2.13.0
@@ -459,8 +461,10 @@ typing-extensions==4.12.2
     #   opentelemetry-exporter-otlp-proto-http
     #   opentelemetry-sdk
     #   opentelemetry-semantic-conventions
+    #   psycopg
     #   pydantic
     #   pydantic-core
+    #   pyopenssl
     #   qrcode
     #   zgw-consumers
 tzdata==2026.3
